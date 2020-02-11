@@ -1,6 +1,7 @@
 <html>
 <body>
 
+The result is 
 <?php
 if (isset($_POST["add"])) {
 	echo $_POST["num1"] + $_POST["num2"];
