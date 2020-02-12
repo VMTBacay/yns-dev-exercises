@@ -1,0 +1,11 @@
+CREATE TABLE `company`.`employees` ( `id` INT NOT NULL AUTO_INCREMENT , `first_name` VARCHAR(30) NOT NULL , `last_name` VARCHAR(30) NOT NULL , `middle_name` VARCHAR(30) NULL , `birth_date` DATE NOT NULL , `department_id` INT NOT NULL , `hire_date` DATE NULL , `boss_id` INT NULL , PRIMARY KEY (`id`)) ENGINE = InnoDB;
+INSERT INTO `employees` (`id`, `first_name`, `last_name`, `middle_name`, `birth_date`, `department_id`, `hire_date`, `boss_id`) VALUES (1, 'Manabu', 'Yamazaki', NULL, '1976-03-15', '1', NULL, NULL), (NULL, 'Tomohiko', 'Takasago', NULL, '1974-05-24', '3', '2014-04-01', '1'), (NULL, 'Yuta', 'Kawakami', NULL, '1990-08-13', '4', '2014-04-01', '1'), (NULL, 'Shogo', 'Kubota', NULL, '1985-01-31', '4', '2014-12-01', '1'), (NULL, 'Lorraine', 'San Jose', 'P.', '1983-10-11', '2', '2015-03-10', '1'), (NULL, 'Haille', 'Dela Cruz', 'A.', '1990-11-12', '3', '2015-02-15', '2'), (NULL, 'Godfrey', 'Sarmenta', 'L.', '1993-09-13', '4', '2015-01-01', '1'), (NULL, 'Alex', 'Amistad', 'F.', '1988-04-14', '4', '2015-04-10', '1'), (NULL, 'Hideshi', 'Ogoshi', NULL, '1983-07-15', '4', '2014-06-01', '1');
+
+CREATE TABLE `company`.`departments` ( `id` INT NOT NULL AUTO_INCREMENT , `name` VARCHAR(30) NOT NULL , PRIMARY KEY (`id`)) ENGINE = InnoDB;
+INSERT INTO `departments` (`id`, `name`) VALUES ('1', 'Executive'), (NULL, 'Admin'), (NULL, 'Sales'), (NULL, 'Development'), (NULL, 'Design'), (NULL, 'Marketing');
+
+CREATE TABLE `company`.`positions` ( `id` INT NOT NULL AUTO_INCREMENT , `name` VARCHAR(30) NOT NULL , PRIMARY KEY (`id`)) ENGINE = InnoDB;
+INSERT INTO `positions` (`id`, `name`) VALUES ('1', 'CEO'), (NULL, 'CTO'), (NULL, 'CFO'), (NULL, 'Manager'), (NULL, 'Staff')
+
+CREATE TABLE `company`.`employee_positions` ( `id` INT NOT NULL AUTO_INCREMENT , `employee_id` INT NOT NULL , `position_id` INT NOT NULL , PRIMARY KEY (`id`)) ENGINE = InnoDB;
+INSERT INTO `employee_positions` (`id`, `employee_id`, `position_id`) VALUES ('1', '1', '1'), (NULL, '1', '2'), (NULL, '1', '3'), (NULL, '2', '4'), (NULL, '3', '5'), (NULL, '4', '5'), (NULL, '5', '5'), (NULL, '6', '5'), (NULL, '7', '5'), (NULL, '8', '5'), (NULL, '9', '5'), (NULL, '10', '5')
