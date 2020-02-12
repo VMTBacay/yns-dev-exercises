@@ -2,7 +2,6 @@
 <body>
 
 <?php
-
 preg_match("/\w+@[a-zA-Z]+\.[a-zA-Z]+/", $_POST["email"], $matches);
 if (count($matches) != 1) {
 	echo "Email Error";
@@ -32,7 +31,7 @@ if (count($matches) != 1) {
 		    }
 		}
 
-		$fields = array($_POST["name"], $_POST["cont_num"], $_POST["email"], basename($_FILES["fileToUpload"]["name"]));
+		$fields = array($_POST["user"], $_POST["pass"], $_POST["email"], basename($_FILES["fileToUpload"]["name"]));
 		echo "Your name is " . $fields[0] . "<br>";
 		echo "Your contact no. is " . $fields[1] . "<br>";
 		echo "Your email address is " . $fields[2] . "<br>"; 
@@ -42,8 +41,6 @@ if (count($matches) != 1) {
 		fclose($file);
 	}
 }
-
-
 ?>
 
 </body>
