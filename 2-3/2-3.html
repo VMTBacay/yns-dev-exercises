@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+</head>
+<body>
+Number1: <input type="number" class="num"><br>
+Number2: <input type="number" class="num"><br>
+<select class="operation">
+	<option value="add">Add</option>
+	<option value="sub">Subtract</option>
+	<option value="mul">Multiply</option>
+	<option value="div">Div</option>
+</select><br>
+<input type="submit" value="Submit" onclick="calculate()"><br>
+<p id="result"></p>
+<script type="text/javascript">
+	function calculate() {
+		let op = document.getElementsByTagName("select")[0].value, nums = document.getElementsByClassName("num"), result = 0;
+		if (op === "add") {
+			result = +nums[0].value + +nums[1].value;
+		} else if (op === "sub") {
+			result = +nums[0].value - +nums[1].value;
+		} else if (op === "mul") {
+			result = +nums[0].value * +nums[1].value;
+		} else {
+			result = +nums[0].value / +nums[1].value;
+		}
+		document.getElementById("result").innerHTML = "The result is " + result;
+	}
+</script>
+</body>
+</html>

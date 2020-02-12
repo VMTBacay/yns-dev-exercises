@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+</head>
+<body>
+<img src="http://icons.iconarchive.com/icons/paomedia/small-n-flat/256/cat-icon.png" id="picture">
+<select onchange="changeImg()">
+	<option value="http://icons.iconarchive.com/icons/paomedia/small-n-flat/256/cat-icon.png">Image 1</option>
+	<option value="https://donyprisma.files.wordpress.com/2011/11/linux-icons-penguin_3_256x256-256x256.png">Image 2</option>
+	<option value="https://upload.wikimedia.org/wikipedia/commons/9/9b/Love-game-logo-256x256.png">Image 3</option>
+	<option value="https://findicons.com/files/icons/2711/free_icons_for_windows8_metro/256/biohazard.png">Image 4</option>
+</select>
+</body>
+<script type="text/javascript">
+	function changeImg() {
+		document.getElementById("picture").src = document.getElementsByTagName("select")[0].value;
+	}
+</script>
+</html>

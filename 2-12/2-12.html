@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+</head>
+<body>
+<img src="http://icons.iconarchive.com/icons/paomedia/small-n-flat/256/cat-icon.png" onmouseover="changeImg()" onmouseout="restoreImg()" id="picture">
+<script type="text/javascript">
+	origImg = "http://icons.iconarchive.com/icons/paomedia/small-n-flat/256/cat-icon.png";
+	newImg = "https://donyprisma.files.wordpress.com/2011/11/linux-icons-penguin_3_256x256-256x256.png";
+
+	function changeImg() {
+		document.getElementById("picture").src = newImg;
+	}
+
+	function restoreImg() {
+		document.getElementById("picture").src = origImg;
+	}
+</script>
+</body>
+</html>
