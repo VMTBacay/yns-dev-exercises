@@ -1,1 +1,0 @@
-CREATE TABLE `sample`.`testing` ( `id` INT NOT NULL , `name` TEXT NOT NULL , `number` INT NOT NULL ) ENGINE = InnoDB;
