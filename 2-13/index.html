@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>2-13</title>
+</head>
+<body>
+<img src="http://icons.iconarchive.com/icons/paomedia/small-n-flat/256/cat-icon.png" id="picture"><br>
+<button onclick="smallify()">Small</button> <button onclick="mediumify()">Medium</button> <button onclick="largify()">Large</button>
+</body>
+<script type="text/javascript">
+    function smallify() {
+        document.getElementById('picture').width = 128;
+        document.getElementById('picture').height = 128;
+    }
+
+    function mediumify() {
+        document.getElementById('picture').width = 256;
+        document.getElementById('picture').height = 256;
+    }
+
+    function largify() {
+        document.getElementById('picture').width = 512;
+        document.getElementById('picture').height = 512;
+    }
+</script>
+</html>

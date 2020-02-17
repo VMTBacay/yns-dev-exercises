@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>2-7</title>
+</head>
+<body>
+    Click image to see filename<br>
+    <img src="http://icons.iconarchive.com/icons/paomedia/small-n-flat/256/cat-icon.png" onclick="imgFilename()">
+</body>
+<script type="text/javascript">
+    function imgFilename() {
+        alert('Filename of image is ' + document.getElementsByTagName('img')[0].src.split('/').pop());
+    }
+</script>
+</html>

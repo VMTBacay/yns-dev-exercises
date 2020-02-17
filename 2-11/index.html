@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>2-11</title>
+</head>
+<body onload="bgAnimation()">
+Sample Text<br>
+</body>
+<script type="text/javascript">
+    async function bgAnimation() {
+        for (let db = 0, change = 5; db < 1000; db += change) {
+            document.body.style.background = `linear-gradient(90deg, lightblue, darkblue ${db}%)`;
+            await new Promise(resolve => setTimeout(resolve, 50));
+        }
+    }
+</script>
+</html>

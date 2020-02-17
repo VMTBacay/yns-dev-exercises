@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>2-4</title>
+</head>
+<body>
+    Displays primes less than or equal to input<br>
+    Number: <input type="number" id="num"><br>
+    <input type="submit" value="Submit" onclick="primes()"><br>
+    <p id="result"></p>
+</body>
+<script type="text/javascript">
+    function isPrime(n) {
+        for(let i = 2, s = Math.sqrt(n); i <= s; i++) {
+            if(n % i === 0) {
+                return false;
+            }
+        }
+        return n > 1;
+    }
+
+    function primes() {
+        let num = +document.getElementById('num').value, result = '';
+        for (let i = 2; i <= num; i++) {
+            if (isPrime(i)) {
+                result += i + '<br>';
+            }
+        }
+        result = result ? result : 'None';
+        document.getElementById('result').innerHTML = 'The primes less than and equal to that number are<br>' + result;
+    }
+</script>
+</html>

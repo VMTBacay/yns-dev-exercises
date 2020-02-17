@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>2-15</title>
+</head>
+<body onload="currentTime()">
+    Current Time:<br>
+    <label></label>
+</body>
+<script type="text/javascript">
+    async function currentTime() {
+        while (true) {
+            document.getElementsByTagName('label')[0].innerHTML = new Date();
+            await new Promise(resolve => setTimeout(resolve, 1000));
+        }
+    }
+</script>
+</html>

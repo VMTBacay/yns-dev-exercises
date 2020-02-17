@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>2-5</title>
+</head>
+<body>
+    Type here: <input type="text" id="input" oninput="copyText()"><br>
+    This is what you're typing: <label id="output"></label>
+</body>
+<script type="text/javascript">
+    function copyText() {
+        document.getElementById('output').innerHTML = document.getElementById('input').value;
+    }
+</script>
+</html>

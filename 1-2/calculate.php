@@ -1,18 +1,21 @@
+<!DOCTYPE html>
 <html>
+<head>
+    <title></title>
+</head>
 <body>
-
-The result is 
-<?php
-if (isset($_POST["add"])) {
-	echo $_POST["num1"] + $_POST["num2"];
-} elseif (isset($_POST["sub"])) {
-	echo $_POST["num1"] - $_POST["num2"];
-} elseif (isset($_POST["mul"])) {
-	echo $_POST["num1"] * $_POST["num2"];
-} else {
-	echo $_POST["num1"] / $_POST["num2"];
-}
-?>
-
+    <?php
+    $result = 0;
+    if (isset($_POST['add'])) {
+        $result = $_POST['num1'] + $_POST['num2'];
+    } elseif (isset($_POST['sub'])) {
+        $result = $_POST['num1'] - $_POST['num2'];
+    } elseif (isset($_POST['mul'])) {
+        $result = $_POST['num1'] * $_POST['num2'];
+    } else {
+        $result = $_POST['num1'] / $_POST['num2'];
+    }
+    echo 'The result is ' . $result;
+    ?>
 </body>
-</html> 
+</html>
