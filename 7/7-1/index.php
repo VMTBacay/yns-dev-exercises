@@ -21,14 +21,14 @@ if ($conn->connect_error) {
         $columns = $conn->query('SHOW columns FROM employees;');
         echo '<tr>';
         while ($column = mysqli_fetch_array($columns)) {
-            echo '<td>' . $column[0] . '<td>';
+            echo '<td>' . $column[0] . '</td>';
         }
         echo '</tr>';
         $result = $conn->query('SELECT * FROM employees WHERE 1261440000 > TIMESTAMPDIFF(SECOND, birth_date, CURRENT_DATE) AND TIMESTAMPDIFF(SECOND, birth_date, CURRENT_DATE) > 946080000');
         foreach ($result as $row) {
             echo '<tr>';
             foreach ($row as $value) {
-                echo '<td>' . $value . '<td>';
+                echo '<td>' . $value . '</td>';
             }
             echo '</tr>';
         }
