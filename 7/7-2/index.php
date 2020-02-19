@@ -51,12 +51,12 @@ if ($conn->connect_error) {
                 `sort_start_time`;'
         );
         foreach ($result as $row) {
-                echo '<tr>';
-                foreach ($row as $value) {
-                        echo '<td>' . $value . '</td>';
-                }
-                echo '</tr>';
+            echo '<tr>';
+            foreach ($row as $value) {
+                    echo '<td>' . $value . '</td>';
             }
+            echo '</tr>';
+        }
         ?>
     </table>
 </body>
