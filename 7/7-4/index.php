@@ -17,29 +17,7 @@ if ($conn->connect_error) {
 <body>
     <table border="1">
         <?php
-        $result = $conn->query(
-            'SELECT 
-            CASE
-                WHEN `id` = 1 THEN 1
-                WHEN `id` = 2 THEN 4
-                WHEN `id` = 3 THEN 3
-                WHEN `id` = 4 THEN 6
-                WHEN `id` = 5 THEN 7
-                WHEN `id` = 6 THEN 2
-                WHEN `id` = 7 THEN 5
-            END,
-            CASE
-                WHEN `id` = 1 THEN NULL
-                WHEN `id` = 2 THEN 1
-                WHEN `id` = 3 THEN NULL
-                WHEN `id` = 4 THEN 3
-                WHEN `id` = 5 THEN 3
-                WHEN `id` = 6 THEN 5
-                WHEN `id` = 7 THEN NULL
-            END
-            FROM `parents` 
-            WHERE id IS NOT NULL'
-        );
+        $result = $conn->query('SELECT * FROM `parents` WHERE id IS NOT NULL ORDER BY CASE WHEN `parent_id` IS NULL then `id` ELSE `parent_id` END');
         foreach ($result as $row) {
             echo '<tr>';
             foreach ($row as $value) {
