@@ -23,28 +23,33 @@
 
     Output:'true'
     */
-    echo 'eightQueens(array("(1,1)", "(2,2)", "(3,3)", "(4,4)", "(5,5)", "(6,6)", "(7,7)", "(8,8)")): ' . eightQueens(array('(1,1)', '(2,2)', '(3,3)', '(4,4)', '(5,5)', '(6,6)', '(7,7)', '(8,8)'));
+    echo 'eightQueens(array("(8,1)", "(7,2)", "(6,3)", "(5,4)", "(4,5)", "(3,6)", "(2,7)", "(1,8)")): ' . eightQueens(array('(8,1)', '(7,2)', '(6,3)', '(5,4)', '(4,5)', '(3,6)', '(2,7)', '(1,8)'));
     echo '<br>';
     echo 'eightQueens(array("(1,5)", "(2,3)", "(3,1)", "(4,7)", "(5,2)", "(6,8)", "(7,6)", "(8,4)")): ' . eightQueens(array('(1,5)', '(2,3)', '(3,1)', '(4,7)', '(5,2)', '(6,8)', '(7,6)', '(8,4)'));
 
     function eightQueens(array $strArr): string {
-        $occupied_cols = $occupied_rows = $occupied_dias = array();
-        foreach ($strArr as $index => $queen) {
+        $occupied_cols = $occupied_rows = $occupied_fdias = $occupied_bdias = array();
+        foreach ($strArr as $queen) {
             $c = array_search($queen[1], $occupied_cols);
-            $r = array_search($queen[3], $occupied_rows);
-            $d = array_search(intval($queen[1]) - intval($queen[3]), $occupied_dias);
             if ($c !== false) {
                 return $strArr[$c];
             }
+            $r = array_search($queen[3], $occupied_rows);
             if ($r !== false) {
                 return $strArr[$r];
             }
-            if ($d !== false) {
-                return $strArr[$d];
+            $fd = array_search(intval($queen[1]) - intval($queen[3]), $occupied_fdias);
+            if ($fd !== false) {
+                return $strArr[$fd];
+            }
+            $bd = array_search(intval($queen[1]) + intval($queen[3]), $occupied_bdias);
+            if ($bd !== false) {
+                return $strArr[$bd];
             }
             array_push($occupied_cols, $queen[1]);
             array_push($occupied_rows, $queen[3]);
-            array_push($occupied_dias, intval($queen[1]) - intval($queen[3]));
+            array_push($occupied_fdias, intval($queen[1]) - intval($queen[3]));
+            array_push($occupied_bdias, intval($queen[1]) + intval($queen[3]));
         }
         return 'true';
     }
