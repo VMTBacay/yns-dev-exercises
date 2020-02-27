@@ -6,7 +6,7 @@
 <body>
     Correct Path<br>
     <?php
-    /* 
+    /*
     QUESTION:
 
     Have the function correctPath(str) read the str parameter being passed, which will represent the movements made in a 5x5 grid of cells starting from the top left position. The characters in the input string will be entirely composed of: r, l, u, d, ?. Each of the characters stand for the direction to take within the grid, for example: r = right, l = left, u = up, d = down. Your goal is to determine what characters the question marks should be in order for a path to be created to go from the top left of the grid all the way to the bottom right without touching previously travelled on cells in the grid.
@@ -49,7 +49,6 @@
 
     function correctPath(string $str): string {
         $net_down = $net_right = $moves = 0;
-        $movesets = array();
         foreach (str_split($str) as $c) {
             switch ($c) {
                 case 'u':
@@ -70,6 +69,7 @@
             }
         }
         $req_moves = '';
+        $movesets = array();
         if ($net_down < 5) {
             $req_moves .= str_repeat('d', (4 - $net_down));
             $moves -= 4 - $net_down;

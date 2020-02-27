@@ -43,7 +43,7 @@
         $len = count($strArr);
         $wid = strlen($strArr[0]);
         for ($i = 0; $i < $len - 1; $i++) {
-            for ($k=0; $k < $wid - 1; $k++) {
+            for ($k = 0; $k < $wid - 1; $k++) {
                 if (
                     strpos('aeiou', $strArr[$i][$k]) !== false
                     && strpos('aeiou', $strArr[$i+1][$k]) !== false
