@@ -3,23 +3,14 @@ class PostsController extends AppController {
     public $helpers = array('Html', 'Form', 'Flash', 'Space');
     public $components = array('Flash', 'Session');
 
-    public $uses = array('Post', 'Repost', 'Like');
+    public $uses = array('Post', 'Repost', 'Like', 'Comment');
 
     public function index() {
+        if ($this->Session->read('User.id') === null) {
+            return $this->redirect(array('controller' => 'users', 'action' => 'signUp'));
+        }
         $this->set('reposts', $this->Repost->findAllByUserIdAndDeleted($this->Session->read('User.id'), 0));
         $this->set('posts', $this->Post->findAllByUserIdAndDeleted($this->Session->read('User.id'), 0));
-    }
-
-    public function view($id = null) {
-        if (!$id) {
-            throw new NotFoundException(__('Invalid post'));
-        }
-
-        $post = $this->Post->findById($id);
-        if (!$post) {
-            throw new NotFoundException(__('Invalid post'));
-        }
-        $this->set('post', $post);
     }
 
     public function add() {
@@ -87,7 +78,6 @@ class PostsController extends AppController {
     public function repost($id) {
         if ($this->request->is('post')) {
             $repost = $this->Repost->findAllByUserIdAndPostId($this->Session->read('User.id'), $id)[0];
-            var_dump($repost);
             if ($repost !== null) {
                 $this->Repost->id = $repost['Repost']['id'];
                 $this->request->data['Repost']['modified'] = date("Y-m-d H:i:s");
@@ -102,6 +92,7 @@ class PostsController extends AppController {
                 return $this->redirect(array('action' => 'index'));
             }
             $this->Flash->error(__('Unable to repost that post.'));
+            return $this->redirect(array('action' => 'index'));
         }
     }
 
@@ -126,14 +117,12 @@ class PostsController extends AppController {
             }
             $this->Flash->error(__('Unable to undo your repost.'));
         }
-
         return $this->redirect(array('action' => 'index'));
     }
 
     public function like($id) {
         if ($this->request->is('post')) {
             $like = $this->Like->findAllByUserIdAndPostId($this->Session->read('User.id'), $id)[0];
-            var_dump($like);
             if ($like !== null) {
                 $this->Like->id = $like['Like']['id'];
                 $this->request->data['Like']['modified'] = date("Y-m-d H:i:s");
@@ -149,6 +138,7 @@ class PostsController extends AppController {
             }
             $this->Flash->error(__('Unable to like that post.'));
         }
+        return $this->redirect(array('action' => 'index'));
     }
 
     public function undoLike($id) {
@@ -172,7 +162,6 @@ class PostsController extends AppController {
             }
             $this->Flash->error(__('Unable to undo your like.'));
         }
-
         return $this->redirect(array('action' => 'index'));
     }
 

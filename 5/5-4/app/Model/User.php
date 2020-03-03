@@ -26,7 +26,7 @@ class User extends AppModel {
             'message' => 'Invalid email'
         )
     );
-    
+
     public function equalToField($check, $otherField) {
         //get name of field
         $fname = '';
@@ -35,7 +35,7 @@ class User extends AppModel {
             break;
         }
         return $this->data[$this->name][$fname] === $this->data[$this->name][$otherField];
-    } 
+    }
 
     public function activationExpiration($check) {
         return time() - strtotime($check['activation_code_date'])  <= 1800;

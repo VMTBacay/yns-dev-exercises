@@ -10,24 +10,29 @@
 </head>
 <body>
     <div class="topbar">
-       <span class="home"><?php echo $this->Html->link('Home', array('action' => 'index'), array('style' => 'color: white;')); ?></span> 
+       <span class="home"><?php echo $this->Html->link('Home', array('controller' => 'posts', 'action' => 'index'), array('style' => 'color: white;')); ?></span>
         <span style="float: right;">
             <table style="border-collapse: collapse; border-style: hidden;">
                 <?php echo $this->Form->create('Search'); ?>
                 <tr>
                     <td><?php echo $this->Form->input('terms', array('label' => '', 'type' => 'text', 'style' => 'width: 200px')); ?></td>
                     <td><?php echo $this->Form->end('Search'); ?></td>
-                    <td><?php echo $this->Html->link('Log out', array('action' => 'logout'), array('style' => 'color: white')); ?></td>
+                    <td><?php echo $this->Html->link('Log out', array('controller' => 'posts', 'action' => 'logout'), array('style' => 'color: white')); ?></td>
                 </tr>
             </table>
         </span>
     </div>
     <div class="sidebar">
-        <?php echo $this->Html->image($this->Session->read('User.profile_pic')) ?>
-        <a href="#">About</a>
-        <a href="#">Services</a>
-        <a href="#">Clients</a>
-        <a href="#">Contact</a>
+        <?php
+        echo $this->Html->image($this->Session->read('User.profile_pic'), array('height' => '150px', 'width' => '150px'));
+        echo $this->Session->read('User.username');
+        echo $this->Html->link('Posts', array('controller' => 'posts', 'action' => 'userPosts'));
+        echo $this->Html->link('Following', array('controller' => 'followers', 'action' => 'following'));
+        echo $this->Html->link('Followers', array('controller' => 'followers', 'action' => 'index'));
+        echo $this->Html->link('Edit Username', array('controller' => 'users', 'action' => 'editUsername'));
+        echo $this->Html->link('Edit Password', array('controller' => 'users', 'action' => 'editPassword'));
+        echo $this->Html->link('Edit Profile Picture', array('controller' => 'users', 'action' => 'editProfilePic'));
+        ?>
     </div>
     <div id="content" style="margin-left: 160px;">
         <?php echo $this->Flash->render();?>

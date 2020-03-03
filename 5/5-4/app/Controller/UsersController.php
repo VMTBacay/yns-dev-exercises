@@ -13,7 +13,7 @@ class EmailConfig {
 class UsersController extends AppController {
     public $helpers = array('Html', 'Form', 'Flash');
     public $components = array('Flash', 'Session');
-    
+
 
     public function signUp() {
         $this->layout = 'suli';
@@ -28,7 +28,7 @@ class UsersController extends AppController {
        if ($this->request->is('post')) {
             $this->User->create();
             $activationCode = '';
-            for ($i = 0; $i < 6; $i++) { 
+            for ($i = 0; $i < 6; $i++) {
                 $activationCode .= rand(0, 9);
             }
             $codeMail = new CakeEmail(EmailConfig::$gmail);
@@ -72,12 +72,11 @@ class UsersController extends AppController {
 
     public function login() {
         $this->layout = 'suli';
-        
+
         if ($this->request->is('post')) {
             $user = $this->User->findByUsername($this->request->data['User']['username']);
             if ($user['User']['password'] === $this->request->data['User']['password'] && $user['User']['activated']) {
-                $this->Session->write('User.id', $user['User']['id']);
-                $this->Session->write('User.profile_pic', $user['User']['profile_pic']);
+                $this->Session->write('User', $user['User']);
                 return $this->redirect(array('controller' => 'posts'));
             }
         }
@@ -85,5 +84,75 @@ class UsersController extends AppController {
 
     public function activated() {
         $this->layout = 'suli';
+    }
+
+    public function editUsername() {
+        $this->User->validator()->remove('password');
+        $this->User->validator()->remove('email');
+
+        if ($this->request->is('post')) {
+            $this->User->id = $this->Session->read('User.id');
+            $this->request->data['User']['modified'] = date("Y-m-d H:i:s");
+            if ($this->User->save($this->request->data)) {
+                $this->Flash->success(__('Your username has been updated.'));
+                $this->Session->write('User.username', $this->request->data['User']['username']);
+                return $this->redirect(array('controller' => 'posts', 'action' => 'index')));
+            }
+            $this->Flash->error(__('Unable to update your username.'));
+        }
+    }
+
+    public function editPassword() {
+        $this->User->validator()->remove('username');
+        $this->User->validator()->remove('email');
+        $this->User->validator()->add('repass', 'required', array(
+            'rule' => array('equalToField', 'password'),
+            'required' => true,
+            'allowEmpty' => false,
+            'message' => 'Re-entered password is different'
+        ));
+
+        if ($this->request->is('post')) {
+            if ($this->request->data['User']['oldpass'] !== $this->Session->read('User.password')) {
+                $this->Flash->error(__('Old password is incorrect.'));
+            } else {
+                $this->User->id = $this->Session->read('User.id');
+                $this->request->data['User']['modified'] = date("Y-m-d H:i:s");
+                if ($this->User->save($this->request->data)) {
+                    $this->Flash->success(__('Your password has been updated.'));
+                    $this->Session->write('User.password', $this->request->data['User']['password']);
+                    return $this->redirect(array('controller' => 'posts', 'action' => 'index')));
+                }
+                $this->Flash->error(__('Unable to update your password.'));
+            }
+        }
+    }
+
+    public function editProfilePic() {
+        $this->User->validator()->remove('username');
+        $this->User->validator()->remove('password');
+        $this->User->validator()->remove('email');
+
+        if ($this->request->is('post')) {
+            $this->User->id = $this->Session->read('User.id'); 
+            $this->request->data['User']['modified'] = date("Y-m-d H:i:s");
+            $img_name = explode('.', $this->request->data['User']['pic']['name']);
+            $target_dir = 'C:/xampp/htdocs' . $this->webroot . 'app/webroot/img/';
+            $target_file = $target_dir . $img_name[0] . '.' . $img_name[1];
+            $i = 1;
+            while (file_exists($target_file)) {
+                $target_file = $target_dir . $img_name[0] . $i . '.' . $img_name[1];
+                $i++;
+            }
+            $this->request->data['User']['profile_pic'] = basename($target_file);
+            if ($this->User->save($this->request->data)) {
+                
+                move_uploaded_file($this->request->data['User']['pic']['tmp_name'], $target_file);
+                $this->Flash->success(__('Your profile picture has been updated.'));
+                $this->Session->write('User.profile_pic', basename($target_file));
+                return $this->redirect(array('controller' => 'posts', 'action' => 'index')));
+            }
+            $this->Flash->error(__('Unable to update your profile picture.'));
+        }
     }
 }

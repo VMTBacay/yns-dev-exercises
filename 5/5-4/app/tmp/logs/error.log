@@ -1774,3 +1774,962 @@ Stack Trace:
 #3 C:\xampp\htdocs\yns-dev-exercises\5\5-4\lib\Cake\Routing\Dispatcher.php(167): Dispatcher->_invoke(Object(PostsController), Object(CakeRequest))
 #4 C:\xampp\htdocs\yns-dev-exercises\5\5-4\app\webroot\index.php(117): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
 #5 {main}
+2020-03-03 02:17:55 Error: [MissingActionException] Action UsersController::favicon.ico() could not be found.
+Exception Attributes: array (
+  'controller' => 'UsersController',
+  'action' => 'favicon.ico',
+)
+Request URL: /yns-dev-exercises/5/5-4/users/favicon.ico
+Stack Trace:
+#0 C:\xampp\htdocs\yns-dev-exercises\5\5-4\lib\Cake\Routing\Dispatcher.php(193): Controller->invokeAction(Object(CakeRequest))
+#1 C:\xampp\htdocs\yns-dev-exercises\5\5-4\lib\Cake\Routing\Dispatcher.php(167): Dispatcher->_invoke(Object(UsersController), Object(CakeRequest))
+#2 C:\xampp\htdocs\yns-dev-exercises\5\5-4\app\webroot\index.php(117): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#3 {main}
+2020-03-03 02:58:41 Error: [NotFoundException] Invalid post
+Request URL: /yns-dev-exercises/5/5-4/posts/view/favicon.ico
+Stack Trace:
+#0 [internal function]: PostsController->view('favicon.ico')
+#1 C:\xampp\htdocs\yns-dev-exercises\5\5-4\lib\Cake\Controller\Controller.php(499): ReflectionMethod->invokeArgs(Object(PostsController), Array)
+#2 C:\xampp\htdocs\yns-dev-exercises\5\5-4\lib\Cake\Routing\Dispatcher.php(193): Controller->invokeAction(Object(CakeRequest))
+#3 C:\xampp\htdocs\yns-dev-exercises\5\5-4\lib\Cake\Routing\Dispatcher.php(167): Dispatcher->_invoke(Object(PostsController), Object(CakeRequest))
+#4 C:\xampp\htdocs\yns-dev-exercises\5\5-4\app\webroot\index.php(117): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#5 {main}
+2020-03-03 03:08:40 Error: [NotFoundException] Invalid post
+Request URL: /yns-dev-exercises/5/5-4/posts/view/img/default_profile_pic.jpg
+Stack Trace:
+#0 [internal function]: PostsController->view('img', 'default_profile...')
+#1 C:\xampp\htdocs\yns-dev-exercises\5\5-4\lib\Cake\Controller\Controller.php(499): ReflectionMethod->invokeArgs(Object(PostsController), Array)
+#2 C:\xampp\htdocs\yns-dev-exercises\5\5-4\lib\Cake\Routing\Dispatcher.php(193): Controller->invokeAction(Object(CakeRequest))
+#3 C:\xampp\htdocs\yns-dev-exercises\5\5-4\lib\Cake\Routing\Dispatcher.php(167): Dispatcher->_invoke(Object(PostsController), Object(CakeRequest))
+#4 C:\xampp\htdocs\yns-dev-exercises\5\5-4\app\webroot\index.php(117): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#5 {main}
+2020-03-03 03:11:59 Error: [NotFoundException] Invalid post
+Request URL: /yns-dev-exercises/5/5-4/posts/view/img/default_profile_pic.jpg
+Stack Trace:
+#0 [internal function]: PostsController->view('img', 'default_profile...')
+#1 C:\xampp\htdocs\yns-dev-exercises\5\5-4\lib\Cake\Controller\Controller.php(499): ReflectionMethod->invokeArgs(Object(PostsController), Array)
+#2 C:\xampp\htdocs\yns-dev-exercises\5\5-4\lib\Cake\Routing\Dispatcher.php(193): Controller->invokeAction(Object(CakeRequest))
+#3 C:\xampp\htdocs\yns-dev-exercises\5\5-4\lib\Cake\Routing\Dispatcher.php(167): Dispatcher->_invoke(Object(PostsController), Object(CakeRequest))
+#4 C:\xampp\htdocs\yns-dev-exercises\5\5-4\app\webroot\index.php(117): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#5 {main}
+2020-03-03 03:14:12 Error: [NotFoundException] Invalid post
+Request URL: /yns-dev-exercises/5/5-4/posts/view/img/default_profile_pic.jpg
+Stack Trace:
+#0 [internal function]: PostsController->view('img', 'default_profile...')
+#1 C:\xampp\htdocs\yns-dev-exercises\5\5-4\lib\Cake\Controller\Controller.php(499): ReflectionMethod->invokeArgs(Object(PostsController), Array)
+#2 C:\xampp\htdocs\yns-dev-exercises\5\5-4\lib\Cake\Routing\Dispatcher.php(193): Controller->invokeAction(Object(CakeRequest))
+#3 C:\xampp\htdocs\yns-dev-exercises\5\5-4\lib\Cake\Routing\Dispatcher.php(167): Dispatcher->_invoke(Object(PostsController), Object(CakeRequest))
+#4 C:\xampp\htdocs\yns-dev-exercises\5\5-4\app\webroot\index.php(117): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#5 {main}
+2020-03-03 03:24:59 Error: [PDOException] SQLSTATE[23000]: Integrity constraint violation: 1452 Cannot add or update a child row: a foreign key constraint fails (`microblog2`.`posts`, CONSTRAINT `posts_ibfk_1` FOREIGN KEY (`user_id`) REFERENCES `users` (`id`))
+Request URL: /yns-dev-exercises/5/5-4/posts/view/5
+Stack Trace:
+#0 C:\xampp\htdocs\yns-dev-exercises\5\5-4\lib\Cake\Model\Datasource\DboSource.php(502): PDOStatement->execute(Array)
+#1 C:\xampp\htdocs\yns-dev-exercises\5\5-4\lib\Cake\Model\Datasource\DboSource.php(468): DboSource->_execute('INSERT INTO `mi...', Array)
+#2 C:\xampp\htdocs\yns-dev-exercises\5\5-4\lib\Cake\Model\Datasource\DboSource.php(1132): DboSource->execute('INSERT INTO `mi...')
+#3 C:\xampp\htdocs\yns-dev-exercises\5\5-4\lib\Cake\Model\Model.php(1942): DboSource->create(Object(Post), Array, Array)
+#4 C:\xampp\htdocs\yns-dev-exercises\5\5-4\lib\Cake\Model\Model.php(1760): Model->_doSave(Array, Array)
+#5 C:\xampp\htdocs\yns-dev-exercises\5\5-4\app\Controller\PostsController.php(31): Model->save(Array)
+#6 [internal function]: PostsController->view('5')
+#7 C:\xampp\htdocs\yns-dev-exercises\5\5-4\lib\Cake\Controller\Controller.php(499): ReflectionMethod->invokeArgs(Object(PostsController), Array)
+#8 C:\xampp\htdocs\yns-dev-exercises\5\5-4\lib\Cake\Routing\Dispatcher.php(193): Controller->invokeAction(Object(CakeRequest))
+#9 C:\xampp\htdocs\yns-dev-exercises\5\5-4\lib\Cake\Routing\Dispatcher.php(167): Dispatcher->_invoke(Object(PostsController), Object(CakeRequest))
+#10 C:\xampp\htdocs\yns-dev-exercises\5\5-4\app\webroot\index.php(117): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#11 {main}
+2020-03-03 03:25:23 Error: [NotFoundException] Invalid post
+Request URL: /yns-dev-exercises/5/5-4/posts/view
+Stack Trace:
+#0 [internal function]: PostsController->view()
+#1 C:\xampp\htdocs\yns-dev-exercises\5\5-4\lib\Cake\Controller\Controller.php(499): ReflectionMethod->invokeArgs(Object(PostsController), Array)
+#2 C:\xampp\htdocs\yns-dev-exercises\5\5-4\lib\Cake\Routing\Dispatcher.php(193): Controller->invokeAction(Object(CakeRequest))
+#3 C:\xampp\htdocs\yns-dev-exercises\5\5-4\lib\Cake\Routing\Dispatcher.php(167): Dispatcher->_invoke(Object(PostsController), Object(CakeRequest))
+#4 C:\xampp\htdocs\yns-dev-exercises\5\5-4\app\webroot\index.php(117): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#5 {main}
+2020-03-03 03:31:23 Error: [NotFoundException] Invalid post
+Request URL: /yns-dev-exercises/5/5-4/posts/view/img/default_profile_pic.jpg
+Stack Trace:
+#0 [internal function]: PostsController->view('img', 'default_profile...')
+#1 C:\xampp\htdocs\yns-dev-exercises\5\5-4\lib\Cake\Controller\Controller.php(499): ReflectionMethod->invokeArgs(Object(PostsController), Array)
+#2 C:\xampp\htdocs\yns-dev-exercises\5\5-4\lib\Cake\Routing\Dispatcher.php(193): Controller->invokeAction(Object(CakeRequest))
+#3 C:\xampp\htdocs\yns-dev-exercises\5\5-4\lib\Cake\Routing\Dispatcher.php(167): Dispatcher->_invoke(Object(PostsController), Object(CakeRequest))
+#4 C:\xampp\htdocs\yns-dev-exercises\5\5-4\app\webroot\index.php(117): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#5 {main}
+2020-03-03 03:39:00 Error: [NotFoundException] Invalid post
+Request URL: /yns-dev-exercises/5/5-4/posts/view/img/default_profile_pic.jpg
+Stack Trace:
+#0 [internal function]: PostsController->view('img', 'default_profile...')
+#1 C:\xampp\htdocs\yns-dev-exercises\5\5-4\lib\Cake\Controller\Controller.php(499): ReflectionMethod->invokeArgs(Object(PostsController), Array)
+#2 C:\xampp\htdocs\yns-dev-exercises\5\5-4\lib\Cake\Routing\Dispatcher.php(193): Controller->invokeAction(Object(CakeRequest))
+#3 C:\xampp\htdocs\yns-dev-exercises\5\5-4\lib\Cake\Routing\Dispatcher.php(167): Dispatcher->_invoke(Object(PostsController), Object(CakeRequest))
+#4 C:\xampp\htdocs\yns-dev-exercises\5\5-4\app\webroot\index.php(117): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#5 {main}
+2020-03-03 03:43:21 Error: [NotFoundException] Invalid post
+Request URL: /yns-dev-exercises/5/5-4/posts/view/img/default_profile_pic.jpg
+Stack Trace:
+#0 [internal function]: PostsController->view('img', 'default_profile...')
+#1 C:\xampp\htdocs\yns-dev-exercises\5\5-4\lib\Cake\Controller\Controller.php(499): ReflectionMethod->invokeArgs(Object(PostsController), Array)
+#2 C:\xampp\htdocs\yns-dev-exercises\5\5-4\lib\Cake\Routing\Dispatcher.php(193): Controller->invokeAction(Object(CakeRequest))
+#3 C:\xampp\htdocs\yns-dev-exercises\5\5-4\lib\Cake\Routing\Dispatcher.php(167): Dispatcher->_invoke(Object(PostsController), Object(CakeRequest))
+#4 C:\xampp\htdocs\yns-dev-exercises\5\5-4\app\webroot\index.php(117): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#5 {main}
+2020-03-03 03:43:59 Error: [NotFoundException] Invalid post
+Request URL: /yns-dev-exercises/5/5-4/posts/view/img/default_profile_pic.jpg
+Stack Trace:
+#0 [internal function]: PostsController->view('img', 'default_profile...')
+#1 C:\xampp\htdocs\yns-dev-exercises\5\5-4\lib\Cake\Controller\Controller.php(499): ReflectionMethod->invokeArgs(Object(PostsController), Array)
+#2 C:\xampp\htdocs\yns-dev-exercises\5\5-4\lib\Cake\Routing\Dispatcher.php(193): Controller->invokeAction(Object(CakeRequest))
+#3 C:\xampp\htdocs\yns-dev-exercises\5\5-4\lib\Cake\Routing\Dispatcher.php(167): Dispatcher->_invoke(Object(PostsController), Object(CakeRequest))
+#4 C:\xampp\htdocs\yns-dev-exercises\5\5-4\app\webroot\index.php(117): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#5 {main}
+2020-03-03 03:49:32 Error: [ParseError] syntax error, unexpected ';', expecting ')'
+Request URL: /yns-dev-exercises/5/5-4/posts/view/5
+Stack Trace:
+#0 [internal function]: App::load('PostsController')
+#1 [internal function]: spl_autoload_call('PostsController')
+#2 C:\xampp\htdocs\yns-dev-exercises\5\5-4\lib\Cake\Routing\Dispatcher.php(266): class_exists('PostsController')
+#3 C:\xampp\htdocs\yns-dev-exercises\5\5-4\lib\Cake\Routing\Dispatcher.php(235): Dispatcher->_loadController(Object(CakeRequest))
+#4 C:\xampp\htdocs\yns-dev-exercises\5\5-4\lib\Cake\Routing\Dispatcher.php(158): Dispatcher->_getController(Object(CakeRequest), Object(CakeResponse))
+#5 C:\xampp\htdocs\yns-dev-exercises\5\5-4\app\webroot\index.php(117): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#6 {main}
+2020-03-03 03:50:51 Error: [ParseError] syntax error, unexpected ';', expecting ')'
+Request URL: /yns-dev-exercises/5/5-4/posts/view/5
+Stack Trace:
+#0 [internal function]: App::load('PostsController')
+#1 [internal function]: spl_autoload_call('PostsController')
+#2 C:\xampp\htdocs\yns-dev-exercises\5\5-4\lib\Cake\Routing\Dispatcher.php(266): class_exists('PostsController')
+#3 C:\xampp\htdocs\yns-dev-exercises\5\5-4\lib\Cake\Routing\Dispatcher.php(235): Dispatcher->_loadController(Object(CakeRequest))
+#4 C:\xampp\htdocs\yns-dev-exercises\5\5-4\lib\Cake\Routing\Dispatcher.php(158): Dispatcher->_getController(Object(CakeRequest), Object(CakeResponse))
+#5 C:\xampp\htdocs\yns-dev-exercises\5\5-4\app\webroot\index.php(117): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#6 {main}
+2020-03-03 03:51:12 Error: [ParseError] syntax error, unexpected ';', expecting ')'
+Request URL: /yns-dev-exercises/5/5-4/posts/view/5
+Stack Trace:
+#0 [internal function]: App::load('PostsController')
+#1 [internal function]: spl_autoload_call('PostsController')
+#2 C:\xampp\htdocs\yns-dev-exercises\5\5-4\lib\Cake\Routing\Dispatcher.php(266): class_exists('PostsController')
+#3 C:\xampp\htdocs\yns-dev-exercises\5\5-4\lib\Cake\Routing\Dispatcher.php(235): Dispatcher->_loadController(Object(CakeRequest))
+#4 C:\xampp\htdocs\yns-dev-exercises\5\5-4\lib\Cake\Routing\Dispatcher.php(158): Dispatcher->_getController(Object(CakeRequest), Object(CakeResponse))
+#5 C:\xampp\htdocs\yns-dev-exercises\5\5-4\app\webroot\index.php(117): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#6 {main}
+2020-03-03 03:51:25 Error: [ParseError] syntax error, unexpected ';', expecting ')'
+Request URL: /yns-dev-exercises/5/5-4/posts/view/5
+Stack Trace:
+#0 [internal function]: App::load('PostsController')
+#1 [internal function]: spl_autoload_call('PostsController')
+#2 C:\xampp\htdocs\yns-dev-exercises\5\5-4\lib\Cake\Routing\Dispatcher.php(266): class_exists('PostsController')
+#3 C:\xampp\htdocs\yns-dev-exercises\5\5-4\lib\Cake\Routing\Dispatcher.php(235): Dispatcher->_loadController(Object(CakeRequest))
+#4 C:\xampp\htdocs\yns-dev-exercises\5\5-4\lib\Cake\Routing\Dispatcher.php(158): Dispatcher->_getController(Object(CakeRequest), Object(CakeResponse))
+#5 C:\xampp\htdocs\yns-dev-exercises\5\5-4\app\webroot\index.php(117): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#6 {main}
+2020-03-03 03:51:37 Error: [ParseError] syntax error, unexpected ';', expecting ')'
+Request URL: /yns-dev-exercises/5/5-4/posts/view/5
+Stack Trace:
+#0 [internal function]: App::load('PostsController')
+#1 [internal function]: spl_autoload_call('PostsController')
+#2 C:\xampp\htdocs\yns-dev-exercises\5\5-4\lib\Cake\Routing\Dispatcher.php(266): class_exists('PostsController')
+#3 C:\xampp\htdocs\yns-dev-exercises\5\5-4\lib\Cake\Routing\Dispatcher.php(235): Dispatcher->_loadController(Object(CakeRequest))
+#4 C:\xampp\htdocs\yns-dev-exercises\5\5-4\lib\Cake\Routing\Dispatcher.php(158): Dispatcher->_getController(Object(CakeRequest), Object(CakeResponse))
+#5 C:\xampp\htdocs\yns-dev-exercises\5\5-4\app\webroot\index.php(117): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#6 {main}
+2020-03-03 03:52:26 Error: [NotFoundException] Invalid post
+Request URL: /yns-dev-exercises/5/5-4/posts/view/img/default_profile_pic.jpg
+Stack Trace:
+#0 [internal function]: PostsController->view('img', 'default_profile...')
+#1 C:\xampp\htdocs\yns-dev-exercises\5\5-4\lib\Cake\Controller\Controller.php(499): ReflectionMethod->invokeArgs(Object(PostsController), Array)
+#2 C:\xampp\htdocs\yns-dev-exercises\5\5-4\lib\Cake\Routing\Dispatcher.php(193): Controller->invokeAction(Object(CakeRequest))
+#3 C:\xampp\htdocs\yns-dev-exercises\5\5-4\lib\Cake\Routing\Dispatcher.php(167): Dispatcher->_invoke(Object(PostsController), Object(CakeRequest))
+#4 C:\xampp\htdocs\yns-dev-exercises\5\5-4\app\webroot\index.php(117): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#5 {main}
+2020-03-03 03:56:26 Error: [ParseError] syntax error, unexpected ';'
+Request URL: /yns-dev-exercises/5/5-4/posts/view/5
+Stack Trace:
+#0 C:\xampp\htdocs\yns-dev-exercises\5\5-4\lib\Cake\View\View.php(933): View->_evaluate('C:\\xampp\\htdocs...', Array)
+#1 C:\xampp\htdocs\yns-dev-exercises\5\5-4\lib\Cake\View\View.php(473): View->_render('C:\\xampp\\htdocs...')
+#2 C:\xampp\htdocs\yns-dev-exercises\5\5-4\lib\Cake\Controller\Controller.php(968): View->render(NULL, NULL)
+#3 C:\xampp\htdocs\yns-dev-exercises\5\5-4\lib\Cake\Routing\Dispatcher.php(200): Controller->render()
+#4 C:\xampp\htdocs\yns-dev-exercises\5\5-4\lib\Cake\Routing\Dispatcher.php(167): Dispatcher->_invoke(Object(PostsController), Object(CakeRequest))
+#5 C:\xampp\htdocs\yns-dev-exercises\5\5-4\app\webroot\index.php(117): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#6 {main}
+2020-03-03 04:43:21 Error: [MissingViewException] View file "Posts\edit_comment.ctp" is missing.
+Exception Attributes: array (
+  'file' => 'Posts\\edit_comment.ctp',
+)
+Request URL: /yns-dev-exercises/5/5-4/posts/editComment/1
+Stack Trace:
+#0 C:\xampp\htdocs\yns-dev-exercises\5\5-4\lib\Cake\View\View.php(470): View->_getViewFileName('Posts\\edit_comm...')
+#1 C:\xampp\htdocs\yns-dev-exercises\5\5-4\lib\Cake\Controller\Controller.php(968): View->render(NULL, NULL)
+#2 C:\xampp\htdocs\yns-dev-exercises\5\5-4\lib\Cake\Routing\Dispatcher.php(200): Controller->render()
+#3 C:\xampp\htdocs\yns-dev-exercises\5\5-4\lib\Cake\Routing\Dispatcher.php(167): Dispatcher->_invoke(Object(PostsController), Object(CakeRequest))
+#4 C:\xampp\htdocs\yns-dev-exercises\5\5-4\app\webroot\index.php(117): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#5 {main}
+2020-03-03 04:46:43 Error: [NotFoundException] Invalid comment
+Request URL: /yns-dev-exercises/5/5-4/posts/editComment/favicon.ico
+Stack Trace:
+#0 [internal function]: PostsController->editComment('favicon.ico')
+#1 C:\xampp\htdocs\yns-dev-exercises\5\5-4\lib\Cake\Controller\Controller.php(499): ReflectionMethod->invokeArgs(Object(PostsController), Array)
+#2 C:\xampp\htdocs\yns-dev-exercises\5\5-4\lib\Cake\Routing\Dispatcher.php(193): Controller->invokeAction(Object(CakeRequest))
+#3 C:\xampp\htdocs\yns-dev-exercises\5\5-4\lib\Cake\Routing\Dispatcher.php(167): Dispatcher->_invoke(Object(PostsController), Object(CakeRequest))
+#4 C:\xampp\htdocs\yns-dev-exercises\5\5-4\app\webroot\index.php(117): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#5 {main}
+2020-03-03 04:47:41 Error: [MissingActionException] Action PostsController::view() could not be found.
+Exception Attributes: array (
+  'controller' => 'PostsController',
+  'action' => 'view',
+)
+Request URL: /yns-dev-exercises/5/5-4/posts/view/5
+Stack Trace:
+#0 C:\xampp\htdocs\yns-dev-exercises\5\5-4\lib\Cake\Routing\Dispatcher.php(193): Controller->invokeAction(Object(CakeRequest))
+#1 C:\xampp\htdocs\yns-dev-exercises\5\5-4\lib\Cake\Routing\Dispatcher.php(167): Dispatcher->_invoke(Object(PostsController), Object(CakeRequest))
+#2 C:\xampp\htdocs\yns-dev-exercises\5\5-4\app\webroot\index.php(117): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#3 {main}
+2020-03-03 04:56:21 Error: [NotFoundException] Invalid post
+Request URL: /yns-dev-exercises/5/5-4/posts/comment/favicon.ico
+Stack Trace:
+#0 [internal function]: PostsController->comment('favicon.ico')
+#1 C:\xampp\htdocs\yns-dev-exercises\5\5-4\lib\Cake\Controller\Controller.php(499): ReflectionMethod->invokeArgs(Object(PostsController), Array)
+#2 C:\xampp\htdocs\yns-dev-exercises\5\5-4\lib\Cake\Routing\Dispatcher.php(193): Controller->invokeAction(Object(CakeRequest))
+#3 C:\xampp\htdocs\yns-dev-exercises\5\5-4\lib\Cake\Routing\Dispatcher.php(167): Dispatcher->_invoke(Object(PostsController), Object(CakeRequest))
+#4 C:\xampp\htdocs\yns-dev-exercises\5\5-4\app\webroot\index.php(117): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#5 {main}
+2020-03-03 06:23:50 Error: [MissingActionException] Action PostsController::comment() could not be found.
+Exception Attributes: array (
+  'controller' => 'PostsController',
+  'action' => 'comment',
+)
+Request URL: /yns-dev-exercises/5/5-4/posts/comment/5
+Stack Trace:
+#0 C:\xampp\htdocs\yns-dev-exercises\5\5-4\lib\Cake\Routing\Dispatcher.php(193): Controller->invokeAction(Object(CakeRequest))
+#1 C:\xampp\htdocs\yns-dev-exercises\5\5-4\lib\Cake\Routing\Dispatcher.php(167): Dispatcher->_invoke(Object(PostsController), Object(CakeRequest))
+#2 C:\xampp\htdocs\yns-dev-exercises\5\5-4\app\webroot\index.php(117): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#3 {main}
+2020-03-03 06:27:59 Error: [MissingViewException] View file "Comments\index.ctp" is missing.
+Exception Attributes: array (
+  'file' => 'Comments\\index.ctp',
+)
+Request URL: /yns-dev-exercises/5/5-4/comments/index/5
+Stack Trace:
+#0 C:\xampp\htdocs\yns-dev-exercises\5\5-4\lib\Cake\View\View.php(470): View->_getViewFileName('Comments\\index')
+#1 C:\xampp\htdocs\yns-dev-exercises\5\5-4\lib\Cake\Controller\Controller.php(968): View->render(NULL, NULL)
+#2 C:\xampp\htdocs\yns-dev-exercises\5\5-4\lib\Cake\Routing\Dispatcher.php(200): Controller->render()
+#3 C:\xampp\htdocs\yns-dev-exercises\5\5-4\lib\Cake\Routing\Dispatcher.php(167): Dispatcher->_invoke(Object(CommentsController), Object(CakeRequest))
+#4 C:\xampp\htdocs\yns-dev-exercises\5\5-4\app\webroot\index.php(117): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#5 {main}
+2020-03-03 06:28:44 Error: [NotFoundException] Invalid comment
+Request URL: /yns-dev-exercises/5/5-4/comments/editComment/5
+Stack Trace:
+#0 [internal function]: CommentsController->editComment('5')
+#1 C:\xampp\htdocs\yns-dev-exercises\5\5-4\lib\Cake\Controller\Controller.php(499): ReflectionMethod->invokeArgs(Object(CommentsController), Array)
+#2 C:\xampp\htdocs\yns-dev-exercises\5\5-4\lib\Cake\Routing\Dispatcher.php(193): Controller->invokeAction(Object(CakeRequest))
+#3 C:\xampp\htdocs\yns-dev-exercises\5\5-4\lib\Cake\Routing\Dispatcher.php(167): Dispatcher->_invoke(Object(CommentsController), Object(CakeRequest))
+#4 C:\xampp\htdocs\yns-dev-exercises\5\5-4\app\webroot\index.php(117): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#5 {main}
+2020-03-03 06:29:30 Error: [NotFoundException] Invalid post
+Request URL: /yns-dev-exercises/5/5-4/comments/index/favicon.ico
+Stack Trace:
+#0 [internal function]: CommentsController->index('favicon.ico')
+#1 C:\xampp\htdocs\yns-dev-exercises\5\5-4\lib\Cake\Controller\Controller.php(499): ReflectionMethod->invokeArgs(Object(CommentsController), Array)
+#2 C:\xampp\htdocs\yns-dev-exercises\5\5-4\lib\Cake\Routing\Dispatcher.php(193): Controller->invokeAction(Object(CakeRequest))
+#3 C:\xampp\htdocs\yns-dev-exercises\5\5-4\lib\Cake\Routing\Dispatcher.php(167): Dispatcher->_invoke(Object(CommentsController), Object(CakeRequest))
+#4 C:\xampp\htdocs\yns-dev-exercises\5\5-4\app\webroot\index.php(117): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#5 {main}
+2020-03-03 06:29:52 Error: [MissingViewException] View file "Comments\edit_comment.ctp" is missing.
+Exception Attributes: array (
+  'file' => 'Comments\\edit_comment.ctp',
+)
+Request URL: /yns-dev-exercises/5/5-4/comments/editComment/5
+Stack Trace:
+#0 C:\xampp\htdocs\yns-dev-exercises\5\5-4\lib\Cake\View\View.php(470): View->_getViewFileName('Comments\\edit_c...')
+#1 C:\xampp\htdocs\yns-dev-exercises\5\5-4\lib\Cake\Controller\Controller.php(968): View->render(NULL, NULL)
+#2 C:\xampp\htdocs\yns-dev-exercises\5\5-4\lib\Cake\Routing\Dispatcher.php(200): Controller->render()
+#3 C:\xampp\htdocs\yns-dev-exercises\5\5-4\lib\Cake\Routing\Dispatcher.php(167): Dispatcher->_invoke(Object(CommentsController), Object(CakeRequest))
+#4 C:\xampp\htdocs\yns-dev-exercises\5\5-4\app\webroot\index.php(117): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#5 {main}
+2020-03-03 06:30:32 Error: [MissingActionException] Action CommentsController::editComment() could not be found.
+Exception Attributes: array (
+  'controller' => 'CommentsController',
+  'action' => 'editComment',
+)
+Request URL: /yns-dev-exercises/5/5-4/comments/editComment/5
+Stack Trace:
+#0 C:\xampp\htdocs\yns-dev-exercises\5\5-4\lib\Cake\Routing\Dispatcher.php(193): Controller->invokeAction(Object(CakeRequest))
+#1 C:\xampp\htdocs\yns-dev-exercises\5\5-4\lib\Cake\Routing\Dispatcher.php(167): Dispatcher->_invoke(Object(CommentsController), Object(CakeRequest))
+#2 C:\xampp\htdocs\yns-dev-exercises\5\5-4\app\webroot\index.php(117): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#3 {main}
+2020-03-03 07:05:18 Error: [ParseError] syntax error, unexpected ';', expecting ')'
+Request URL: /yns-dev-exercises/5/5-4/users/editUsername
+Stack Trace:
+#0 C:\xampp\htdocs\yns-dev-exercises\5\5-4\lib\Cake\View\View.php(933): View->_evaluate('C:\\xampp\\htdocs...', Array)
+#1 C:\xampp\htdocs\yns-dev-exercises\5\5-4\lib\Cake\View\View.php(473): View->_render('C:\\xampp\\htdocs...')
+#2 C:\xampp\htdocs\yns-dev-exercises\5\5-4\lib\Cake\Controller\Controller.php(968): View->render(NULL, NULL)
+#3 C:\xampp\htdocs\yns-dev-exercises\5\5-4\lib\Cake\Routing\Dispatcher.php(200): Controller->render()
+#4 C:\xampp\htdocs\yns-dev-exercises\5\5-4\lib\Cake\Routing\Dispatcher.php(167): Dispatcher->_invoke(Object(UsersController), Object(CakeRequest))
+#5 C:\xampp\htdocs\yns-dev-exercises\5\5-4\app\webroot\index.php(117): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#6 {main}
+2020-03-03 07:05:40 Error: [Error] Call to undefined method View::getDatasource()
+Request URL: /yns-dev-exercises/5/5-4/users/editUsername
+Stack Trace:
+#0 C:\xampp\htdocs\yns-dev-exercises\5\5-4\lib\Cake\View\View.php(971): include()
+#1 C:\xampp\htdocs\yns-dev-exercises\5\5-4\lib\Cake\View\View.php(933): View->_evaluate('C:\\xampp\\htdocs...', Array)
+#2 C:\xampp\htdocs\yns-dev-exercises\5\5-4\lib\Cake\View\View.php(473): View->_render('C:\\xampp\\htdocs...')
+#3 C:\xampp\htdocs\yns-dev-exercises\5\5-4\lib\Cake\Controller\Controller.php(968): View->render(NULL, NULL)
+#4 C:\xampp\htdocs\yns-dev-exercises\5\5-4\lib\Cake\Routing\Dispatcher.php(200): Controller->render()
+#5 C:\xampp\htdocs\yns-dev-exercises\5\5-4\lib\Cake\Routing\Dispatcher.php(167): Dispatcher->_invoke(Object(UsersController), Object(CakeRequest))
+#6 C:\xampp\htdocs\yns-dev-exercises\5\5-4\app\webroot\index.php(117): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#7 {main}
+2020-03-03 07:06:11 Error: [Error] Call to undefined method UsersController::getDatasource()
+Request URL: /yns-dev-exercises/5/5-4/users/editUsername
+Stack Trace:
+#0 [internal function]: UsersController->editUsername()
+#1 C:\xampp\htdocs\yns-dev-exercises\5\5-4\lib\Cake\Controller\Controller.php(499): ReflectionMethod->invokeArgs(Object(UsersController), Array)
+#2 C:\xampp\htdocs\yns-dev-exercises\5\5-4\lib\Cake\Routing\Dispatcher.php(193): Controller->invokeAction(Object(CakeRequest))
+#3 C:\xampp\htdocs\yns-dev-exercises\5\5-4\lib\Cake\Routing\Dispatcher.php(167): Dispatcher->_invoke(Object(UsersController), Object(CakeRequest))
+#4 C:\xampp\htdocs\yns-dev-exercises\5\5-4\app\webroot\index.php(117): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#5 {main}
+2020-03-03 07:24:10 Error: [ParseError] syntax error, unexpected '$user' (T_VARIABLE)
+Request URL: /yns-dev-exercises/5/5-4/users/editUsername
+Stack Trace:
+#0 [internal function]: App::load('UsersController')
+#1 [internal function]: spl_autoload_call('UsersController')
+#2 C:\xampp\htdocs\yns-dev-exercises\5\5-4\lib\Cake\Routing\Dispatcher.php(266): class_exists('UsersController')
+#3 C:\xampp\htdocs\yns-dev-exercises\5\5-4\lib\Cake\Routing\Dispatcher.php(235): Dispatcher->_loadController(Object(CakeRequest))
+#4 C:\xampp\htdocs\yns-dev-exercises\5\5-4\lib\Cake\Routing\Dispatcher.php(158): Dispatcher->_getController(Object(CakeRequest), Object(CakeResponse))
+#5 C:\xampp\htdocs\yns-dev-exercises\5\5-4\app\webroot\index.php(117): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#6 {main}
+2020-03-03 07:25:51 Error: [MissingActionException] Action UsersController::index() could not be found.
+Exception Attributes: array (
+  'controller' => 'UsersController',
+  'action' => 'index',
+)
+Request URL: /yns-dev-exercises/5/5-4/users
+Stack Trace:
+#0 C:\xampp\htdocs\yns-dev-exercises\5\5-4\lib\Cake\Routing\Dispatcher.php(193): Controller->invokeAction(Object(CakeRequest))
+#1 C:\xampp\htdocs\yns-dev-exercises\5\5-4\lib\Cake\Routing\Dispatcher.php(167): Dispatcher->_invoke(Object(UsersController), Object(CakeRequest))
+#2 C:\xampp\htdocs\yns-dev-exercises\5\5-4\app\webroot\index.php(117): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#3 {main}
+2020-03-03 07:33:01 Error: [ParseError] syntax error, unexpected 'return' (T_RETURN)
+Request URL: /yns-dev-exercises/5/5-4/users/editUsername
+Stack Trace:
+#0 [internal function]: App::load('UsersController')
+#1 [internal function]: spl_autoload_call('UsersController')
+#2 C:\xampp\htdocs\yns-dev-exercises\5\5-4\lib\Cake\Routing\Dispatcher.php(266): class_exists('UsersController')
+#3 C:\xampp\htdocs\yns-dev-exercises\5\5-4\lib\Cake\Routing\Dispatcher.php(235): Dispatcher->_loadController(Object(CakeRequest))
+#4 C:\xampp\htdocs\yns-dev-exercises\5\5-4\lib\Cake\Routing\Dispatcher.php(158): Dispatcher->_getController(Object(CakeRequest), Object(CakeResponse))
+#5 C:\xampp\htdocs\yns-dev-exercises\5\5-4\app\webroot\index.php(117): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#6 {main}
+2020-03-03 07:37:37 Error: [ParseError] syntax error, unexpected '$this' (T_VARIABLE)
+Request URL: /yns-dev-exercises/5/5-4/users/editUsername
+Stack Trace:
+#0 [internal function]: App::load('UsersController')
+#1 [internal function]: spl_autoload_call('UsersController')
+#2 C:\xampp\htdocs\yns-dev-exercises\5\5-4\lib\Cake\Routing\Dispatcher.php(266): class_exists('UsersController')
+#3 C:\xampp\htdocs\yns-dev-exercises\5\5-4\lib\Cake\Routing\Dispatcher.php(235): Dispatcher->_loadController(Object(CakeRequest))
+#4 C:\xampp\htdocs\yns-dev-exercises\5\5-4\lib\Cake\Routing\Dispatcher.php(158): Dispatcher->_getController(Object(CakeRequest), Object(CakeResponse))
+#5 C:\xampp\htdocs\yns-dev-exercises\5\5-4\app\webroot\index.php(117): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#6 {main}
+2020-03-03 07:38:17 Error: [ParseError] syntax error, unexpected '$this' (T_VARIABLE)
+Request URL: /yns-dev-exercises/5/5-4/users/editUsername
+Stack Trace:
+#0 [internal function]: App::load('UsersController')
+#1 [internal function]: spl_autoload_call('UsersController')
+#2 C:\xampp\htdocs\yns-dev-exercises\5\5-4\lib\Cake\Routing\Dispatcher.php(266): class_exists('UsersController')
+#3 C:\xampp\htdocs\yns-dev-exercises\5\5-4\lib\Cake\Routing\Dispatcher.php(235): Dispatcher->_loadController(Object(CakeRequest))
+#4 C:\xampp\htdocs\yns-dev-exercises\5\5-4\lib\Cake\Routing\Dispatcher.php(158): Dispatcher->_getController(Object(CakeRequest), Object(CakeResponse))
+#5 C:\xampp\htdocs\yns-dev-exercises\5\5-4\app\webroot\index.php(117): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#6 {main}
+2020-03-03 07:38:38 Error: [ParseError] syntax error, unexpected '$this' (T_VARIABLE)
+Request URL: /yns-dev-exercises/5/5-4/users/editUsername
+Stack Trace:
+#0 [internal function]: App::load('UsersController')
+#1 [internal function]: spl_autoload_call('UsersController')
+#2 C:\xampp\htdocs\yns-dev-exercises\5\5-4\lib\Cake\Routing\Dispatcher.php(266): class_exists('UsersController')
+#3 C:\xampp\htdocs\yns-dev-exercises\5\5-4\lib\Cake\Routing\Dispatcher.php(235): Dispatcher->_loadController(Object(CakeRequest))
+#4 C:\xampp\htdocs\yns-dev-exercises\5\5-4\lib\Cake\Routing\Dispatcher.php(158): Dispatcher->_getController(Object(CakeRequest), Object(CakeResponse))
+#5 C:\xampp\htdocs\yns-dev-exercises\5\5-4\app\webroot\index.php(117): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#6 {main}
+2020-03-03 07:38:43 Error: [ParseError] syntax error, unexpected '$this' (T_VARIABLE)
+Request URL: /yns-dev-exercises/5/5-4/users/editUsername
+Stack Trace:
+#0 [internal function]: App::load('UsersController')
+#1 [internal function]: spl_autoload_call('UsersController')
+#2 C:\xampp\htdocs\yns-dev-exercises\5\5-4\lib\Cake\Routing\Dispatcher.php(266): class_exists('UsersController')
+#3 C:\xampp\htdocs\yns-dev-exercises\5\5-4\lib\Cake\Routing\Dispatcher.php(235): Dispatcher->_loadController(Object(CakeRequest))
+#4 C:\xampp\htdocs\yns-dev-exercises\5\5-4\lib\Cake\Routing\Dispatcher.php(158): Dispatcher->_getController(Object(CakeRequest), Object(CakeResponse))
+#5 C:\xampp\htdocs\yns-dev-exercises\5\5-4\app\webroot\index.php(117): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#6 {main}
+2020-03-03 07:39:38 Error: [ParseError] syntax error, unexpected '$this' (T_VARIABLE)
+Request URL: /yns-dev-exercises/5/5-4/users/editUsername
+Stack Trace:
+#0 [internal function]: App::load('UsersController')
+#1 [internal function]: spl_autoload_call('UsersController')
+#2 C:\xampp\htdocs\yns-dev-exercises\5\5-4\lib\Cake\Routing\Dispatcher.php(266): class_exists('UsersController')
+#3 C:\xampp\htdocs\yns-dev-exercises\5\5-4\lib\Cake\Routing\Dispatcher.php(235): Dispatcher->_loadController(Object(CakeRequest))
+#4 C:\xampp\htdocs\yns-dev-exercises\5\5-4\lib\Cake\Routing\Dispatcher.php(158): Dispatcher->_getController(Object(CakeRequest), Object(CakeResponse))
+#5 C:\xampp\htdocs\yns-dev-exercises\5\5-4\app\webroot\index.php(117): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#6 {main}
+2020-03-03 07:39:48 Error: [Error] Call to undefined method UsersController::validator()
+Request URL: /yns-dev-exercises/5/5-4/users/editUsername
+Stack Trace:
+#0 [internal function]: UsersController->editUsername()
+#1 C:\xampp\htdocs\yns-dev-exercises\5\5-4\lib\Cake\Controller\Controller.php(499): ReflectionMethod->invokeArgs(Object(UsersController), Array)
+#2 C:\xampp\htdocs\yns-dev-exercises\5\5-4\lib\Cake\Routing\Dispatcher.php(193): Controller->invokeAction(Object(CakeRequest))
+#3 C:\xampp\htdocs\yns-dev-exercises\5\5-4\lib\Cake\Routing\Dispatcher.php(167): Dispatcher->_invoke(Object(UsersController), Object(CakeRequest))
+#4 C:\xampp\htdocs\yns-dev-exercises\5\5-4\app\webroot\index.php(117): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#5 {main}
+2020-03-03 07:40:29 Error: [MissingActionException] Action UsersController::index() could not be found.
+Exception Attributes: array (
+  'controller' => 'UsersController',
+  'action' => 'index',
+)
+Request URL: /yns-dev-exercises/5/5-4/users
+Stack Trace:
+#0 C:\xampp\htdocs\yns-dev-exercises\5\5-4\lib\Cake\Routing\Dispatcher.php(193): Controller->invokeAction(Object(CakeRequest))
+#1 C:\xampp\htdocs\yns-dev-exercises\5\5-4\lib\Cake\Routing\Dispatcher.php(167): Dispatcher->_invoke(Object(UsersController), Object(CakeRequest))
+#2 C:\xampp\htdocs\yns-dev-exercises\5\5-4\app\webroot\index.php(117): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#3 {main}
+2020-03-03 07:42:04 Error: [ParseError] syntax error, unexpected 'return' (T_RETURN)
+Request URL: /yns-dev-exercises/5/5-4/users/editUsername
+Stack Trace:
+#0 [internal function]: App::load('UsersController')
+#1 [internal function]: spl_autoload_call('UsersController')
+#2 C:\xampp\htdocs\yns-dev-exercises\5\5-4\lib\Cake\Routing\Dispatcher.php(266): class_exists('UsersController')
+#3 C:\xampp\htdocs\yns-dev-exercises\5\5-4\lib\Cake\Routing\Dispatcher.php(235): Dispatcher->_loadController(Object(CakeRequest))
+#4 C:\xampp\htdocs\yns-dev-exercises\5\5-4\lib\Cake\Routing\Dispatcher.php(158): Dispatcher->_getController(Object(CakeRequest), Object(CakeResponse))
+#5 C:\xampp\htdocs\yns-dev-exercises\5\5-4\app\webroot\index.php(117): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#6 {main}
+2020-03-03 08:03:02 Error: [MissingControllerException] Controller class ImgController could not be found.
+Exception Attributes: array (
+  'class' => 'ImgController',
+  'plugin' => NULL,
+)
+Request URL: /yns-dev-exercises/5/5-4/img/smiley.png
+Stack Trace:
+#0 C:\xampp\htdocs\yns-dev-exercises\5\5-4\app\webroot\index.php(117): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2020-03-03 08:03:02 Error: [MissingControllerException] Controller class ImgController could not be found.
+Exception Attributes: array (
+  'class' => 'ImgController',
+  'plugin' => NULL,
+)
+Request URL: /yns-dev-exercises/5/5-4/img/smiley.png
+Stack Trace:
+#0 C:\xampp\htdocs\yns-dev-exercises\5\5-4\app\webroot\index.php(117): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2020-03-03 08:09:03 Error: [MissingControllerException] Controller class ImgController could not be found.
+Exception Attributes: array (
+  'class' => 'ImgController',
+  'plugin' => NULL,
+)
+Request URL: /yns-dev-exercises/5/5-4/img/smiley.png
+Stack Trace:
+#0 C:\xampp\htdocs\yns-dev-exercises\5\5-4\app\webroot\index.php(117): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2020-03-03 08:13:32 Error: [MissingControllerException] Controller class ImgController could not be found.
+Exception Attributes: array (
+  'class' => 'ImgController',
+  'plugin' => NULL,
+)
+Request URL: /yns-dev-exercises/5/5-4/img/profile_pic.jpg
+Stack Trace:
+#0 C:\xampp\htdocs\yns-dev-exercises\5\5-4\app\webroot\index.php(117): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2020-03-03 08:14:01 Error: [MissingControllerException] Controller class ImgController could not be found.
+Exception Attributes: array (
+  'class' => 'ImgController',
+  'plugin' => NULL,
+)
+Request URL: /yns-dev-exercises/5/5-4/img/profile_pic.jpg
+Stack Trace:
+#0 C:\xampp\htdocs\yns-dev-exercises\5\5-4\app\webroot\index.php(117): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2020-03-03 08:30:44 Error: [MissingControllerException] Controller class ImgController could not be found.
+Exception Attributes: array (
+  'class' => 'ImgController',
+  'plugin' => NULL,
+)
+Request URL: /yns-dev-exercises/5/5-4/img/smiley.png
+Stack Trace:
+#0 C:\xampp\htdocs\yns-dev-exercises\5\5-4\app\webroot\index.php(117): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2020-03-03 08:50:10 Error: [ParseError] syntax error, unexpected '$i' (T_VARIABLE)
+Request URL: /yns-dev-exercises/5/5-4/users/editProfilePic
+Stack Trace:
+#0 [internal function]: App::load('UsersController')
+#1 [internal function]: spl_autoload_call('UsersController')
+#2 C:\xampp\htdocs\yns-dev-exercises\5\5-4\lib\Cake\Routing\Dispatcher.php(266): class_exists('UsersController')
+#3 C:\xampp\htdocs\yns-dev-exercises\5\5-4\lib\Cake\Routing\Dispatcher.php(235): Dispatcher->_loadController(Object(CakeRequest))
+#4 C:\xampp\htdocs\yns-dev-exercises\5\5-4\lib\Cake\Routing\Dispatcher.php(158): Dispatcher->_getController(Object(CakeRequest), Object(CakeResponse))
+#5 C:\xampp\htdocs\yns-dev-exercises\5\5-4\app\webroot\index.php(117): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#6 {main}
+2020-03-03 08:50:33 Error: [ParseError] syntax error, unexpected '$i' (T_VARIABLE)
+Request URL: /yns-dev-exercises/5/5-4/users/editProfilePic
+Stack Trace:
+#0 [internal function]: App::load('UsersController')
+#1 [internal function]: spl_autoload_call('UsersController')
+#2 C:\xampp\htdocs\yns-dev-exercises\5\5-4\lib\Cake\Routing\Dispatcher.php(266): class_exists('UsersController')
+#3 C:\xampp\htdocs\yns-dev-exercises\5\5-4\lib\Cake\Routing\Dispatcher.php(235): Dispatcher->_loadController(Object(CakeRequest))
+#4 C:\xampp\htdocs\yns-dev-exercises\5\5-4\lib\Cake\Routing\Dispatcher.php(158): Dispatcher->_getController(Object(CakeRequest), Object(CakeResponse))
+#5 C:\xampp\htdocs\yns-dev-exercises\5\5-4\app\webroot\index.php(117): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#6 {main}
+2020-03-03 09:17:35 Error: [MissingActionException] Action FollowersController::follow() could not be found.
+Exception Attributes: array (
+  'controller' => 'FollowersController',
+  'action' => 'follow',
+)
+Request URL: /yns-dev-exercises/5/5-4/followers/follow/12
+Stack Trace:
+#0 C:\xampp\htdocs\yns-dev-exercises\5\5-4\lib\Cake\Routing\Dispatcher.php(193): Controller->invokeAction(Object(CakeRequest))
+#1 C:\xampp\htdocs\yns-dev-exercises\5\5-4\lib\Cake\Routing\Dispatcher.php(167): Dispatcher->_invoke(Object(FollowersController), Object(CakeRequest))
+#2 C:\xampp\htdocs\yns-dev-exercises\5\5-4\app\webroot\index.php(117): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#3 {main}
+2020-03-03 09:37:31 Error: [PDOException] SQLSTATE[42S22]: Column not found: 1054 Unknown column 'Follower.follwer_id' in 'where clause'
+Request URL: /yns-dev-exercises/5/5-4/followers/follow/12
+Stack Trace:
+#0 C:\xampp\htdocs\yns-dev-exercises\5\5-4\lib\Cake\Model\Datasource\DboSource.php(502): PDOStatement->execute(Array)
+#1 C:\xampp\htdocs\yns-dev-exercises\5\5-4\lib\Cake\Model\Datasource\DboSource.php(468): DboSource->_execute('SELECT `Followe...', Array)
+#2 C:\xampp\htdocs\yns-dev-exercises\5\5-4\lib\Cake\Model\Datasource\DboSource.php(715): DboSource->execute('SELECT `Followe...', Array, Array)
+#3 C:\xampp\htdocs\yns-dev-exercises\5\5-4\lib\Cake\Model\Datasource\DboSource.php(1226): DboSource->fetchAll('SELECT `Followe...', Array)
+#4 C:\xampp\htdocs\yns-dev-exercises\5\5-4\lib\Cake\Model\Model.php(3053): DboSource->read(Object(Follower), Array)
+#5 C:\xampp\htdocs\yns-dev-exercises\5\5-4\lib\Cake\Model\Model.php(3025): Model->_readDataSource('first', Array)
+#6 C:\xampp\htdocs\yns-dev-exercises\5\5-4\lib\Cake\Model\Datasource\DboSource.php(636): Model->find('first', Array)
+#7 C:\xampp\htdocs\yns-dev-exercises\5\5-4\lib\Cake\Model\Model.php(834): DboSource->query('findByUserIdAnd...', Array, Object(Follower))
+#8 C:\xampp\htdocs\yns-dev-exercises\5\5-4\app\Controller\FollowersController.php(10): Model->__call('findByUserIdAnd...', Array)
+#9 [internal function]: FollowersController->follow('12')
+#10 C:\xampp\htdocs\yns-dev-exercises\5\5-4\lib\Cake\Controller\Controller.php(499): ReflectionMethod->invokeArgs(Object(FollowersController), Array)
+#11 C:\xampp\htdocs\yns-dev-exercises\5\5-4\lib\Cake\Routing\Dispatcher.php(193): Controller->invokeAction(Object(CakeRequest))
+#12 C:\xampp\htdocs\yns-dev-exercises\5\5-4\lib\Cake\Routing\Dispatcher.php(167): Dispatcher->_invoke(Object(FollowersController), Object(CakeRequest))
+#13 C:\xampp\htdocs\yns-dev-exercises\5\5-4\app\webroot\index.php(117): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#14 {main}
+2020-03-03 09:38:08 Error: [PDOException] SQLSTATE[23000]: Integrity constraint violation: 1452 Cannot add or update a child row: a foreign key constraint fails (`microblog2`.`followers`, CONSTRAINT `followers_ibfk_1` FOREIGN KEY (`user_id`) REFERENCES `users` (`id`))
+Request URL: /yns-dev-exercises/5/5-4/followers/follow/12
+Stack Trace:
+#0 C:\xampp\htdocs\yns-dev-exercises\5\5-4\lib\Cake\Model\Datasource\DboSource.php(502): PDOStatement->execute(Array)
+#1 C:\xampp\htdocs\yns-dev-exercises\5\5-4\lib\Cake\Model\Datasource\DboSource.php(468): DboSource->_execute('INSERT INTO `mi...', Array)
+#2 C:\xampp\htdocs\yns-dev-exercises\5\5-4\lib\Cake\Model\Datasource\DboSource.php(1132): DboSource->execute('INSERT INTO `mi...')
+#3 C:\xampp\htdocs\yns-dev-exercises\5\5-4\lib\Cake\Model\Model.php(1942): DboSource->create(Object(Follower), Array, Array)
+#4 C:\xampp\htdocs\yns-dev-exercises\5\5-4\lib\Cake\Model\Model.php(1760): Model->_doSave(Array, Array)
+#5 C:\xampp\htdocs\yns-dev-exercises\5\5-4\app\Controller\FollowersController.php(20): Model->save(Array)
+#6 [internal function]: FollowersController->follow('12')
+#7 C:\xampp\htdocs\yns-dev-exercises\5\5-4\lib\Cake\Controller\Controller.php(499): ReflectionMethod->invokeArgs(Object(FollowersController), Array)
+#8 C:\xampp\htdocs\yns-dev-exercises\5\5-4\lib\Cake\Routing\Dispatcher.php(193): Controller->invokeAction(Object(CakeRequest))
+#9 C:\xampp\htdocs\yns-dev-exercises\5\5-4\lib\Cake\Routing\Dispatcher.php(167): Dispatcher->_invoke(Object(FollowersController), Object(CakeRequest))
+#10 C:\xampp\htdocs\yns-dev-exercises\5\5-4\app\webroot\index.php(117): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#11 {main}
+2020-03-03 09:39:40 Error: [PDOException] SQLSTATE[23000]: Integrity constraint violation: 1452 Cannot add or update a child row: a foreign key constraint fails (`microblog2`.`followers`, CONSTRAINT `followers_ibfk_1` FOREIGN KEY (`user_id`) REFERENCES `users` (`id`))
+Request URL: /yns-dev-exercises/5/5-4/followers/follow/12
+Stack Trace:
+#0 C:\xampp\htdocs\yns-dev-exercises\5\5-4\lib\Cake\Model\Datasource\DboSource.php(502): PDOStatement->execute(Array)
+#1 C:\xampp\htdocs\yns-dev-exercises\5\5-4\lib\Cake\Model\Datasource\DboSource.php(468): DboSource->_execute('INSERT INTO `mi...', Array)
+#2 C:\xampp\htdocs\yns-dev-exercises\5\5-4\lib\Cake\Model\Datasource\DboSource.php(1132): DboSource->execute('INSERT INTO `mi...')
+#3 C:\xampp\htdocs\yns-dev-exercises\5\5-4\lib\Cake\Model\Model.php(1942): DboSource->create(Object(Follower), Array, Array)
+#4 C:\xampp\htdocs\yns-dev-exercises\5\5-4\lib\Cake\Model\Model.php(1760): Model->_doSave(Array, Array)
+#5 C:\xampp\htdocs\yns-dev-exercises\5\5-4\app\Controller\FollowersController.php(21): Model->save(Array)
+#6 [internal function]: FollowersController->follow('12')
+#7 C:\xampp\htdocs\yns-dev-exercises\5\5-4\lib\Cake\Controller\Controller.php(499): ReflectionMethod->invokeArgs(Object(FollowersController), Array)
+#8 C:\xampp\htdocs\yns-dev-exercises\5\5-4\lib\Cake\Routing\Dispatcher.php(193): Controller->invokeAction(Object(CakeRequest))
+#9 C:\xampp\htdocs\yns-dev-exercises\5\5-4\lib\Cake\Routing\Dispatcher.php(167): Dispatcher->_invoke(Object(FollowersController), Object(CakeRequest))
+#10 C:\xampp\htdocs\yns-dev-exercises\5\5-4\app\webroot\index.php(117): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#11 {main}
+2020-03-03 09:39:52 Error: [PDOException] SQLSTATE[23000]: Integrity constraint violation: 1452 Cannot add or update a child row: a foreign key constraint fails (`microblog2`.`followers`, CONSTRAINT `followers_ibfk_1` FOREIGN KEY (`user_id`) REFERENCES `users` (`id`))
+Request URL: /yns-dev-exercises/5/5-4/followers/follow/12
+Stack Trace:
+#0 C:\xampp\htdocs\yns-dev-exercises\5\5-4\lib\Cake\Model\Datasource\DboSource.php(502): PDOStatement->execute(Array)
+#1 C:\xampp\htdocs\yns-dev-exercises\5\5-4\lib\Cake\Model\Datasource\DboSource.php(468): DboSource->_execute('INSERT INTO `mi...', Array)
+#2 C:\xampp\htdocs\yns-dev-exercises\5\5-4\lib\Cake\Model\Datasource\DboSource.php(1132): DboSource->execute('INSERT INTO `mi...')
+#3 C:\xampp\htdocs\yns-dev-exercises\5\5-4\lib\Cake\Model\Model.php(1942): DboSource->create(Object(Follower), Array, Array)
+#4 C:\xampp\htdocs\yns-dev-exercises\5\5-4\lib\Cake\Model\Model.php(1760): Model->_doSave(Array, Array)
+#5 C:\xampp\htdocs\yns-dev-exercises\5\5-4\app\Controller\FollowersController.php(21): Model->save(Array)
+#6 [internal function]: FollowersController->follow('12')
+#7 C:\xampp\htdocs\yns-dev-exercises\5\5-4\lib\Cake\Controller\Controller.php(499): ReflectionMethod->invokeArgs(Object(FollowersController), Array)
+#8 C:\xampp\htdocs\yns-dev-exercises\5\5-4\lib\Cake\Routing\Dispatcher.php(193): Controller->invokeAction(Object(CakeRequest))
+#9 C:\xampp\htdocs\yns-dev-exercises\5\5-4\lib\Cake\Routing\Dispatcher.php(167): Dispatcher->_invoke(Object(FollowersController), Object(CakeRequest))
+#10 C:\xampp\htdocs\yns-dev-exercises\5\5-4\app\webroot\index.php(117): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#11 {main}
+2020-03-03 09:40:14 Error: [PDOException] SQLSTATE[23000]: Integrity constraint violation: 1452 Cannot add or update a child row: a foreign key constraint fails (`microblog2`.`followers`, CONSTRAINT `followers_ibfk_1` FOREIGN KEY (`user_id`) REFERENCES `users` (`id`))
+Request URL: /yns-dev-exercises/5/5-4/followers/follow/12
+Stack Trace:
+#0 C:\xampp\htdocs\yns-dev-exercises\5\5-4\lib\Cake\Model\Datasource\DboSource.php(502): PDOStatement->execute(Array)
+#1 C:\xampp\htdocs\yns-dev-exercises\5\5-4\lib\Cake\Model\Datasource\DboSource.php(468): DboSource->_execute('INSERT INTO `mi...', Array)
+#2 C:\xampp\htdocs\yns-dev-exercises\5\5-4\lib\Cake\Model\Datasource\DboSource.php(1132): DboSource->execute('INSERT INTO `mi...')
+#3 C:\xampp\htdocs\yns-dev-exercises\5\5-4\lib\Cake\Model\Model.php(1942): DboSource->create(Object(Follower), Array, Array)
+#4 C:\xampp\htdocs\yns-dev-exercises\5\5-4\lib\Cake\Model\Model.php(1760): Model->_doSave(Array, Array)
+#5 C:\xampp\htdocs\yns-dev-exercises\5\5-4\app\Controller\FollowersController.php(20): Model->save(Array)
+#6 [internal function]: FollowersController->follow('12')
+#7 C:\xampp\htdocs\yns-dev-exercises\5\5-4\lib\Cake\Controller\Controller.php(499): ReflectionMethod->invokeArgs(Object(FollowersController), Array)
+#8 C:\xampp\htdocs\yns-dev-exercises\5\5-4\lib\Cake\Routing\Dispatcher.php(193): Controller->invokeAction(Object(CakeRequest))
+#9 C:\xampp\htdocs\yns-dev-exercises\5\5-4\lib\Cake\Routing\Dispatcher.php(167): Dispatcher->_invoke(Object(FollowersController), Object(CakeRequest))
+#10 C:\xampp\htdocs\yns-dev-exercises\5\5-4\app\webroot\index.php(117): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#11 {main}
+2020-03-03 09:40:18 Error: [MissingActionException] Action PostsController::userPosts() could not be found.
+Exception Attributes: array (
+  'controller' => 'PostsController',
+  'action' => 'userPosts',
+)
+Request URL: /yns-dev-exercises/5/5-4/posts/userPosts
+Stack Trace:
+#0 C:\xampp\htdocs\yns-dev-exercises\5\5-4\lib\Cake\Routing\Dispatcher.php(193): Controller->invokeAction(Object(CakeRequest))
+#1 C:\xampp\htdocs\yns-dev-exercises\5\5-4\lib\Cake\Routing\Dispatcher.php(167): Dispatcher->_invoke(Object(PostsController), Object(CakeRequest))
+#2 C:\xampp\htdocs\yns-dev-exercises\5\5-4\app\webroot\index.php(117): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#3 {main}
+2020-03-03 09:40:21 Error: [MissingActionException] Action PostsController::userPosts() could not be found.
+Exception Attributes: array (
+  'controller' => 'PostsController',
+  'action' => 'userPosts',
+)
+Request URL: /yns-dev-exercises/5/5-4/posts/userPosts
+Stack Trace:
+#0 C:\xampp\htdocs\yns-dev-exercises\5\5-4\lib\Cake\Routing\Dispatcher.php(193): Controller->invokeAction(Object(CakeRequest))
+#1 C:\xampp\htdocs\yns-dev-exercises\5\5-4\lib\Cake\Routing\Dispatcher.php(167): Dispatcher->_invoke(Object(PostsController), Object(CakeRequest))
+#2 C:\xampp\htdocs\yns-dev-exercises\5\5-4\app\webroot\index.php(117): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#3 {main}
+2020-03-03 09:41:03 Error: [MissingActionException] Action PostsController::userPosts() could not be found.
+Exception Attributes: array (
+  'controller' => 'PostsController',
+  'action' => 'userPosts',
+)
+Request URL: /yns-dev-exercises/5/5-4/posts/userPosts
+Stack Trace:
+#0 C:\xampp\htdocs\yns-dev-exercises\5\5-4\lib\Cake\Routing\Dispatcher.php(193): Controller->invokeAction(Object(CakeRequest))
+#1 C:\xampp\htdocs\yns-dev-exercises\5\5-4\lib\Cake\Routing\Dispatcher.php(167): Dispatcher->_invoke(Object(PostsController), Object(CakeRequest))
+#2 C:\xampp\htdocs\yns-dev-exercises\5\5-4\app\webroot\index.php(117): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#3 {main}
+2020-03-03 09:41:52 Error: [MissingActionException] Action PostsController::favicon.ico() could not be found.
+Exception Attributes: array (
+  'controller' => 'PostsController',
+  'action' => 'favicon.ico',
+)
+Request URL: /yns-dev-exercises/5/5-4/posts/favicon.ico
+Stack Trace:
+#0 C:\xampp\htdocs\yns-dev-exercises\5\5-4\lib\Cake\Routing\Dispatcher.php(193): Controller->invokeAction(Object(CakeRequest))
+#1 C:\xampp\htdocs\yns-dev-exercises\5\5-4\lib\Cake\Routing\Dispatcher.php(167): Dispatcher->_invoke(Object(PostsController), Object(CakeRequest))
+#2 C:\xampp\htdocs\yns-dev-exercises\5\5-4\app\webroot\index.php(117): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#3 {main}
+2020-03-03 09:43:40 Error: [MissingActionException] Action PostsController::userPosts() could not be found.
+Exception Attributes: array (
+  'controller' => 'PostsController',
+  'action' => 'userPosts',
+)
+Request URL: /yns-dev-exercises/5/5-4/posts/userPosts
+Stack Trace:
+#0 C:\xampp\htdocs\yns-dev-exercises\5\5-4\lib\Cake\Routing\Dispatcher.php(193): Controller->invokeAction(Object(CakeRequest))
+#1 C:\xampp\htdocs\yns-dev-exercises\5\5-4\lib\Cake\Routing\Dispatcher.php(167): Dispatcher->_invoke(Object(PostsController), Object(CakeRequest))
+#2 C:\xampp\htdocs\yns-dev-exercises\5\5-4\app\webroot\index.php(117): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#3 {main}
+2020-03-03 09:43:40 Error: Fatal Error (16): Exception thrown without a stack frame in [Unknown, line 0]
+2020-03-03 09:43:40 Error: [FatalErrorException] Exception thrown without a stack frame
+Request URL: /yns-dev-exercises/5/5-4/posts/userPosts
+Stack Trace:
+#0 C:\xampp\htdocs\yns-dev-exercises\5\5-4\lib\Cake\Error\ErrorHandler.php(212): ErrorHandler::handleFatalError(16, 'Exception throw...', 'Unknown', 0)
+#1 C:\xampp\htdocs\yns-dev-exercises\5\5-4\lib\Cake\Core\App.php(970): ErrorHandler::handleError(16, 'Exception throw...', 'Unknown', 0, Array)
+#2 C:\xampp\htdocs\yns-dev-exercises\5\5-4\lib\Cake\Core\App.php(943): App::_checkFatalError()
+#3 [internal function]: App::shutdown()
+#4 {main}
+2020-03-03 09:44:06 Error: [MissingActionException] Action PostsController::userPosts() could not be found.
+Exception Attributes: array (
+  'controller' => 'PostsController',
+  'action' => 'userPosts',
+)
+Request URL: /yns-dev-exercises/5/5-4/posts/userPosts
+Stack Trace:
+#0 C:\xampp\htdocs\yns-dev-exercises\5\5-4\lib\Cake\Routing\Dispatcher.php(193): Controller->invokeAction(Object(CakeRequest))
+#1 C:\xampp\htdocs\yns-dev-exercises\5\5-4\lib\Cake\Routing\Dispatcher.php(167): Dispatcher->_invoke(Object(PostsController), Object(CakeRequest))
+#2 C:\xampp\htdocs\yns-dev-exercises\5\5-4\app\webroot\index.php(117): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#3 {main}
+2020-03-03 09:44:19 Error: [PDOException] SQLSTATE[23000]: Integrity constraint violation: 1452 Cannot add or update a child row: a foreign key constraint fails (`microblog2`.`followers`, CONSTRAINT `followers_ibfk_1` FOREIGN KEY (`user_id`) REFERENCES `users` (`id`))
+Request URL: /yns-dev-exercises/5/5-4/followers/follow/12
+Stack Trace:
+#0 C:\xampp\htdocs\yns-dev-exercises\5\5-4\lib\Cake\Model\Datasource\DboSource.php(502): PDOStatement->execute(Array)
+#1 C:\xampp\htdocs\yns-dev-exercises\5\5-4\lib\Cake\Model\Datasource\DboSource.php(468): DboSource->_execute('INSERT INTO `mi...', Array)
+#2 C:\xampp\htdocs\yns-dev-exercises\5\5-4\lib\Cake\Model\Datasource\DboSource.php(1132): DboSource->execute('INSERT INTO `mi...')
+#3 C:\xampp\htdocs\yns-dev-exercises\5\5-4\lib\Cake\Model\Model.php(1942): DboSource->create(Object(Follower), Array, Array)
+#4 C:\xampp\htdocs\yns-dev-exercises\5\5-4\lib\Cake\Model\Model.php(1760): Model->_doSave(Array, Array)
+#5 C:\xampp\htdocs\yns-dev-exercises\5\5-4\app\Controller\FollowersController.php(20): Model->save(Array)
+#6 [internal function]: FollowersController->follow('12')
+#7 C:\xampp\htdocs\yns-dev-exercises\5\5-4\lib\Cake\Controller\Controller.php(499): ReflectionMethod->invokeArgs(Object(FollowersController), Array)
+#8 C:\xampp\htdocs\yns-dev-exercises\5\5-4\lib\Cake\Routing\Dispatcher.php(193): Controller->invokeAction(Object(CakeRequest))
+#9 C:\xampp\htdocs\yns-dev-exercises\5\5-4\lib\Cake\Routing\Dispatcher.php(167): Dispatcher->_invoke(Object(FollowersController), Object(CakeRequest))
+#10 C:\xampp\htdocs\yns-dev-exercises\5\5-4\app\webroot\index.php(117): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#11 {main}
+2020-03-03 09:44:53 Error: [PDOException] SQLSTATE[23000]: Integrity constraint violation: 1452 Cannot add or update a child row: a foreign key constraint fails (`microblog2`.`followers`, CONSTRAINT `followers_ibfk_1` FOREIGN KEY (`user_id`) REFERENCES `users` (`id`))
+Request URL: /yns-dev-exercises/5/5-4/followers/follow/12
+Stack Trace:
+#0 C:\xampp\htdocs\yns-dev-exercises\5\5-4\lib\Cake\Model\Datasource\DboSource.php(502): PDOStatement->execute(Array)
+#1 C:\xampp\htdocs\yns-dev-exercises\5\5-4\lib\Cake\Model\Datasource\DboSource.php(468): DboSource->_execute('INSERT INTO `mi...', Array)
+#2 C:\xampp\htdocs\yns-dev-exercises\5\5-4\lib\Cake\Model\Datasource\DboSource.php(1132): DboSource->execute('INSERT INTO `mi...')
+#3 C:\xampp\htdocs\yns-dev-exercises\5\5-4\lib\Cake\Model\Model.php(1942): DboSource->create(Object(Follower), Array, Array)
+#4 C:\xampp\htdocs\yns-dev-exercises\5\5-4\lib\Cake\Model\Model.php(1760): Model->_doSave(Array, Array)
+#5 C:\xampp\htdocs\yns-dev-exercises\5\5-4\app\Controller\FollowersController.php(21): Model->save(Array)
+#6 [internal function]: FollowersController->follow('12')
+#7 C:\xampp\htdocs\yns-dev-exercises\5\5-4\lib\Cake\Controller\Controller.php(499): ReflectionMethod->invokeArgs(Object(FollowersController), Array)
+#8 C:\xampp\htdocs\yns-dev-exercises\5\5-4\lib\Cake\Routing\Dispatcher.php(193): Controller->invokeAction(Object(CakeRequest))
+#9 C:\xampp\htdocs\yns-dev-exercises\5\5-4\lib\Cake\Routing\Dispatcher.php(167): Dispatcher->_invoke(Object(FollowersController), Object(CakeRequest))
+#10 C:\xampp\htdocs\yns-dev-exercises\5\5-4\app\webroot\index.php(117): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#11 {main}
+2020-03-03 09:45:43 Error: [PDOException] SQLSTATE[23000]: Integrity constraint violation: 1452 Cannot add or update a child row: a foreign key constraint fails (`microblog2`.`followers`, CONSTRAINT `followers_ibfk_1` FOREIGN KEY (`user_id`) REFERENCES `users` (`id`))
+Request URL: /yns-dev-exercises/5/5-4/followers/follow/12
+Stack Trace:
+#0 C:\xampp\htdocs\yns-dev-exercises\5\5-4\lib\Cake\Model\Datasource\DboSource.php(502): PDOStatement->execute(Array)
+#1 C:\xampp\htdocs\yns-dev-exercises\5\5-4\lib\Cake\Model\Datasource\DboSource.php(468): DboSource->_execute('INSERT INTO `mi...', Array)
+#2 C:\xampp\htdocs\yns-dev-exercises\5\5-4\lib\Cake\Model\Datasource\DboSource.php(1132): DboSource->execute('INSERT INTO `mi...')
+#3 C:\xampp\htdocs\yns-dev-exercises\5\5-4\lib\Cake\Model\Model.php(1942): DboSource->create(Object(Follower), Array, Array)
+#4 C:\xampp\htdocs\yns-dev-exercises\5\5-4\lib\Cake\Model\Model.php(1760): Model->_doSave(Array, Array)
+#5 C:\xampp\htdocs\yns-dev-exercises\5\5-4\app\Controller\FollowersController.php(20): Model->save(Array)
+#6 [internal function]: FollowersController->follow('12')
+#7 C:\xampp\htdocs\yns-dev-exercises\5\5-4\lib\Cake\Controller\Controller.php(499): ReflectionMethod->invokeArgs(Object(FollowersController), Array)
+#8 C:\xampp\htdocs\yns-dev-exercises\5\5-4\lib\Cake\Routing\Dispatcher.php(193): Controller->invokeAction(Object(CakeRequest))
+#9 C:\xampp\htdocs\yns-dev-exercises\5\5-4\lib\Cake\Routing\Dispatcher.php(167): Dispatcher->_invoke(Object(FollowersController), Object(CakeRequest))
+#10 C:\xampp\htdocs\yns-dev-exercises\5\5-4\app\webroot\index.php(117): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#11 {main}
+2020-03-03 09:51:31 Error: [PDOException] SQLSTATE[23000]: Integrity constraint violation: 1452 Cannot add or update a child row: a foreign key constraint fails (`microblog2`.`followers`, CONSTRAINT `followers_ibfk_1` FOREIGN KEY (`user_id`) REFERENCES `users` (`id`))
+Request URL: /yns-dev-exercises/5/5-4/followers/follow/12
+Stack Trace:
+#0 C:\xampp\htdocs\yns-dev-exercises\5\5-4\lib\Cake\Model\Datasource\DboSource.php(502): PDOStatement->execute(Array)
+#1 C:\xampp\htdocs\yns-dev-exercises\5\5-4\lib\Cake\Model\Datasource\DboSource.php(468): DboSource->_execute('INSERT INTO `mi...', Array)
+#2 C:\xampp\htdocs\yns-dev-exercises\5\5-4\lib\Cake\Model\Datasource\DboSource.php(1132): DboSource->execute('INSERT INTO `mi...')
+#3 C:\xampp\htdocs\yns-dev-exercises\5\5-4\lib\Cake\Model\Model.php(1942): DboSource->create(Object(Follower), Array, Array)
+#4 C:\xampp\htdocs\yns-dev-exercises\5\5-4\lib\Cake\Model\Model.php(1760): Model->_doSave(Array, Array)
+#5 C:\xampp\htdocs\yns-dev-exercises\5\5-4\app\Controller\FollowersController.php(20): Model->save(Array)
+#6 [internal function]: FollowersController->follow('12')
+#7 C:\xampp\htdocs\yns-dev-exercises\5\5-4\lib\Cake\Controller\Controller.php(499): ReflectionMethod->invokeArgs(Object(FollowersController), Array)
+#8 C:\xampp\htdocs\yns-dev-exercises\5\5-4\lib\Cake\Routing\Dispatcher.php(193): Controller->invokeAction(Object(CakeRequest))
+#9 C:\xampp\htdocs\yns-dev-exercises\5\5-4\lib\Cake\Routing\Dispatcher.php(167): Dispatcher->_invoke(Object(FollowersController), Object(CakeRequest))
+#10 C:\xampp\htdocs\yns-dev-exercises\5\5-4\app\webroot\index.php(117): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#11 {main}
+2020-03-03 09:53:32 Error: [MissingViewException] View file "Followers\follow.ctp" is missing.
+Exception Attributes: array (
+  'file' => 'Followers\\follow.ctp',
+)
+Request URL: /yns-dev-exercises/5/5-4/followers/follow/11
+Stack Trace:
+#0 C:\xampp\htdocs\yns-dev-exercises\5\5-4\lib\Cake\View\View.php(470): View->_getViewFileName('Followers\\follo...')
+#1 C:\xampp\htdocs\yns-dev-exercises\5\5-4\lib\Cake\Controller\Controller.php(968): View->render(NULL, NULL)
+#2 C:\xampp\htdocs\yns-dev-exercises\5\5-4\lib\Cake\Routing\Dispatcher.php(200): Controller->render()
+#3 C:\xampp\htdocs\yns-dev-exercises\5\5-4\lib\Cake\Routing\Dispatcher.php(167): Dispatcher->_invoke(Object(FollowersController), Object(CakeRequest))
+#4 C:\xampp\htdocs\yns-dev-exercises\5\5-4\app\webroot\index.php(117): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#5 {main}
+2020-03-03 09:54:20 Error: [PDOException] SQLSTATE[23000]: Integrity constraint violation: 1452 Cannot add or update a child row: a foreign key constraint fails (`microblog2`.`followers`, CONSTRAINT `followers_ibfk_1` FOREIGN KEY (`user_id`) REFERENCES `users` (`id`))
+Request URL: /yns-dev-exercises/5/5-4/followers/follow/11
+Stack Trace:
+#0 C:\xampp\htdocs\yns-dev-exercises\5\5-4\lib\Cake\Model\Datasource\DboSource.php(502): PDOStatement->execute(Array)
+#1 C:\xampp\htdocs\yns-dev-exercises\5\5-4\lib\Cake\Model\Datasource\DboSource.php(468): DboSource->_execute('INSERT INTO `mi...', Array)
+#2 C:\xampp\htdocs\yns-dev-exercises\5\5-4\lib\Cake\Model\Datasource\DboSource.php(1132): DboSource->execute('INSERT INTO `mi...')
+#3 C:\xampp\htdocs\yns-dev-exercises\5\5-4\lib\Cake\Model\Model.php(1942): DboSource->create(Object(Follower), Array, Array)
+#4 C:\xampp\htdocs\yns-dev-exercises\5\5-4\lib\Cake\Model\Model.php(1760): Model->_doSave(Array, Array)
+#5 C:\xampp\htdocs\yns-dev-exercises\5\5-4\app\Controller\FollowersController.php(20): Model->save(Array)
+#6 [internal function]: FollowersController->follow('11')
+#7 C:\xampp\htdocs\yns-dev-exercises\5\5-4\lib\Cake\Controller\Controller.php(499): ReflectionMethod->invokeArgs(Object(FollowersController), Array)
+#8 C:\xampp\htdocs\yns-dev-exercises\5\5-4\lib\Cake\Routing\Dispatcher.php(193): Controller->invokeAction(Object(CakeRequest))
+#9 C:\xampp\htdocs\yns-dev-exercises\5\5-4\lib\Cake\Routing\Dispatcher.php(167): Dispatcher->_invoke(Object(FollowersController), Object(CakeRequest))
+#10 C:\xampp\htdocs\yns-dev-exercises\5\5-4\app\webroot\index.php(117): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#11 {main}
+2020-03-03 09:56:18 Error: [PDOException] SQLSTATE[23000]: Integrity constraint violation: 1452 Cannot add or update a child row: a foreign key constraint fails (`microblog2`.`followers`, CONSTRAINT `followers_ibfk_1` FOREIGN KEY (`user_id`) REFERENCES `users` (`id`))
+Request URL: /yns-dev-exercises/5/5-4/followers/follow/11
+Stack Trace:
+#0 C:\xampp\htdocs\yns-dev-exercises\5\5-4\lib\Cake\Model\Datasource\DboSource.php(502): PDOStatement->execute(Array)
+#1 C:\xampp\htdocs\yns-dev-exercises\5\5-4\lib\Cake\Model\Datasource\DboSource.php(468): DboSource->_execute('INSERT INTO `mi...', Array)
+#2 C:\xampp\htdocs\yns-dev-exercises\5\5-4\lib\Cake\Model\Datasource\DboSource.php(1132): DboSource->execute('INSERT INTO `mi...')
+#3 C:\xampp\htdocs\yns-dev-exercises\5\5-4\lib\Cake\Model\Model.php(1942): DboSource->create(Object(Follower), Array, Array)
+#4 C:\xampp\htdocs\yns-dev-exercises\5\5-4\lib\Cake\Model\Model.php(1760): Model->_doSave(Array, Array)
+#5 C:\xampp\htdocs\yns-dev-exercises\5\5-4\app\Controller\FollowersController.php(20): Model->save(Array)
+#6 [internal function]: FollowersController->follow('11')
+#7 C:\xampp\htdocs\yns-dev-exercises\5\5-4\lib\Cake\Controller\Controller.php(499): ReflectionMethod->invokeArgs(Object(FollowersController), Array)
+#8 C:\xampp\htdocs\yns-dev-exercises\5\5-4\lib\Cake\Routing\Dispatcher.php(193): Controller->invokeAction(Object(CakeRequest))
+#9 C:\xampp\htdocs\yns-dev-exercises\5\5-4\lib\Cake\Routing\Dispatcher.php(167): Dispatcher->_invoke(Object(FollowersController), Object(CakeRequest))
+#10 C:\xampp\htdocs\yns-dev-exercises\5\5-4\app\webroot\index.php(117): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#11 {main}
+2020-03-03 09:57:28 Error: [PDOException] SQLSTATE[23000]: Integrity constraint violation: 1452 Cannot add or update a child row: a foreign key constraint fails (`microblog2`.`followers`, CONSTRAINT `followers_ibfk_1` FOREIGN KEY (`user_id`) REFERENCES `users` (`id`))
+Request URL: /yns-dev-exercises/5/5-4/followers/follow/11
+Stack Trace:
+#0 C:\xampp\htdocs\yns-dev-exercises\5\5-4\lib\Cake\Model\Datasource\DboSource.php(502): PDOStatement->execute(Array)
+#1 C:\xampp\htdocs\yns-dev-exercises\5\5-4\lib\Cake\Model\Datasource\DboSource.php(468): DboSource->_execute('INSERT INTO `mi...', Array)
+#2 C:\xampp\htdocs\yns-dev-exercises\5\5-4\lib\Cake\Model\Datasource\DboSource.php(1132): DboSource->execute('INSERT INTO `mi...')
+#3 C:\xampp\htdocs\yns-dev-exercises\5\5-4\lib\Cake\Model\Model.php(1942): DboSource->create(Object(Follower), Array, Array)
+#4 C:\xampp\htdocs\yns-dev-exercises\5\5-4\lib\Cake\Model\Model.php(1760): Model->_doSave(Array, Array)
+#5 C:\xampp\htdocs\yns-dev-exercises\5\5-4\app\Controller\FollowersController.php(21): Model->save(Array)
+#6 [internal function]: FollowersController->follow('11')
+#7 C:\xampp\htdocs\yns-dev-exercises\5\5-4\lib\Cake\Controller\Controller.php(499): ReflectionMethod->invokeArgs(Object(FollowersController), Array)
+#8 C:\xampp\htdocs\yns-dev-exercises\5\5-4\lib\Cake\Routing\Dispatcher.php(193): Controller->invokeAction(Object(CakeRequest))
+#9 C:\xampp\htdocs\yns-dev-exercises\5\5-4\lib\Cake\Routing\Dispatcher.php(167): Dispatcher->_invoke(Object(FollowersController), Object(CakeRequest))
+#10 C:\xampp\htdocs\yns-dev-exercises\5\5-4\app\webroot\index.php(117): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#11 {main}
+2020-03-03 09:58:58 Error: [MissingViewException] View file "Followers\follow.ctp" is missing.
+Exception Attributes: array (
+  'file' => 'Followers\\follow.ctp',
+)
+Request URL: /yns-dev-exercises/5/5-4/followers/follow/11
+Stack Trace:
+#0 C:\xampp\htdocs\yns-dev-exercises\5\5-4\lib\Cake\View\View.php(470): View->_getViewFileName('Followers\\follo...')
+#1 C:\xampp\htdocs\yns-dev-exercises\5\5-4\lib\Cake\Controller\Controller.php(968): View->render(NULL, NULL)
+#2 C:\xampp\htdocs\yns-dev-exercises\5\5-4\lib\Cake\Routing\Dispatcher.php(200): Controller->render()
+#3 C:\xampp\htdocs\yns-dev-exercises\5\5-4\lib\Cake\Routing\Dispatcher.php(167): Dispatcher->_invoke(Object(FollowersController), Object(CakeRequest))
+#4 C:\xampp\htdocs\yns-dev-exercises\5\5-4\app\webroot\index.php(117): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#5 {main}
+2020-03-03 10:04:39 Error: [MissingViewException] View file "Followers\follow.ctp" is missing.
+Exception Attributes: array (
+  'file' => 'Followers\\follow.ctp',
+)
+Request URL: /yns-dev-exercises/5/5-4/followers/follow/12
+Stack Trace:
+#0 C:\xampp\htdocs\yns-dev-exercises\5\5-4\lib\Cake\View\View.php(470): View->_getViewFileName('Followers\\follo...')
+#1 C:\xampp\htdocs\yns-dev-exercises\5\5-4\lib\Cake\Controller\Controller.php(968): View->render(NULL, NULL)
+#2 C:\xampp\htdocs\yns-dev-exercises\5\5-4\lib\Cake\Routing\Dispatcher.php(200): Controller->render()
+#3 C:\xampp\htdocs\yns-dev-exercises\5\5-4\lib\Cake\Routing\Dispatcher.php(167): Dispatcher->_invoke(Object(FollowersController), Object(CakeRequest))
+#4 C:\xampp\htdocs\yns-dev-exercises\5\5-4\app\webroot\index.php(117): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#5 {main}
+2020-03-03 10:05:40 Error: [MissingViewException] View file "Followers\follow.ctp" is missing.
+Exception Attributes: array (
+  'file' => 'Followers\\follow.ctp',
+)
+Request URL: /yns-dev-exercises/5/5-4/followers/follow/12
+Stack Trace:
+#0 C:\xampp\htdocs\yns-dev-exercises\5\5-4\lib\Cake\View\View.php(470): View->_getViewFileName('Followers\\follo...')
+#1 C:\xampp\htdocs\yns-dev-exercises\5\5-4\lib\Cake\Controller\Controller.php(968): View->render(NULL, NULL)
+#2 C:\xampp\htdocs\yns-dev-exercises\5\5-4\lib\Cake\Routing\Dispatcher.php(200): Controller->render()
+#3 C:\xampp\htdocs\yns-dev-exercises\5\5-4\lib\Cake\Routing\Dispatcher.php(167): Dispatcher->_invoke(Object(FollowersController), Object(CakeRequest))
+#4 C:\xampp\htdocs\yns-dev-exercises\5\5-4\app\webroot\index.php(117): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#5 {main}
+2020-03-03 10:05:58 Error: [MissingViewException] View file "Followers\follow.ctp" is missing.
+Exception Attributes: array (
+  'file' => 'Followers\\follow.ctp',
+)
+Request URL: /yns-dev-exercises/5/5-4/followers/follow/12
+Stack Trace:
+#0 C:\xampp\htdocs\yns-dev-exercises\5\5-4\lib\Cake\View\View.php(470): View->_getViewFileName('Followers\\follo...')
+#1 C:\xampp\htdocs\yns-dev-exercises\5\5-4\lib\Cake\Controller\Controller.php(968): View->render(NULL, NULL)
+#2 C:\xampp\htdocs\yns-dev-exercises\5\5-4\lib\Cake\Routing\Dispatcher.php(200): Controller->render()
+#3 C:\xampp\htdocs\yns-dev-exercises\5\5-4\lib\Cake\Routing\Dispatcher.php(167): Dispatcher->_invoke(Object(FollowersController), Object(CakeRequest))
+#4 C:\xampp\htdocs\yns-dev-exercises\5\5-4\app\webroot\index.php(117): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#5 {main}
+2020-03-03 10:07:44 Error: [PDOException] SQLSTATE[23000]: Integrity constraint violation: 1452 Cannot add or update a child row: a foreign key constraint fails (`microblog2`.`followers`, CONSTRAINT `followers_ibfk_1` FOREIGN KEY (`user_id`) REFERENCES `users` (`id`))
+Request URL: /yns-dev-exercises/5/5-4/followers/follow/12
+Stack Trace:
+#0 C:\xampp\htdocs\yns-dev-exercises\5\5-4\lib\Cake\Model\Datasource\DboSource.php(502): PDOStatement->execute(Array)
+#1 C:\xampp\htdocs\yns-dev-exercises\5\5-4\lib\Cake\Model\Datasource\DboSource.php(468): DboSource->_execute('INSERT INTO `mi...', Array)
+#2 C:\xampp\htdocs\yns-dev-exercises\5\5-4\lib\Cake\Model\Datasource\DboSource.php(1132): DboSource->execute('INSERT INTO `mi...')
+#3 C:\xampp\htdocs\yns-dev-exercises\5\5-4\lib\Cake\Model\Model.php(1942): DboSource->create(Object(Follower), Array, Array)
+#4 C:\xampp\htdocs\yns-dev-exercises\5\5-4\lib\Cake\Model\Model.php(1760): Model->_doSave(Array, Array)
+#5 C:\xampp\htdocs\yns-dev-exercises\5\5-4\app\Controller\FollowersController.php(20): Model->save(Array)
+#6 [internal function]: FollowersController->follow('12')
+#7 C:\xampp\htdocs\yns-dev-exercises\5\5-4\lib\Cake\Controller\Controller.php(499): ReflectionMethod->invokeArgs(Object(FollowersController), Array)
+#8 C:\xampp\htdocs\yns-dev-exercises\5\5-4\lib\Cake\Routing\Dispatcher.php(193): Controller->invokeAction(Object(CakeRequest))
+#9 C:\xampp\htdocs\yns-dev-exercises\5\5-4\lib\Cake\Routing\Dispatcher.php(167): Dispatcher->_invoke(Object(FollowersController), Object(CakeRequest))
+#10 C:\xampp\htdocs\yns-dev-exercises\5\5-4\app\webroot\index.php(117): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#11 {main}
+2020-03-03 10:12:52 Error: [PDOException] SQLSTATE[23000]: Integrity constraint violation: 1452 Cannot add or update a child row: a foreign key constraint fails (`microblog2`.`followers`, CONSTRAINT `followers_ibfk_1` FOREIGN KEY (`user_id`) REFERENCES `users` (`id`))
+Request URL: /yns-dev-exercises/5/5-4/followers/follow/12
+Stack Trace:
+#0 C:\xampp\htdocs\yns-dev-exercises\5\5-4\lib\Cake\Model\Datasource\DboSource.php(502): PDOStatement->execute(Array)
+#1 C:\xampp\htdocs\yns-dev-exercises\5\5-4\lib\Cake\Model\Datasource\DboSource.php(468): DboSource->_execute('INSERT INTO `mi...', Array)
+#2 C:\xampp\htdocs\yns-dev-exercises\5\5-4\lib\Cake\Model\Datasource\DboSource.php(1132): DboSource->execute('INSERT INTO `mi...')
+#3 C:\xampp\htdocs\yns-dev-exercises\5\5-4\lib\Cake\Model\Model.php(1942): DboSource->create(Object(Follower), Array, Array)
+#4 C:\xampp\htdocs\yns-dev-exercises\5\5-4\lib\Cake\Model\Model.php(1760): Model->_doSave(Array, Array)
+#5 C:\xampp\htdocs\yns-dev-exercises\5\5-4\app\Controller\FollowersController.php(23): Model->save(Array)
+#6 [internal function]: FollowersController->follow('12')
+#7 C:\xampp\htdocs\yns-dev-exercises\5\5-4\lib\Cake\Controller\Controller.php(499): ReflectionMethod->invokeArgs(Object(FollowersController), Array)
+#8 C:\xampp\htdocs\yns-dev-exercises\5\5-4\lib\Cake\Routing\Dispatcher.php(193): Controller->invokeAction(Object(CakeRequest))
+#9 C:\xampp\htdocs\yns-dev-exercises\5\5-4\lib\Cake\Routing\Dispatcher.php(167): Dispatcher->_invoke(Object(FollowersController), Object(CakeRequest))
+#10 C:\xampp\htdocs\yns-dev-exercises\5\5-4\app\webroot\index.php(117): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#11 {main}
+2020-03-03 10:13:04 Error: [PDOException] SQLSTATE[23000]: Integrity constraint violation: 1452 Cannot add or update a child row: a foreign key constraint fails (`microblog2`.`followers`, CONSTRAINT `followers_ibfk_1` FOREIGN KEY (`user_id`) REFERENCES `users` (`id`))
+Request URL: /yns-dev-exercises/5/5-4/followers/follow/12
+Stack Trace:
+#0 C:\xampp\htdocs\yns-dev-exercises\5\5-4\lib\Cake\Model\Datasource\DboSource.php(502): PDOStatement->execute(Array)
+#1 C:\xampp\htdocs\yns-dev-exercises\5\5-4\lib\Cake\Model\Datasource\DboSource.php(468): DboSource->_execute('INSERT INTO `mi...', Array)
+#2 C:\xampp\htdocs\yns-dev-exercises\5\5-4\lib\Cake\Model\Datasource\DboSource.php(1132): DboSource->execute('INSERT INTO `mi...')
+#3 C:\xampp\htdocs\yns-dev-exercises\5\5-4\lib\Cake\Model\Model.php(1942): DboSource->create(Object(Follower), Array, Array)
+#4 C:\xampp\htdocs\yns-dev-exercises\5\5-4\lib\Cake\Model\Model.php(1760): Model->_doSave(Array, Array)
+#5 C:\xampp\htdocs\yns-dev-exercises\5\5-4\app\Controller\FollowersController.php(23): Model->save(Array)
+#6 [internal function]: FollowersController->follow('12')
+#7 C:\xampp\htdocs\yns-dev-exercises\5\5-4\lib\Cake\Controller\Controller.php(499): ReflectionMethod->invokeArgs(Object(FollowersController), Array)
+#8 C:\xampp\htdocs\yns-dev-exercises\5\5-4\lib\Cake\Routing\Dispatcher.php(193): Controller->invokeAction(Object(CakeRequest))
+#9 C:\xampp\htdocs\yns-dev-exercises\5\5-4\lib\Cake\Routing\Dispatcher.php(167): Dispatcher->_invoke(Object(FollowersController), Object(CakeRequest))
+#10 C:\xampp\htdocs\yns-dev-exercises\5\5-4\app\webroot\index.php(117): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#11 {main}
+2020-03-03 10:14:09 Error: [PDOException] SQLSTATE[23000]: Integrity constraint violation: 1452 Cannot add or update a child row: a foreign key constraint fails (`microblog2`.`followers`, CONSTRAINT `followers_ibfk_1` FOREIGN KEY (`user_id`) REFERENCES `users` (`id`))
+Request URL: /yns-dev-exercises/5/5-4/followers/follow/12
+Stack Trace:
+#0 C:\xampp\htdocs\yns-dev-exercises\5\5-4\lib\Cake\Model\Datasource\DboSource.php(502): PDOStatement->execute(Array)
+#1 C:\xampp\htdocs\yns-dev-exercises\5\5-4\lib\Cake\Model\Datasource\DboSource.php(468): DboSource->_execute('INSERT INTO `mi...', Array)
+#2 C:\xampp\htdocs\yns-dev-exercises\5\5-4\lib\Cake\Model\Datasource\DboSource.php(1132): DboSource->execute('INSERT INTO `mi...')
+#3 C:\xampp\htdocs\yns-dev-exercises\5\5-4\lib\Cake\Model\Model.php(1942): DboSource->create(Object(Follower), Array, Array)
+#4 C:\xampp\htdocs\yns-dev-exercises\5\5-4\lib\Cake\Model\Model.php(1760): Model->_doSave(Array, Array)
+#5 C:\xampp\htdocs\yns-dev-exercises\5\5-4\app\Controller\FollowersController.php(23): Model->save(Array)
+#6 [internal function]: FollowersController->follow('12')
+#7 C:\xampp\htdocs\yns-dev-exercises\5\5-4\lib\Cake\Controller\Controller.php(499): ReflectionMethod->invokeArgs(Object(FollowersController), Array)
+#8 C:\xampp\htdocs\yns-dev-exercises\5\5-4\lib\Cake\Routing\Dispatcher.php(193): Controller->invokeAction(Object(CakeRequest))
+#9 C:\xampp\htdocs\yns-dev-exercises\5\5-4\lib\Cake\Routing\Dispatcher.php(167): Dispatcher->_invoke(Object(FollowersController), Object(CakeRequest))
+#10 C:\xampp\htdocs\yns-dev-exercises\5\5-4\app\webroot\index.php(117): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#11 {main}
+2020-03-03 10:16:14 Error: [MissingViewException] View file "Followers\follow.ctp" is missing.
+Exception Attributes: array (
+  'file' => 'Followers\\follow.ctp',
+)
+Request URL: /yns-dev-exercises/5/5-4/followers/follow/12
+Stack Trace:
+#0 C:\xampp\htdocs\yns-dev-exercises\5\5-4\lib\Cake\View\View.php(470): View->_getViewFileName('Followers\\follo...')
+#1 C:\xampp\htdocs\yns-dev-exercises\5\5-4\lib\Cake\Controller\Controller.php(968): View->render(NULL, NULL)
+#2 C:\xampp\htdocs\yns-dev-exercises\5\5-4\lib\Cake\Routing\Dispatcher.php(200): Controller->render()
+#3 C:\xampp\htdocs\yns-dev-exercises\5\5-4\lib\Cake\Routing\Dispatcher.php(167): Dispatcher->_invoke(Object(FollowersController), Object(CakeRequest))
+#4 C:\xampp\htdocs\yns-dev-exercises\5\5-4\app\webroot\index.php(117): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#5 {main}
+2020-03-03 10:16:32 Error: [MissingViewException] View file "Followers\follow.ctp" is missing.
+Exception Attributes: array (
+  'file' => 'Followers\\follow.ctp',
+)
+Request URL: /yns-dev-exercises/5/5-4/followers/follow/12
+Stack Trace:
+#0 C:\xampp\htdocs\yns-dev-exercises\5\5-4\lib\Cake\View\View.php(470): View->_getViewFileName('Followers\\follo...')
+#1 C:\xampp\htdocs\yns-dev-exercises\5\5-4\lib\Cake\Controller\Controller.php(968): View->render(NULL, NULL)
+#2 C:\xampp\htdocs\yns-dev-exercises\5\5-4\lib\Cake\Routing\Dispatcher.php(200): Controller->render()
+#3 C:\xampp\htdocs\yns-dev-exercises\5\5-4\lib\Cake\Routing\Dispatcher.php(167): Dispatcher->_invoke(Object(FollowersController), Object(CakeRequest))
+#4 C:\xampp\htdocs\yns-dev-exercises\5\5-4\app\webroot\index.php(117): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#5 {main}
+2020-03-03 10:17:55 Error: [MissingViewException] View file "Followers\follow.ctp" is missing.
+Exception Attributes: array (
+  'file' => 'Followers\\follow.ctp',
+)
+Request URL: /yns-dev-exercises/5/5-4/followers/follow/12
+Stack Trace:
+#0 C:\xampp\htdocs\yns-dev-exercises\5\5-4\lib\Cake\View\View.php(470): View->_getViewFileName('Followers\\follo...')
+#1 C:\xampp\htdocs\yns-dev-exercises\5\5-4\lib\Cake\Controller\Controller.php(968): View->render(NULL, NULL)
+#2 C:\xampp\htdocs\yns-dev-exercises\5\5-4\lib\Cake\Routing\Dispatcher.php(200): Controller->render()
+#3 C:\xampp\htdocs\yns-dev-exercises\5\5-4\lib\Cake\Routing\Dispatcher.php(167): Dispatcher->_invoke(Object(FollowersController), Object(CakeRequest))
+#4 C:\xampp\htdocs\yns-dev-exercises\5\5-4\app\webroot\index.php(117): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#5 {main}
+2020-03-03 10:18:31 Error: [PDOException] SQLSTATE[23000]: Integrity constraint violation: 1452 Cannot add or update a child row: a foreign key constraint fails (`microblog2`.`followers`, CONSTRAINT `followers_ibfk_1` FOREIGN KEY (`user_id`) REFERENCES `users` (`id`))
+Request URL: /yns-dev-exercises/5/5-4/followers/follow/12
+Stack Trace:
+#0 C:\xampp\htdocs\yns-dev-exercises\5\5-4\lib\Cake\Model\Datasource\DboSource.php(502): PDOStatement->execute(Array)
+#1 C:\xampp\htdocs\yns-dev-exercises\5\5-4\lib\Cake\Model\Datasource\DboSource.php(468): DboSource->_execute('INSERT INTO `mi...', Array)
+#2 C:\xampp\htdocs\yns-dev-exercises\5\5-4\lib\Cake\Model\Datasource\DboSource.php(1132): DboSource->execute('INSERT INTO `mi...')
+#3 C:\xampp\htdocs\yns-dev-exercises\5\5-4\lib\Cake\Model\Model.php(1942): DboSource->create(Object(Follower), Array, Array)
+#4 C:\xampp\htdocs\yns-dev-exercises\5\5-4\lib\Cake\Model\Model.php(1760): Model->_doSave(Array, Array)
+#5 C:\xampp\htdocs\yns-dev-exercises\5\5-4\app\Controller\FollowersController.php(20): Model->save(Array)
+#6 [internal function]: FollowersController->follow('12')
+#7 C:\xampp\htdocs\yns-dev-exercises\5\5-4\lib\Cake\Controller\Controller.php(499): ReflectionMethod->invokeArgs(Object(FollowersController), Array)
+#8 C:\xampp\htdocs\yns-dev-exercises\5\5-4\lib\Cake\Routing\Dispatcher.php(193): Controller->invokeAction(Object(CakeRequest))
+#9 C:\xampp\htdocs\yns-dev-exercises\5\5-4\lib\Cake\Routing\Dispatcher.php(167): Dispatcher->_invoke(Object(FollowersController), Object(CakeRequest))
+#10 C:\xampp\htdocs\yns-dev-exercises\5\5-4\app\webroot\index.php(117): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#11 {main}
+2020-03-03 10:19:40 Error: [MissingViewException] View file "Followers\follow.ctp" is missing.
+Exception Attributes: array (
+  'file' => 'Followers\\follow.ctp',
+)
+Request URL: /yns-dev-exercises/5/5-4/followers/follow/12
+Stack Trace:
+#0 C:\xampp\htdocs\yns-dev-exercises\5\5-4\lib\Cake\View\View.php(470): View->_getViewFileName('Followers\\follo...')
+#1 C:\xampp\htdocs\yns-dev-exercises\5\5-4\lib\Cake\Controller\Controller.php(968): View->render(NULL, NULL)
+#2 C:\xampp\htdocs\yns-dev-exercises\5\5-4\lib\Cake\Routing\Dispatcher.php(200): Controller->render()
+#3 C:\xampp\htdocs\yns-dev-exercises\5\5-4\lib\Cake\Routing\Dispatcher.php(167): Dispatcher->_invoke(Object(FollowersController), Object(CakeRequest))
+#4 C:\xampp\htdocs\yns-dev-exercises\5\5-4\app\webroot\index.php(117): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#5 {main}
+2020-03-03 10:22:03 Error: [MissingActionException] Action FollowersController::index() could not be found.
+Exception Attributes: array (
+  'controller' => 'FollowersController',
+  'action' => 'index',
+)
+Request URL: /yns-dev-exercises/5/5-4/followers
+Stack Trace:
+#0 C:\xampp\htdocs\yns-dev-exercises\5\5-4\lib\Cake\Routing\Dispatcher.php(193): Controller->invokeAction(Object(CakeRequest))
+#1 C:\xampp\htdocs\yns-dev-exercises\5\5-4\lib\Cake\Routing\Dispatcher.php(167): Dispatcher->_invoke(Object(FollowersController), Object(CakeRequest))
+#2 C:\xampp\htdocs\yns-dev-exercises\5\5-4\app\webroot\index.php(117): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#3 {main}

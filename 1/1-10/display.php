@@ -49,7 +49,7 @@
                     echo 'Sorry, there was an error uploading your image.';
                 }
             }
-             $fields = array($name, $contact, $email, basename($_FILES['fileToUpload']['name']));
+            $fields = array($name, $contact, $email, basename($_FILES['fileToUpload']['name']));
             echo 'Your name is ' . $fields[0] . '<br>';
             echo 'Your contact no. is ' . $fields[1] . '<br>';
             echo 'And your email address is ' . $fields[2] . '<br>';

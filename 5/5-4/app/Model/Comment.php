@@ -1,4 +1,4 @@
 <?php
-class Repost extends AppModel {
+class Comment extends AppModel {
     public $belongsTo = array('User', 'Post');
 }

@@ -8,5 +8,6 @@
     echo $this->Form->input('repass', array('label' => 'Re-Enter Password'));
     echo $this->Form->input('email');
     echo $this->Form->end('Sign up');
+    echo $this->Html->link('Login', array('action' => 'login'));
     ?>
 </div>

@@ -3,8 +3,8 @@
 <?php
 $allPosts = array_merge($posts, $reposts);
 usort($allPosts, function($b, $a) {
-    $x = array_key_exists('Repost', $a) ? 'Repost' : 'Post';
-    $y = array_key_exists('Repost', $b) ? 'Repost' : 'Post';
+    $x = !array_key_exists('Like', $a) ? 'Repost' : 'Post';
+    $y = !array_key_exists('Like', $b) ? 'Repost' : 'Post';
      return strtotime($a[$x]['created']) - strtotime($b[$y]['created']);
 });
 ?>
@@ -14,18 +14,19 @@ usort($allPosts, function($b, $a) {
         <div style="margin: 10px; display : flex; justify-content: space-between;">
             <span style="display: inline-flex; align-items: center;">
                 <?php
-                echo '<img src="img/' . $post['User']['profile_pic'] . '" height="50px" width="50px">';
+                echo $this->Html->image($post['User']['profile_pic'], array('height' => '50', 'width' => '50'));
                 $this->Space->spaceMaker();
-                echo $this->Html->link($post['Post']['title'], array('action' => 'view', $post['Post']['id']));
+                echo $post['User']['username'] . ' says:&nbsp;';
+                echo $this->Html->link($post['Post']['title'], array('controller' => 'comments', $post['Post']['id']));
                 ?>
             </span>
             <span style="color: gray">
                 <?php
-                if (array_key_exists('Repost', $post)) {
+                if (!array_key_exists('Like', $post)) {
                     echo 'Reposted on: ' . $post['Repost']['created'] . ' by ' . $post['User']['username'];
                 }
-                ?> 
-            </span>  
+                ?>
+            </span>
         </div>
         <div style="margin: 10px">
             <?php echo $post['Post']['body'] ?>
@@ -49,7 +50,7 @@ usort($allPosts, function($b, $a) {
                 $this->Space->spaceMaker();
 
                 $ogPost = $post;
-                if (array_key_exists('Repost', $post)) {
+                if (!array_key_exists('Like', $post)) {
                     foreach ($posts as $p) {
                         if ($p['Post']['id'] === $post['Post']['id']) {
                             $ogPost = $p;
@@ -74,10 +75,10 @@ usort($allPosts, function($b, $a) {
                         'Like', array('action' => 'like', $post['Post']['id'])
                     );
                 }
-                
+                echo ' ' . count($ogPost['Like']) . ' like(s)';
                 $this->Space->spaceMaker();
 
-                if (array_key_exists('Repost', $post)) {
+                if (!array_key_exists('Like', $post)) {
                     echo $this->Form->postlink(
                         'Undo repost', array('action' => 'undoRepost', $post['Repost']['id'])
                     );
@@ -86,15 +87,17 @@ usort($allPosts, function($b, $a) {
                         'Repost', array('action' => 'repost', $post['Post']['id'])
                     );
                 }
+                echo ' ' . count($ogPost['Repost']) . ' repost(s)';
                 $this->Space->spaceMaker();
 
                 echo $this->Html->link(
-                    'Comment', array('action' => 'comment', $post['Post']['id'])
+                    'Comment', array('controller' => 'comments', $post['Post']['id'])
                 );
+                echo ' ' . count($ogPost['Comment']) . ' comment(s)';
                 $this->Space->spaceMaker();
 
                 echo $this->Form->postlink(
-                    'Follow', array('action' => 'follow', $post['Post']['id'])
+                    'Follow User', array('controller' => 'followers', 'action' => 'follow', $post['User']['id'])
                 );
                 ?>
             </span>
