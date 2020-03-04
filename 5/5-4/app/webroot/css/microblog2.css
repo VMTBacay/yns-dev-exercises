@@ -787,3 +787,7 @@ pre {
     position: absolute;
     top: 20px;
 }
+
+.highlight {
+    background-color: yellow;
+}

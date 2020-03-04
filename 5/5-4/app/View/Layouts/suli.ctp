@@ -6,7 +6,7 @@
     <!-- Include external files and scripts here (See HTML helper for more info.) -->
     <?php
     echo $this->Html->meta('icon');
-    echo $this->HTML->css('microblog.default');
+    echo $this->HTML->css('microblog2');
     echo $this->fetch('script');
     ?>
 </head>
@@ -24,6 +24,7 @@
     </div>
     <div id="content">
         <!-- Here's where I want my views to be displayed -->
+        <?php echo $this->Flash->render();?>
         <?php echo $this->fetch('content'); ?>
     </div>
 </body>

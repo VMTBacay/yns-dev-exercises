@@ -31,4 +31,9 @@ App::uses('Controller', 'Controller');
  * @link		https://book.cakephp.org/2.0/en/controllers.html#the-app-controller
  */
 class AppController extends Controller {
+    public function beforeFilter() {
+        if ($this->Session->read('User.id') === null) {
+            return $this->redirect(array('controller' => 'users', 'action' => 'signUp'));
+        }
+    }
 }

@@ -14,6 +14,8 @@ class UsersController extends AppController {
     public $helpers = array('Html', 'Form', 'Flash');
     public $components = array('Flash', 'Session');
 
+    public function beforeFilter() {
+    }
 
     public function signUp() {
         $this->layout = 'suli';
@@ -75,9 +77,12 @@ class UsersController extends AppController {
 
         if ($this->request->is('post')) {
             $user = $this->User->findByUsername($this->request->data['User']['username']);
-            if ($user['User']['password'] === $this->request->data['User']['password'] && $user['User']['activated']) {
+
+            if (!empty($user) && $user['User']['password'] === $this->request->data['User']['password'] && $user['User']['activated']) {
                 $this->Session->write('User', $user['User']);
                 return $this->redirect(array('controller' => 'posts'));
+            } else {
+                $this->Flash->error(__('Invalid username/password.'));
             }
         }
     }
@@ -96,9 +101,10 @@ class UsersController extends AppController {
             if ($this->User->save($this->request->data)) {
                 $this->Flash->success(__('Your username has been updated.'));
                 $this->Session->write('User.username', $this->request->data['User']['username']);
-                return $this->redirect(array('controller' => 'posts', 'action' => 'index')));
+                return $this->redirect(array('controller' => 'posts', 'action' => 'index'));
             }
             $this->Flash->error(__('Unable to update your username.'));
+            return $this->redirect(array('controller' => 'posts', 'action' => 'index'));
         }
     }
 
@@ -121,9 +127,10 @@ class UsersController extends AppController {
                 if ($this->User->save($this->request->data)) {
                     $this->Flash->success(__('Your password has been updated.'));
                     $this->Session->write('User.password', $this->request->data['User']['password']);
-                    return $this->redirect(array('controller' => 'posts', 'action' => 'index')));
+                    return $this->redirect(array('controller' => 'posts', 'action' => 'index'));
                 }
                 $this->Flash->error(__('Unable to update your password.'));
+                return $this->redirect(array('controller' => 'posts', 'action' => 'index'));
             }
         }
     }
@@ -134,7 +141,7 @@ class UsersController extends AppController {
         $this->User->validator()->remove('email');
 
         if ($this->request->is('post')) {
-            $this->User->id = $this->Session->read('User.id'); 
+            $this->User->id = $this->Session->read('User.id');
             $this->request->data['User']['modified'] = date("Y-m-d H:i:s");
             $img_name = explode('.', $this->request->data['User']['pic']['name']);
             $target_dir = 'C:/xampp/htdocs' . $this->webroot . 'app/webroot/img/';
@@ -146,13 +153,14 @@ class UsersController extends AppController {
             }
             $this->request->data['User']['profile_pic'] = basename($target_file);
             if ($this->User->save($this->request->data)) {
-                
+
                 move_uploaded_file($this->request->data['User']['pic']['tmp_name'], $target_file);
                 $this->Flash->success(__('Your profile picture has been updated.'));
                 $this->Session->write('User.profile_pic', basename($target_file));
-                return $this->redirect(array('controller' => 'posts', 'action' => 'index')));
+                return $this->redirect(array('controller' => 'posts', 'action' => 'index'));
             }
             $this->Flash->error(__('Unable to update your profile picture.'));
+            return $this->redirect(array('controller' => 'posts', 'action' => 'index'));
         }
     }
 }

@@ -5,7 +5,7 @@
     <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
     <?php
     echo $this->Html->meta('icon');
-    echo $this->HTML->css('hello.world');
+    echo $this->HTML->css('microblog2');
     ?>
 </head>
 <body>
@@ -13,7 +13,7 @@
        <span class="home"><?php echo $this->Html->link('Home', array('controller' => 'posts', 'action' => 'index'), array('style' => 'color: white;')); ?></span>
         <span style="float: right;">
             <table style="border-collapse: collapse; border-style: hidden;">
-                <?php echo $this->Form->create('Search'); ?>
+                <?php echo $this->Form->create('Search', array('url' => array('controller' => 'searches'))); ?>
                 <tr>
                     <td><?php echo $this->Form->input('terms', array('label' => '', 'type' => 'text', 'style' => 'width: 200px')); ?></td>
                     <td><?php echo $this->Form->end('Search'); ?></td>
@@ -26,7 +26,7 @@
         <?php
         echo $this->Html->image($this->Session->read('User.profile_pic'), array('height' => '150px', 'width' => '150px'));
         echo $this->Session->read('User.username');
-        echo $this->Html->link('Posts', array('controller' => 'posts', 'action' => 'userPosts'));
+        echo $this->Html->link('Your Posts', array('controller' => 'posts', 'action' => 'index', 1));
         echo $this->Html->link('Following', array('controller' => 'followers', 'action' => 'following'));
         echo $this->Html->link('Followers', array('controller' => 'followers', 'action' => 'index'));
         echo $this->Html->link('Edit Username', array('controller' => 'users', 'action' => 'editUsername'));

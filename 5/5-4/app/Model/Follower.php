@@ -1,6 +1,12 @@
 <?php
 class Follower extends AppModel {
-    public $belongsTo = 'User';
+    public $belongsTo = array(
+        'User',
+        'FollowerProfile' => array(
+            'className' => 'User',
+            'foreignKey' => 'follower_id'
+        )
+    );
 
     public $validate = array(
         'follower_id' =>  array(

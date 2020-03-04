@@ -3,14 +3,36 @@ class PostsController extends AppController {
     public $helpers = array('Html', 'Form', 'Flash', 'Space');
     public $components = array('Flash', 'Session');
 
-    public $uses = array('Post', 'Repost', 'Like', 'Comment');
+    public $uses = array('Post', 'Repost', 'Like', 'Comment', 'Follower');
 
-    public function index() {
-        if ($this->Session->read('User.id') === null) {
-            return $this->redirect(array('controller' => 'users', 'action' => 'signUp'));
+    public function index($userOnly = null) {
+        $this->set('userOnly', $userOnly);
+
+        $follows = array($this->Session->read('User.id'));
+        if ($userOnly === null) {
+            $followIds = $this->Follower->find('all', array(
+                'conditions' => array('follower_id' => $this->Session->read('User.id'), 'Follower.deleted' => 0),
+                'fields' => 'user_id'
+            ));
+            foreach ($followIds as $followId) {
+                array_push($follows, $followId['Follower']['user_id']);
+            }    
         }
-        $this->set('reposts', $this->Repost->findAllByUserIdAndDeleted($this->Session->read('User.id'), 0));
-        $this->set('posts', $this->Post->findAllByUserIdAndDeleted($this->Session->read('User.id'), 0));
+        $this->set('follows', $follows);
+
+        $repostPostIds = $this->Repost->find('all', array(
+            'conditions' => array('Repost.user_id' => $follows, 'Repost.deleted' => 0),
+            'fields' => 'post_id'
+        ));
+        $repostPosts = array();
+        foreach ($repostPostIds as $repostPostId) {
+            array_push($repostPosts, $repostPostId['Repost']['post_id']);
+        }
+        $this->set('repostPosts', $this->Post->findAllByIdAndDeleted($repostPosts, 0));
+
+        $this->set('reposts', $this->Repost->findAllByUserIdAndDeleted($follows, 0));
+
+        $this->set('posts', $this->Post->findAllByUserIdAndDeleted($follows, 0));
     }
 
     public function add() {
