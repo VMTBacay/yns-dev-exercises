@@ -1,9 +1,11 @@
 <?php
 class CommentsController extends AppController {
     public $helpers = array('Html', 'Form', 'Flash', 'Space');
-    public $components = array('Flash', 'Session');
+    public $components = array('Flash', 'Session', 'Paginator');
 
     public $uses = array('Post', 'Comment');
+
+    const PAGE_LIMIT = 5;
 
     public function index($id = null) {
         if (!$id) {
@@ -16,7 +18,11 @@ class CommentsController extends AppController {
         }
         $this->set('post', $post);
 
-        $this->set('comments', $this->Comment->findAllByPostIdAndDeleted($id, 0));
+        $this->Paginator->settings = array(
+            'conditions' => array('Comment.post_id' => $id, 'Comment.deleted' => 0),
+            'limit' => self::PAGE_LIMIT
+        );
+        $this->set('comments', $this->Paginator->paginate('Comment'));
 
         if ($this->request->is('post')) {
             $this->Comment->create();
@@ -24,9 +30,10 @@ class CommentsController extends AppController {
             $this->request->data['Comment']['post_id'] = $id;
             if ($this->Comment->save($this->request->data)) {
                 $this->Flash->success(__('Your comment has been added.'));
-                return $this->redirect(array('action' => 'index', $id));
+                return $this->redirect($this->referer());
             }
             $this->Flash->error(__('Unable to add your comment.'));
+            return $this->redirect($this->referer());
         }
     }
 
@@ -48,6 +55,7 @@ class CommentsController extends AppController {
                 return $this->redirect(array('action' => 'index', $comment['Post']['id']));
             }
             $this->Flash->error(__('Unable to update your comment.'));
+            return $this->redirect($this->referer());
         }
 
         if (!$this->request->data) {
@@ -72,11 +80,10 @@ class CommentsController extends AppController {
         if ($this->request->is(array('post'))) {
             if ($this->Comment->save(array('id' => $id, 'deleted' => 1, 'deleted_date' => date("Y-m-d H:i:s")))) {
                 $this->Flash->success(__('Your comment has been deleted.'));
-                return $this->redirect(array('action' => 'index', $comment['Post']['id']));
+                return $this->redirect($this->referer());
             }
             $this->Flash->error(__('Unable to delete your comment.'));
         }
-
-        return $this->redirect(array('action' => 'index', $comment['Post']['id']));
+        return $this->redirect($this->referer());
     }
 }

@@ -1,7 +1,9 @@
 <?php
 class FollowersController extends AppController {
     public $helpers = array('Html', 'Form', 'Flash', 'Space');
-    public $components = array('Flash', 'Session');
+    public $components = array('Flash', 'Session', 'Paginator');
+
+    const PAGE_LIMIT = 5;
 
     public function index() {
         $followIds = $this->Follower->find('all', array(
@@ -14,11 +16,19 @@ class FollowersController extends AppController {
         }
         $this->set('follows', $follows);
 
-       $this->set('followers', $this->Follower->findAllByUserIdAndDeleted($this->Session->read('User.id'), 0));
+        $this->Paginator->settings = array(
+            'conditions' => array('Follower.user_id' => $this->Session->read('User.id'), 'Follower.deleted' => 0),
+            'limit' => self::PAGE_LIMIT
+        );
+       $this->set('followers', $this->Paginator->paginate('Follower'));
     }
 
     public function following() {
-       $this->set('follows', $this->Follower->findAllByFollowerIdAndDeleted($this->Session->read('User.id'), 0));
+        $this->Paginator->settings = array(
+            'conditions' => array('Follower.follower_id' => $this->Session->read('User.id'), 'Follower.deleted' => 0),
+            'limit' => self::PAGE_LIMIT
+        );
+        $this->set('follows', $this->Paginator->paginate('Follower'));
     }
 
     public function follow($id) {

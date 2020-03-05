@@ -11,6 +11,10 @@ class User extends AppModel {
             'between' => array(
                 'rule' => array('lengthBetween', 5, 15),
                 'message' => 'Between 5 to 15 characters'
+            ),
+            'isUnique' => array(
+                'rule' => 'isUnique',
+                'message' => 'Username taken'
             )
         ),
         'password' => array(
@@ -20,10 +24,16 @@ class User extends AppModel {
             'message' => 'Minimum 8 characters long'
         ),
         'email' =>  array(
-            'rule' => 'email',
-            'required' => true,
-            'allowEmpty' => false,
-            'message' => 'Invalid email'
+            'mail' => array(
+                'rule' => 'email',
+                'required' => true,
+                'allowEmpty' => false,
+                'message' => 'Invalid email'
+            ),
+            'isUnique' => array(
+                'rule' => 'isUnique',
+                'message' => 'Email taken'
+            )
         )
     );
 

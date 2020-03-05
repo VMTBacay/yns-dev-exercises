@@ -1,42 +1,13 @@
-<h1>Add Post</h1>
+<h1>Post Search Results</h1>
+
+<h1>Posts with "<?php echo h($terms) ?>" in their title or body</h1>
 <?php
-echo $this->Form->create('Post', array('type' => 'file', 'url' => array('action' => 'add')));
-echo $this->Form->input('title');
-echo $this->Form->input('body', array('rows' => '3'));
-echo $this->Form->file('Post.pic');
-echo $this->Form->end('Save Post');
-
-$allPosts = array_merge($posts, $reposts);
-usort($allPosts, function($b, $a) {
-    $x = !array_key_exists('Like', $a) ? 'Repost' : 'Post';
-    $y = !array_key_exists('Like', $b) ? 'Repost' : 'Post';
-     return strtotime($a[$x]['created']) - strtotime($b[$y]['created']);
-});
-
-define('PAGE_LIMIT', 5);
-$postCount = count($allPosts);
-$pages = ceil($postCount / PAGE_LIMIT);
-$page = min($pages, array_key_exists('page', $this->params['url']) ? $this->params['url']['page'] : 1);
-$offset = ($page - 1)  * PAGE_LIMIT;
-$end = min(($offset + PAGE_LIMIT), $postCount);
+foreach ($posts as $post):
 ?>
-
-<h1><?php echo $userOnly === null ? 'Posts' : 'Your Posts' ?></h1>
-<?php for ($i = $offset; $i < $end; $i++): ?>
     <div style="border-style: solid;">
         <div style="margin: 10px; display : flex; justify-content: space-between;">
             <span style="display: inline-flex; align-items: center;">
                 <?php
-                $post = $allPosts[$i];
-
-                if (!array_key_exists('Like', $post)) {
-                    foreach ($repostPosts as $repostPost) {
-                        if ($repostPost['Post']['id'] === $post['Post']['id']) {
-                            $post = $repostPost;
-                        }
-                    }
-                }
-
                 echo $this->Html->image($post['User']['profile_pic'], array('height' => '50', 'width' => '50'));
                 $this->Space->spaceMaker();
                 echo h($post['User']['username']) . ' says:&nbsp;';
@@ -45,8 +16,8 @@ $end = min(($offset + PAGE_LIMIT), $postCount);
             </span>
             <span style="color: gray">
                 <?php
-                if (!array_key_exists('Like', $allPosts[$i])) {
-                    echo 'Reposted on: ' . h($allPosts[$i]['Repost']['created']) . ' by ' . h($allPosts[$i]['User']['username']);
+                if (!array_key_exists('Like', $post)) {
+                    echo 'Reposted on: ' . h($post['Repost']['created']) . ' by ' . h($post['User']['username']);
                 }
                 ?>
             </span>
@@ -138,37 +109,18 @@ $end = min(($offset + PAGE_LIMIT), $postCount);
             </span>
         </div>
     </div>
-<?php endfor; ?>
-
+<?php endforeach; ?>
 <div style="text-align: center;">
     <?php
-    if ($page != 1) {
-        echo $this->Html->link('<<first', $this->Html->url(array(
-            'controller' => 'posts',
-            'action' => 'index',
-            "?" => array('page' => 1)
-        )));
-        echo  ' ';
-        echo $this->Html->link('<<Previous', $this->Html->url(array(
-            'controller' => 'posts',
-            'action' => 'index',
-            "?" => array('page' => $page - 1)
-        )));
+    if ($this->Paginator->first()) {
+        echo $this->Paginator->first() . ' ';
+        echo $this->Paginator->prev();
         $this->Space->spaceMaker();
     }
 
-    if ($page != $pages) {
-        echo $this->Html->link('Next>>', $this->Html->url(array(
-            'controller' => 'posts',
-            'action' => 'index',
-            "?" => array('page' => $page + 1)
-        )));
-        echo ' ';
-        echo $this->Html->link('last>>', $this->Html->url(array(
-            'controller' => 'posts',
-            'action' => 'index',
-            "?" => array('page' => $pages)
-        )));
+    if ($this->Paginator->last()) {
+        echo $this->Paginator->next() . ' ';
+        echo $this->Paginator->last();
     }
     ?>
 </div>

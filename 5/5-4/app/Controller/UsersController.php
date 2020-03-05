@@ -104,7 +104,22 @@ class UsersController extends AppController {
                 return $this->redirect(array('controller' => 'posts', 'action' => 'index'));
             }
             $this->Flash->error(__('Unable to update your username.'));
-            return $this->redirect(array('controller' => 'posts', 'action' => 'index'));
+        }
+    }
+
+    public function editEmail() {
+        $this->User->validator()->remove('username');
+        $this->User->validator()->remove('password');
+
+        if ($this->request->is('post')) {
+            $this->User->id = $this->Session->read('User.id');
+            $this->request->data['User']['modified'] = date("Y-m-d H:i:s");
+            if ($this->User->save($this->request->data)) {
+                $this->Flash->success(__('Your email has been updated.'));
+                $this->Session->write('User.email', $this->request->data['User']['email']);
+                return $this->redirect(array('controller' => 'posts', 'action' => 'index'));
+            }
+            $this->Flash->error(__('Unable to update your email.'));
         }
     }
 
@@ -130,7 +145,6 @@ class UsersController extends AppController {
                     return $this->redirect(array('controller' => 'posts', 'action' => 'index'));
                 }
                 $this->Flash->error(__('Unable to update your password.'));
-                return $this->redirect(array('controller' => 'posts', 'action' => 'index'));
             }
         }
     }
@@ -144,7 +158,7 @@ class UsersController extends AppController {
             $this->User->id = $this->Session->read('User.id');
             $this->request->data['User']['modified'] = date("Y-m-d H:i:s");
             $img_name = explode('.', $this->request->data['User']['pic']['name']);
-            $target_dir = 'C:/xampp/htdocs' . $this->webroot . 'app/webroot/img/';
+            $target_dir = dirname(APP) . '/app/webroot/img/';
             $target_file = $target_dir . $img_name[0] . '.' . $img_name[1];
             $i = 1;
             while (file_exists($target_file)) {
@@ -160,7 +174,6 @@ class UsersController extends AppController {
                 return $this->redirect(array('controller' => 'posts', 'action' => 'index'));
             }
             $this->Flash->error(__('Unable to update your profile picture.'));
-            return $this->redirect(array('controller' => 'posts', 'action' => 'index'));
         }
     }
 }

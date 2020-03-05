@@ -16,7 +16,7 @@ class PostsController extends AppController {
             ));
             foreach ($followIds as $followId) {
                 array_push($follows, $followId['Follower']['user_id']);
-            }    
+            }
         }
         $this->set('follows', $follows);
 
@@ -28,9 +28,13 @@ class PostsController extends AppController {
         foreach ($repostPostIds as $repostPostId) {
             array_push($repostPosts, $repostPostId['Repost']['post_id']);
         }
-        $this->set('repostPosts', $this->Post->findAllByIdAndDeleted($repostPosts, 0));
+        $this->set('repostPosts', $this->Post->findAllById($repostPosts, 0));
 
-        $this->set('reposts', $this->Repost->findAllByUserIdAndDeleted($follows, 0));
+        $this->set('reposts', $this->Repost->find('all', array('conditions' => array(
+            'Repost.user_id' => $follows,
+            'Repost.deleted' => 0,
+            'Post.deleted' => 0,
+        ))));
 
         $this->set('posts', $this->Post->findAllByUserIdAndDeleted($follows, 0));
     }
@@ -39,7 +43,23 @@ class PostsController extends AppController {
         if ($this->request->is('post')) {
             $this->Post->create();
             $this->request->data['Post']['user_id'] = $this->Session->read('User.id');
+
+            if (!$this->request->data['Post']['pic']['error']) {
+                $img_name = explode('.', $this->request->data['Post']['pic']['name']);
+                $target_dir = dirname(APP) . '/app/webroot/img/';
+                $target_file = $target_dir . $img_name[0] . '.' . $img_name[1];
+                $i = 1;
+                while (file_exists($target_file)) {
+                    $target_file = $target_dir . $img_name[0] . $i . '.' . $img_name[1];
+                    $i++;
+                }
+                $this->request->data['Post']['image'] = basename($target_file);
+            }
+            
             if ($this->Post->save($this->request->data)) {
+                if ($this->request->data['Post']['pic']['name'] !== null) {
+                    move_uploaded_file($this->request->data['Post']['pic']['tmp_name'], $target_file);
+                }
                 $this->Flash->success(__('Your post has been saved.'));
                 return $this->redirect(array('action' => 'index'));
             }
@@ -60,9 +80,25 @@ class PostsController extends AppController {
         if ($this->request->is(array('post', 'put'))) {
             $this->Post->id = $id;
             $this->request->data['Post']['modified'] = date("Y-m-d H:i:s");
+
+            if (!$this->request->data['Post']['pic']['error']) {
+                $img_name = explode('.', $this->request->data['Post']['pic']['name']);
+                $target_dir = dirname(APP) . '/app/webroot/img/';
+                $target_file = $target_dir . $img_name[0] . '.' . $img_name[1];
+                $i = 1;
+                while (file_exists($target_file)) {
+                    $target_file = $target_dir . $img_name[0] . $i . '.' . $img_name[1];
+                    $i++;
+                }
+                $this->request->data['Post']['image'] = basename($target_file);
+            }
+
             if ($this->Post->save($this->request->data)) {
+                if ($this->request->data['Post']['pic']['name'] !== null) {
+                    move_uploaded_file($this->request->data['Post']['pic']['tmp_name'], $target_file);
+                }
                 $this->Flash->success(__('Your post has been updated.'));
-                return $this->redirect(array('action' => 'index'));
+                return $this->redirect($this->referer());
             }
             $this->Flash->error(__('Unable to update your post.'));
         }
@@ -86,15 +122,17 @@ class PostsController extends AppController {
             throw new NotFoundException(__('Invalid post'));
         }
 
-        if ($this->request->is(array('post'))) {
+        $this->Post->validator()->remove('title');
+        $this->Post->validator()->remove('body');
+
+        if ($this->request->is('post')) {
             if ($this->Post->save(array('id' => $id, 'deleted' => 1, 'deleted_date' => date("Y-m-d H:i:s")))) {
                 $this->Flash->success(__('Your post has been deleted.'));
-                return $this->redirect(array('action' => 'index'));
+                return $this->redirect($this->referer());
             }
             $this->Flash->error(__('Unable to delete your post.'));
+            return $this->redirect($this->referer());
         }
-
-        return $this->redirect(array('action' => 'index'));
     }
 
     public function repost($id) {
@@ -111,10 +149,10 @@ class PostsController extends AppController {
             }
             if ($this->Repost->save($this->request->data)) {
                 $this->Flash->success(__('Successfully reposted.'));
-                return $this->redirect(array('action' => 'index'));
+                return $this->redirect($this->referer());
             }
             $this->Flash->error(__('Unable to repost that post.'));
-            return $this->redirect(array('action' => 'index'));
+            return $this->redirect($this->referer());
         }
     }
 
@@ -135,11 +173,11 @@ class PostsController extends AppController {
         if ($this->request->is(array('post'))) {
             if ($this->Repost->save(array('id' => $id, 'deleted' => 1, 'deleted_date' => date("Y-m-d H:i:s")))) {
                 $this->Flash->success(__('Your repost has been undone.'));
-                return $this->redirect(array('action' => 'index'));
+                return $this->redirect($this->referer());
             }
             $this->Flash->error(__('Unable to undo your repost.'));
         }
-        return $this->redirect(array('action' => 'index'));
+        return $this->redirect($this->referer());
     }
 
     public function like($id) {
@@ -156,11 +194,11 @@ class PostsController extends AppController {
             }
             if ($this->Like->save($this->request->data)) {
                 $this->Flash->success(__('Successfully liked.'));
-                return $this->redirect(array('action' => 'index'));
+                return $this->redirect($this->referer());
             }
             $this->Flash->error(__('Unable to like that post.'));
+            return $this->redirect($this->referer());
         }
-        return $this->redirect(array('action' => 'index'));
     }
 
     public function undoLike($id) {
@@ -180,11 +218,11 @@ class PostsController extends AppController {
         if ($this->request->is(array('post'))) {
             if ($this->Like->save(array('id' => $id, 'deleted' => 1, 'deleted_date' => date("Y-m-d H:i:s")))) {
                 $this->Flash->success(__('Your like has been undone.'));
-                return $this->redirect(array('action' => 'index'));
+                return $this->redirect($this->referer());
             }
             $this->Flash->error(__('Unable to undo your like.'));
+            return $this->redirect($this->referer());
         }
-        return $this->redirect(array('action' => 'index'));
     }
 
     public function logout() {

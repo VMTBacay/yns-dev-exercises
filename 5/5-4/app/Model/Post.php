@@ -19,10 +19,16 @@ class Post extends AppModel {
 
     public $validate = array(
         'title' => array(
-            'rule' => 'notBlank'
+            'rule' => array('maxLength', '50'),
+            'required' => true,
+            'allowEmpty' => false,
+            'message' => 'Maximum 50 characters long'
         ),
         'body' => array(
-            'rule' => 'notBlank'
+            'rule' => array('maxLength', '140'),
+            'required' => true,
+            'allowEmpty' => false,
+            'message' => 'Minimum 140 characters long'
         )
     );
 }

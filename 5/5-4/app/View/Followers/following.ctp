@@ -6,7 +6,7 @@
                 <?php
                 echo $this->Html->image($follow['User']['profile_pic'], array('height' => '50', 'width' => '50'));
                 $this->Space->spaceMaker();
-                echo $follow['User']['username']
+                echo h($follow['User']['username']);
                 ?>
             </span>
             <span>
@@ -19,3 +19,17 @@
         </div>
     </div>
 <?php endforeach; ?>
+<div style="text-align: center;">
+    <?php
+    if ($this->Paginator->first()) {
+        echo $this->Paginator->first() . ' ';
+        echo $this->Paginator->prev();
+        $this->Space->spaceMaker();
+    }
+
+    if ($this->Paginator->last()) {
+        echo $this->Paginator->next() . ' ';
+        echo $this->Paginator->last();
+    }
+    ?>
+</div>

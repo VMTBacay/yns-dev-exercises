@@ -13,7 +13,7 @@
        <span class="home"><?php echo $this->Html->link('Home', array('controller' => 'posts', 'action' => 'index'), array('style' => 'color: white;')); ?></span>
         <span style="float: right;">
             <table style="border-collapse: collapse; border-style: hidden;">
-                <?php echo $this->Form->create('Search', array('url' => array('controller' => 'searches'))); ?>
+                <?php echo $this->Form->create('Search', array('url' => array('controller' => 'searches', 'action' => 'index'), 'type' => 'get')); ?>
                 <tr>
                     <td><?php echo $this->Form->input('terms', array('label' => '', 'type' => 'text', 'style' => 'width: 200px')); ?></td>
                     <td><?php echo $this->Form->end('Search'); ?></td>
@@ -31,6 +31,7 @@
         echo $this->Html->link('Followers', array('controller' => 'followers', 'action' => 'index'));
         echo $this->Html->link('Edit Username', array('controller' => 'users', 'action' => 'editUsername'));
         echo $this->Html->link('Edit Password', array('controller' => 'users', 'action' => 'editPassword'));
+        echo $this->Html->link('Edit Email', array('controller' => 'users', 'action' => 'editEmail'));
         echo $this->Html->link('Edit Profile Picture', array('controller' => 'users', 'action' => 'editProfilePic'));
         ?>
     </div>
