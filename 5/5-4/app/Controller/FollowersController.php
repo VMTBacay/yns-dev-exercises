@@ -1,26 +1,23 @@
 <?php
 class FollowersController extends AppController {
-    public $helpers = array('Html', 'Form', 'Flash', 'Space');
     public $components = array('Flash', 'Session', 'Paginator');
 
     const PAGE_LIMIT = 5;
 
     public function index() {
-        $followIds = $this->Follower->find('all', array(
-            'conditions' => array('follower_id' => $this->Session->read('User.id'), 'Follower.deleted' => 0),
-            'fields' => 'user_id'
-        ));
-        $follows = array($this->Session->read('User.id'));
-        foreach ($followIds as $followId) {
-            array_push($follows, $followId['Follower']['user_id']);
-        }
-        $this->set('follows', $follows);
-
         $this->Paginator->settings = array(
             'conditions' => array('Follower.user_id' => $this->Session->read('User.id'), 'Follower.deleted' => 0),
             'limit' => self::PAGE_LIMIT
         );
-       $this->set('followers', $this->Paginator->paginate('Follower'));
+
+        try {
+            $this->set('followers', $this->Paginator->paginate('Follower'));
+        } catch (Exception $e) {
+            return $this->redirect(array_merge(
+                array('action' => 'index'),
+                array('page' => ceil(count($this->Follower->findAllByUserIdAndDeleted($this->Session->read('User.id'), 0)) / self::PAGE_LIMIT
+            ))));
+        }
     }
 
     public function following() {
@@ -28,7 +25,15 @@ class FollowersController extends AppController {
             'conditions' => array('Follower.follower_id' => $this->Session->read('User.id'), 'Follower.deleted' => 0),
             'limit' => self::PAGE_LIMIT
         );
-        $this->set('follows', $this->Paginator->paginate('Follower'));
+
+        try {
+            $this->set('follows', $this->Paginator->paginate('Follower'));
+        } catch (Exception $e) {
+            return $this->redirect(array_merge(
+                array('action' => 'index'),
+                array('page' => ceil(count($this->Follower->findAllByFollowerIdAndDeleted($this->Session->read('User.id'), 0)) / self::PAGE_LIMIT
+            ))));
+        }
     }
 
     public function follow($id) {
@@ -45,6 +50,10 @@ class FollowersController extends AppController {
             }
             if ($this->Follower->save($this->request->data)) {
                 $this->Flash->success(__('Successfully followed.'));
+
+                $follows = $this->Session->read('User.follows');
+                array_push($follows, $id);
+                $this->Session->write('User.follows', $follows);
                 return $this->redirect($this->referer());
             }
             $this->Flash->error(__('Unable to follow that user.'));
@@ -66,6 +75,9 @@ class FollowersController extends AppController {
 
             if ($this->Follower->save(array('id' => $followId, 'deleted' => 1, 'deleted_date' => date("Y-m-d H:i:s")))) {
                 $this->Flash->success(__('Successfully unfollowed.'));
+                $follows = $this->Session->read('User.follows');
+                unset($follows[array_search($id, $follows)]);
+                $this->Session->write('User.follows', $follows);
                 return $this->redirect($this->referer());
             }
             $this->Flash->error(__('Unable to unfollow.'));

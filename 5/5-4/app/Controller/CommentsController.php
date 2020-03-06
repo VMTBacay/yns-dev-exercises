@@ -1,9 +1,8 @@
 <?php
 class CommentsController extends AppController {
-    public $helpers = array('Html', 'Form', 'Flash', 'Space');
     public $components = array('Flash', 'Session', 'Paginator');
 
-    public $uses = array('Post', 'Comment');
+    public $uses = array('Post', 'Comment', 'Follower');
 
     const PAGE_LIMIT = 5;
 
@@ -20,9 +19,18 @@ class CommentsController extends AppController {
 
         $this->Paginator->settings = array(
             'conditions' => array('Comment.post_id' => $id, 'Comment.deleted' => 0),
-            'limit' => self::PAGE_LIMIT
+            'limit' => self::PAGE_LIMIT,
+            'order' => array('Comment.created' => 'desc')
         );
-        $this->set('comments', $this->Paginator->paginate('Comment'));
+
+        try {
+            $this->set('comments', $this->Paginator->paginate('Comment'));
+        } catch (Exception $e) {
+            return $this->redirect(array_merge(
+                array('action' => 'index', $id),
+                array('page' => ceil(count($this->Comment->findAllByPostIdAndDeleted($id, 0)) / self::PAGE_LIMIT
+            ))));
+        }
 
         if ($this->request->is('post')) {
             $this->Comment->create();
@@ -30,7 +38,7 @@ class CommentsController extends AppController {
             $this->request->data['Comment']['post_id'] = $id;
             if ($this->Comment->save($this->request->data)) {
                 $this->Flash->success(__('Your comment has been added.'));
-                return $this->redirect($this->referer());
+                return $this->redirect(array('action' => 'index', $id));
             }
             $this->Flash->error(__('Unable to add your comment.'));
             return $this->redirect($this->referer());

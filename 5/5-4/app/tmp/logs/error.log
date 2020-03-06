@@ -7917,3 +7917,874 @@ Stack Trace:
 #10 C:\xampp\htdocs\yns-dev-exercises\5\5-4\lib\Cake\Routing\Dispatcher.php(167): Dispatcher->_invoke(Object(UsersController), Object(CakeRequest))
 #11 C:\xampp\htdocs\yns-dev-exercises\5\5-4\app\webroot\index.php(117): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
 #12 {main}
+2020-03-06 02:46:02 Error: [MissingActionException] Action UsersController::favicon.ico() could not be found.
+Exception Attributes: array (
+  'controller' => 'UsersController',
+  'action' => 'favicon.ico',
+)
+Request URL: /users/favicon.ico
+Stack Trace:
+#0 C:\xampp\htdocs\yns-dev-exercises\5\5-4\lib\Cake\Routing\Dispatcher.php(193): Controller->invokeAction(Object(CakeRequest))
+#1 C:\xampp\htdocs\yns-dev-exercises\5\5-4\lib\Cake\Routing\Dispatcher.php(167): Dispatcher->_invoke(Object(UsersController), Object(CakeRequest))
+#2 C:\xampp\htdocs\yns-dev-exercises\5\5-4\app\webroot\index.php(117): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#3 {main}
+2020-03-06 02:46:31 Error: [MissingActionException] Action UsersController::favicon.ico() could not be found.
+Exception Attributes: array (
+  'controller' => 'UsersController',
+  'action' => 'favicon.ico',
+)
+Request URL: /users/favicon.ico
+Stack Trace:
+#0 C:\xampp\htdocs\yns-dev-exercises\5\5-4\lib\Cake\Routing\Dispatcher.php(193): Controller->invokeAction(Object(CakeRequest))
+#1 C:\xampp\htdocs\yns-dev-exercises\5\5-4\lib\Cake\Routing\Dispatcher.php(167): Dispatcher->_invoke(Object(UsersController), Object(CakeRequest))
+#2 C:\xampp\htdocs\yns-dev-exercises\5\5-4\app\webroot\index.php(117): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#3 {main}
+2020-03-06 02:47:21 Error: [MissingActionException] Action UsersController::favicon.ico() could not be found.
+Exception Attributes: array (
+  'controller' => 'UsersController',
+  'action' => 'favicon.ico',
+)
+Request URL: /users/favicon.ico
+Stack Trace:
+#0 C:\xampp\htdocs\yns-dev-exercises\5\5-4\lib\Cake\Routing\Dispatcher.php(193): Controller->invokeAction(Object(CakeRequest))
+#1 C:\xampp\htdocs\yns-dev-exercises\5\5-4\lib\Cake\Routing\Dispatcher.php(167): Dispatcher->_invoke(Object(UsersController), Object(CakeRequest))
+#2 C:\xampp\htdocs\yns-dev-exercises\5\5-4\app\webroot\index.php(117): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#3 {main}
+2020-03-06 02:47:39 Error: [MissingActionException] Action UsersController::favicon.ico() could not be found.
+Exception Attributes: array (
+  'controller' => 'UsersController',
+  'action' => 'favicon.ico',
+)
+Request URL: /users/favicon.ico
+Stack Trace:
+#0 C:\xampp\htdocs\yns-dev-exercises\5\5-4\lib\Cake\Routing\Dispatcher.php(193): Controller->invokeAction(Object(CakeRequest))
+#1 C:\xampp\htdocs\yns-dev-exercises\5\5-4\lib\Cake\Routing\Dispatcher.php(167): Dispatcher->_invoke(Object(UsersController), Object(CakeRequest))
+#2 C:\xampp\htdocs\yns-dev-exercises\5\5-4\app\webroot\index.php(117): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#3 {main}
+2020-03-06 02:48:47 Error: [MissingActionException] Action UsersController::favicon.ico() could not be found.
+Exception Attributes: array (
+  'controller' => 'UsersController',
+  'action' => 'favicon.ico',
+)
+Request URL: /users/favicon.ico
+Stack Trace:
+#0 C:\xampp\htdocs\yns-dev-exercises\5\5-4\lib\Cake\Routing\Dispatcher.php(193): Controller->invokeAction(Object(CakeRequest))
+#1 C:\xampp\htdocs\yns-dev-exercises\5\5-4\lib\Cake\Routing\Dispatcher.php(167): Dispatcher->_invoke(Object(UsersController), Object(CakeRequest))
+#2 C:\xampp\htdocs\yns-dev-exercises\5\5-4\app\webroot\index.php(117): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#3 {main}
+2020-03-06 02:49:00 Error: [MissingActionException] Action UsersController::favicon.ico() could not be found.
+Exception Attributes: array (
+  'controller' => 'UsersController',
+  'action' => 'favicon.ico',
+)
+Request URL: /users/favicon.ico
+Stack Trace:
+#0 C:\xampp\htdocs\yns-dev-exercises\5\5-4\lib\Cake\Routing\Dispatcher.php(193): Controller->invokeAction(Object(CakeRequest))
+#1 C:\xampp\htdocs\yns-dev-exercises\5\5-4\lib\Cake\Routing\Dispatcher.php(167): Dispatcher->_invoke(Object(UsersController), Object(CakeRequest))
+#2 C:\xampp\htdocs\yns-dev-exercises\5\5-4\app\webroot\index.php(117): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#3 {main}
+2020-03-06 02:49:21 Error: [MissingActionException] Action UsersController::favicon.ico() could not be found.
+Exception Attributes: array (
+  'controller' => 'UsersController',
+  'action' => 'favicon.ico',
+)
+Request URL: /users/favicon.ico
+Stack Trace:
+#0 C:\xampp\htdocs\yns-dev-exercises\5\5-4\lib\Cake\Routing\Dispatcher.php(193): Controller->invokeAction(Object(CakeRequest))
+#1 C:\xampp\htdocs\yns-dev-exercises\5\5-4\lib\Cake\Routing\Dispatcher.php(167): Dispatcher->_invoke(Object(UsersController), Object(CakeRequest))
+#2 C:\xampp\htdocs\yns-dev-exercises\5\5-4\app\webroot\index.php(117): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#3 {main}
+2020-03-06 02:50:05 Error: [MissingActionException] Action UsersController::favicon.ico() could not be found.
+Exception Attributes: array (
+  'controller' => 'UsersController',
+  'action' => 'favicon.ico',
+)
+Request URL: /users/favicon.ico
+Stack Trace:
+#0 C:\xampp\htdocs\yns-dev-exercises\5\5-4\lib\Cake\Routing\Dispatcher.php(193): Controller->invokeAction(Object(CakeRequest))
+#1 C:\xampp\htdocs\yns-dev-exercises\5\5-4\lib\Cake\Routing\Dispatcher.php(167): Dispatcher->_invoke(Object(UsersController), Object(CakeRequest))
+#2 C:\xampp\htdocs\yns-dev-exercises\5\5-4\app\webroot\index.php(117): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#3 {main}
+2020-03-06 02:50:24 Error: [MissingActionException] Action UsersController::favicon.ico() could not be found.
+Exception Attributes: array (
+  'controller' => 'UsersController',
+  'action' => 'favicon.ico',
+)
+Request URL: /users/favicon.ico
+Stack Trace:
+#0 C:\xampp\htdocs\yns-dev-exercises\5\5-4\lib\Cake\Routing\Dispatcher.php(193): Controller->invokeAction(Object(CakeRequest))
+#1 C:\xampp\htdocs\yns-dev-exercises\5\5-4\lib\Cake\Routing\Dispatcher.php(167): Dispatcher->_invoke(Object(UsersController), Object(CakeRequest))
+#2 C:\xampp\htdocs\yns-dev-exercises\5\5-4\app\webroot\index.php(117): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#3 {main}
+2020-03-06 02:50:28 Error: [MissingActionException] Action UsersController::favicon.ico() could not be found.
+Exception Attributes: array (
+  'controller' => 'UsersController',
+  'action' => 'favicon.ico',
+)
+Request URL: /users/favicon.ico
+Stack Trace:
+#0 C:\xampp\htdocs\yns-dev-exercises\5\5-4\lib\Cake\Routing\Dispatcher.php(193): Controller->invokeAction(Object(CakeRequest))
+#1 C:\xampp\htdocs\yns-dev-exercises\5\5-4\lib\Cake\Routing\Dispatcher.php(167): Dispatcher->_invoke(Object(UsersController), Object(CakeRequest))
+#2 C:\xampp\htdocs\yns-dev-exercises\5\5-4\app\webroot\index.php(117): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#3 {main}
+2020-03-06 02:51:22 Error: [MissingActionException] Action UsersController::favicon.ico() could not be found.
+Exception Attributes: array (
+  'controller' => 'UsersController',
+  'action' => 'favicon.ico',
+)
+Request URL: /users/favicon.ico
+Stack Trace:
+#0 C:\xampp\htdocs\yns-dev-exercises\5\5-4\lib\Cake\Routing\Dispatcher.php(193): Controller->invokeAction(Object(CakeRequest))
+#1 C:\xampp\htdocs\yns-dev-exercises\5\5-4\lib\Cake\Routing\Dispatcher.php(167): Dispatcher->_invoke(Object(UsersController), Object(CakeRequest))
+#2 C:\xampp\htdocs\yns-dev-exercises\5\5-4\app\webroot\index.php(117): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#3 {main}
+2020-03-06 02:51:40 Error: [MissingActionException] Action UsersController::favicon.ico() could not be found.
+Exception Attributes: array (
+  'controller' => 'UsersController',
+  'action' => 'favicon.ico',
+)
+Request URL: /users/favicon.ico
+Stack Trace:
+#0 C:\xampp\htdocs\yns-dev-exercises\5\5-4\lib\Cake\Routing\Dispatcher.php(193): Controller->invokeAction(Object(CakeRequest))
+#1 C:\xampp\htdocs\yns-dev-exercises\5\5-4\lib\Cake\Routing\Dispatcher.php(167): Dispatcher->_invoke(Object(UsersController), Object(CakeRequest))
+#2 C:\xampp\htdocs\yns-dev-exercises\5\5-4\app\webroot\index.php(117): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#3 {main}
+2020-03-06 02:51:55 Error: [MissingActionException] Action UsersController::favicon.ico() could not be found.
+Exception Attributes: array (
+  'controller' => 'UsersController',
+  'action' => 'favicon.ico',
+)
+Request URL: /users/favicon.ico
+Stack Trace:
+#0 C:\xampp\htdocs\yns-dev-exercises\5\5-4\lib\Cake\Routing\Dispatcher.php(193): Controller->invokeAction(Object(CakeRequest))
+#1 C:\xampp\htdocs\yns-dev-exercises\5\5-4\lib\Cake\Routing\Dispatcher.php(167): Dispatcher->_invoke(Object(UsersController), Object(CakeRequest))
+#2 C:\xampp\htdocs\yns-dev-exercises\5\5-4\app\webroot\index.php(117): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#3 {main}
+2020-03-06 02:53:57 Error: [MissingActionException] Action UsersController::favicon.ico() could not be found.
+Exception Attributes: array (
+  'controller' => 'UsersController',
+  'action' => 'favicon.ico',
+)
+Request URL: /users/favicon.ico
+Stack Trace:
+#0 C:\xampp\htdocs\yns-dev-exercises\5\5-4\lib\Cake\Routing\Dispatcher.php(193): Controller->invokeAction(Object(CakeRequest))
+#1 C:\xampp\htdocs\yns-dev-exercises\5\5-4\lib\Cake\Routing\Dispatcher.php(167): Dispatcher->_invoke(Object(UsersController), Object(CakeRequest))
+#2 C:\xampp\htdocs\yns-dev-exercises\5\5-4\app\webroot\index.php(117): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#3 {main}
+2020-03-06 02:54:08 Error: [MissingActionException] Action UsersController::favicon.ico() could not be found.
+Exception Attributes: array (
+  'controller' => 'UsersController',
+  'action' => 'favicon.ico',
+)
+Request URL: /users/favicon.ico
+Stack Trace:
+#0 C:\xampp\htdocs\yns-dev-exercises\5\5-4\lib\Cake\Routing\Dispatcher.php(193): Controller->invokeAction(Object(CakeRequest))
+#1 C:\xampp\htdocs\yns-dev-exercises\5\5-4\lib\Cake\Routing\Dispatcher.php(167): Dispatcher->_invoke(Object(UsersController), Object(CakeRequest))
+#2 C:\xampp\htdocs\yns-dev-exercises\5\5-4\app\webroot\index.php(117): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#3 {main}
+2020-03-06 02:56:14 Error: [MissingActionException] Action UsersController::favicon.ico() could not be found.
+Exception Attributes: array (
+  'controller' => 'UsersController',
+  'action' => 'favicon.ico',
+)
+Request URL: /users/favicon.ico
+Stack Trace:
+#0 C:\xampp\htdocs\yns-dev-exercises\5\5-4\lib\Cake\Routing\Dispatcher.php(193): Controller->invokeAction(Object(CakeRequest))
+#1 C:\xampp\htdocs\yns-dev-exercises\5\5-4\lib\Cake\Routing\Dispatcher.php(167): Dispatcher->_invoke(Object(UsersController), Object(CakeRequest))
+#2 C:\xampp\htdocs\yns-dev-exercises\5\5-4\app\webroot\index.php(117): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#3 {main}
+2020-03-06 03:00:01 Error: [MissingViewException] View file "Users\signup.ctp" is missing.
+Exception Attributes: array (
+  'file' => 'Users\\signup.ctp',
+)
+Request URL: /users/signup
+Stack Trace:
+#0 C:\xampp\htdocs\yns-dev-exercises\5\5-4\lib\Cake\View\View.php(470): View->_getViewFileName('Users\\signup')
+#1 C:\xampp\htdocs\yns-dev-exercises\5\5-4\lib\Cake\Controller\Controller.php(968): View->render(NULL, NULL)
+#2 C:\xampp\htdocs\yns-dev-exercises\5\5-4\lib\Cake\Routing\Dispatcher.php(200): Controller->render()
+#3 C:\xampp\htdocs\yns-dev-exercises\5\5-4\lib\Cake\Routing\Dispatcher.php(167): Dispatcher->_invoke(Object(UsersController), Object(CakeRequest))
+#4 C:\xampp\htdocs\yns-dev-exercises\5\5-4\app\webroot\index.php(117): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#5 {main}
+2020-03-06 03:06:50 Error: [MissingActionException] Action UsersController::favicon.ico() could not be found.
+Exception Attributes: array (
+  'controller' => 'UsersController',
+  'action' => 'favicon.ico',
+)
+Request URL: /users/favicon.ico
+Stack Trace:
+#0 C:\xampp\htdocs\yns-dev-exercises\5\5-4\lib\Cake\Routing\Dispatcher.php(193): Controller->invokeAction(Object(CakeRequest))
+#1 C:\xampp\htdocs\yns-dev-exercises\5\5-4\lib\Cake\Routing\Dispatcher.php(167): Dispatcher->_invoke(Object(UsersController), Object(CakeRequest))
+#2 C:\xampp\htdocs\yns-dev-exercises\5\5-4\app\webroot\index.php(117): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#3 {main}
+2020-03-06 03:07:12 Error: [MissingActionException] Action UsersController::favicon.ico() could not be found.
+Exception Attributes: array (
+  'controller' => 'UsersController',
+  'action' => 'favicon.ico',
+)
+Request URL: /users/favicon.ico
+Stack Trace:
+#0 C:\xampp\htdocs\yns-dev-exercises\5\5-4\lib\Cake\Routing\Dispatcher.php(193): Controller->invokeAction(Object(CakeRequest))
+#1 C:\xampp\htdocs\yns-dev-exercises\5\5-4\lib\Cake\Routing\Dispatcher.php(167): Dispatcher->_invoke(Object(UsersController), Object(CakeRequest))
+#2 C:\xampp\htdocs\yns-dev-exercises\5\5-4\app\webroot\index.php(117): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#3 {main}
+2020-03-06 03:28:19 Error: [ParseError] syntax error, unexpected '$this' (T_VARIABLE)
+Request URL: /comments/index/5/page:2
+Stack Trace:
+#0 [internal function]: App::load('CommentsControl...')
+#1 [internal function]: spl_autoload_call('CommentsControl...')
+#2 C:\xampp\htdocs\yns-dev-exercises\5\5-4\lib\Cake\Routing\Dispatcher.php(266): class_exists('CommentsControl...')
+#3 C:\xampp\htdocs\yns-dev-exercises\5\5-4\lib\Cake\Routing\Dispatcher.php(235): Dispatcher->_loadController(Object(CakeRequest))
+#4 C:\xampp\htdocs\yns-dev-exercises\5\5-4\lib\Cake\Routing\Dispatcher.php(158): Dispatcher->_getController(Object(CakeRequest), Object(CakeResponse))
+#5 C:\xampp\htdocs\yns-dev-exercises\5\5-4\app\webroot\index.php(117): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#6 {main}
+2020-03-06 03:46:04 Error: [ParseError] syntax error, unexpected ';', expecting ')'
+Request URL: /comments/index/5/page:2
+Stack Trace:
+#0 [internal function]: App::load('CommentsControl...')
+#1 [internal function]: spl_autoload_call('CommentsControl...')
+#2 C:\xampp\htdocs\yns-dev-exercises\5\5-4\lib\Cake\Routing\Dispatcher.php(266): class_exists('CommentsControl...')
+#3 C:\xampp\htdocs\yns-dev-exercises\5\5-4\lib\Cake\Routing\Dispatcher.php(235): Dispatcher->_loadController(Object(CakeRequest))
+#4 C:\xampp\htdocs\yns-dev-exercises\5\5-4\lib\Cake\Routing\Dispatcher.php(158): Dispatcher->_getController(Object(CakeRequest), Object(CakeResponse))
+#5 C:\xampp\htdocs\yns-dev-exercises\5\5-4\app\webroot\index.php(117): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#6 {main}
+2020-03-06 03:46:06 Error: [ParseError] syntax error, unexpected ';', expecting ')'
+Request URL: /comments/index/5/favicon.ico
+Stack Trace:
+#0 [internal function]: App::load('CommentsControl...')
+#1 [internal function]: spl_autoload_call('CommentsControl...')
+#2 C:\xampp\htdocs\yns-dev-exercises\5\5-4\lib\Cake\Routing\Dispatcher.php(266): class_exists('CommentsControl...')
+#3 C:\xampp\htdocs\yns-dev-exercises\5\5-4\lib\Cake\Routing\Dispatcher.php(235): Dispatcher->_loadController(Object(CakeRequest))
+#4 C:\xampp\htdocs\yns-dev-exercises\5\5-4\lib\Cake\Routing\Dispatcher.php(158): Dispatcher->_getController(Object(CakeRequest), Object(CakeResponse))
+#5 C:\xampp\htdocs\yns-dev-exercises\5\5-4\app\webroot\index.php(117): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#6 {main}
+2020-03-06 03:50:37 Error: [NotFoundException] Invalid post
+Request URL: /comments/index/page:3
+Stack Trace:
+#0 [internal function]: CommentsController->index()
+#1 C:\xampp\htdocs\yns-dev-exercises\5\5-4\lib\Cake\Controller\Controller.php(499): ReflectionMethod->invokeArgs(Object(CommentsController), Array)
+#2 C:\xampp\htdocs\yns-dev-exercises\5\5-4\lib\Cake\Routing\Dispatcher.php(193): Controller->invokeAction(Object(CakeRequest))
+#3 C:\xampp\htdocs\yns-dev-exercises\5\5-4\lib\Cake\Routing\Dispatcher.php(167): Dispatcher->_invoke(Object(CommentsController), Object(CakeRequest))
+#4 C:\xampp\htdocs\yns-dev-exercises\5\5-4\app\webroot\index.php(117): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#5 {main}
+2020-03-06 03:55:38 Error: [Error] Call to undefined method PaginatorComponent::paginateCount()
+Request URL: /comments/index/5/page:3
+Stack Trace:
+#0 [internal function]: CommentsController->index('5')
+#1 C:\xampp\htdocs\yns-dev-exercises\5\5-4\lib\Cake\Controller\Controller.php(499): ReflectionMethod->invokeArgs(Object(CommentsController), Array)
+#2 C:\xampp\htdocs\yns-dev-exercises\5\5-4\lib\Cake\Routing\Dispatcher.php(193): Controller->invokeAction(Object(CakeRequest))
+#3 C:\xampp\htdocs\yns-dev-exercises\5\5-4\lib\Cake\Routing\Dispatcher.php(167): Dispatcher->_invoke(Object(CommentsController), Object(CakeRequest))
+#4 C:\xampp\htdocs\yns-dev-exercises\5\5-4\app\webroot\index.php(117): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#5 {main}
+2020-03-06 03:55:39 Error: [Error] Call to undefined method PaginatorComponent::paginateCount()
+Request URL: /comments/index/5/favicon.ico
+Stack Trace:
+#0 [internal function]: CommentsController->index('5', 'favicon.ico')
+#1 C:\xampp\htdocs\yns-dev-exercises\5\5-4\lib\Cake\Controller\Controller.php(499): ReflectionMethod->invokeArgs(Object(CommentsController), Array)
+#2 C:\xampp\htdocs\yns-dev-exercises\5\5-4\lib\Cake\Routing\Dispatcher.php(193): Controller->invokeAction(Object(CakeRequest))
+#3 C:\xampp\htdocs\yns-dev-exercises\5\5-4\lib\Cake\Routing\Dispatcher.php(167): Dispatcher->_invoke(Object(CommentsController), Object(CakeRequest))
+#4 C:\xampp\htdocs\yns-dev-exercises\5\5-4\app\webroot\index.php(117): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#5 {main}
+2020-03-06 03:56:03 Error: [Error] Call to undefined method PaginatorComponent::param()
+Request URL: /comments/index/5/page:3
+Stack Trace:
+#0 [internal function]: CommentsController->index('5')
+#1 C:\xampp\htdocs\yns-dev-exercises\5\5-4\lib\Cake\Controller\Controller.php(499): ReflectionMethod->invokeArgs(Object(CommentsController), Array)
+#2 C:\xampp\htdocs\yns-dev-exercises\5\5-4\lib\Cake\Routing\Dispatcher.php(193): Controller->invokeAction(Object(CakeRequest))
+#3 C:\xampp\htdocs\yns-dev-exercises\5\5-4\lib\Cake\Routing\Dispatcher.php(167): Dispatcher->_invoke(Object(CommentsController), Object(CakeRequest))
+#4 C:\xampp\htdocs\yns-dev-exercises\5\5-4\app\webroot\index.php(117): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#5 {main}
+2020-03-06 03:56:05 Error: [Error] Call to undefined method PaginatorComponent::param()
+Request URL: /comments/index/5/favicon.ico
+Stack Trace:
+#0 [internal function]: CommentsController->index('5', 'favicon.ico')
+#1 C:\xampp\htdocs\yns-dev-exercises\5\5-4\lib\Cake\Controller\Controller.php(499): ReflectionMethod->invokeArgs(Object(CommentsController), Array)
+#2 C:\xampp\htdocs\yns-dev-exercises\5\5-4\lib\Cake\Routing\Dispatcher.php(193): Controller->invokeAction(Object(CakeRequest))
+#3 C:\xampp\htdocs\yns-dev-exercises\5\5-4\lib\Cake\Routing\Dispatcher.php(167): Dispatcher->_invoke(Object(CommentsController), Object(CakeRequest))
+#4 C:\xampp\htdocs\yns-dev-exercises\5\5-4\app\webroot\index.php(117): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#5 {main}
+2020-03-06 03:56:52 Error: [Error] Call to undefined method PaginatorComponent::params()
+Request URL: /comments/index/5/page:3
+Stack Trace:
+#0 [internal function]: CommentsController->index('5')
+#1 C:\xampp\htdocs\yns-dev-exercises\5\5-4\lib\Cake\Controller\Controller.php(499): ReflectionMethod->invokeArgs(Object(CommentsController), Array)
+#2 C:\xampp\htdocs\yns-dev-exercises\5\5-4\lib\Cake\Routing\Dispatcher.php(193): Controller->invokeAction(Object(CakeRequest))
+#3 C:\xampp\htdocs\yns-dev-exercises\5\5-4\lib\Cake\Routing\Dispatcher.php(167): Dispatcher->_invoke(Object(CommentsController), Object(CakeRequest))
+#4 C:\xampp\htdocs\yns-dev-exercises\5\5-4\app\webroot\index.php(117): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#5 {main}
+2020-03-06 03:56:54 Error: [Error] Call to undefined method PaginatorComponent::params()
+Request URL: /comments/index/5/favicon.ico
+Stack Trace:
+#0 [internal function]: CommentsController->index('5', 'favicon.ico')
+#1 C:\xampp\htdocs\yns-dev-exercises\5\5-4\lib\Cake\Controller\Controller.php(499): ReflectionMethod->invokeArgs(Object(CommentsController), Array)
+#2 C:\xampp\htdocs\yns-dev-exercises\5\5-4\lib\Cake\Routing\Dispatcher.php(193): Controller->invokeAction(Object(CakeRequest))
+#3 C:\xampp\htdocs\yns-dev-exercises\5\5-4\lib\Cake\Routing\Dispatcher.php(167): Dispatcher->_invoke(Object(CommentsController), Object(CakeRequest))
+#4 C:\xampp\htdocs\yns-dev-exercises\5\5-4\app\webroot\index.php(117): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#5 {main}
+2020-03-06 03:57:00 Error: [Error] Call to undefined method PaginatorComponent::params()
+Request URL: /comments/index/5/page:3
+Stack Trace:
+#0 [internal function]: CommentsController->index('5')
+#1 C:\xampp\htdocs\yns-dev-exercises\5\5-4\lib\Cake\Controller\Controller.php(499): ReflectionMethod->invokeArgs(Object(CommentsController), Array)
+#2 C:\xampp\htdocs\yns-dev-exercises\5\5-4\lib\Cake\Routing\Dispatcher.php(193): Controller->invokeAction(Object(CakeRequest))
+#3 C:\xampp\htdocs\yns-dev-exercises\5\5-4\lib\Cake\Routing\Dispatcher.php(167): Dispatcher->_invoke(Object(CommentsController), Object(CakeRequest))
+#4 C:\xampp\htdocs\yns-dev-exercises\5\5-4\app\webroot\index.php(117): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#5 {main}
+2020-03-06 03:57:01 Error: [Error] Call to undefined method PaginatorComponent::params()
+Request URL: /comments/index/5/favicon.ico
+Stack Trace:
+#0 [internal function]: CommentsController->index('5', 'favicon.ico')
+#1 C:\xampp\htdocs\yns-dev-exercises\5\5-4\lib\Cake\Controller\Controller.php(499): ReflectionMethod->invokeArgs(Object(CommentsController), Array)
+#2 C:\xampp\htdocs\yns-dev-exercises\5\5-4\lib\Cake\Routing\Dispatcher.php(193): Controller->invokeAction(Object(CakeRequest))
+#3 C:\xampp\htdocs\yns-dev-exercises\5\5-4\lib\Cake\Routing\Dispatcher.php(167): Dispatcher->_invoke(Object(CommentsController), Object(CakeRequest))
+#4 C:\xampp\htdocs\yns-dev-exercises\5\5-4\app\webroot\index.php(117): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#5 {main}
+2020-03-06 04:04:57 Error: [Error] Call to undefined method CommentsController::params()
+Request URL: /comments/index/5?page=3
+Stack Trace:
+#0 [internal function]: CommentsController->index('5')
+#1 C:\xampp\htdocs\yns-dev-exercises\5\5-4\lib\Cake\Controller\Controller.php(499): ReflectionMethod->invokeArgs(Object(CommentsController), Array)
+#2 C:\xampp\htdocs\yns-dev-exercises\5\5-4\lib\Cake\Routing\Dispatcher.php(193): Controller->invokeAction(Object(CakeRequest))
+#3 C:\xampp\htdocs\yns-dev-exercises\5\5-4\lib\Cake\Routing\Dispatcher.php(167): Dispatcher->_invoke(Object(CommentsController), Object(CakeRequest))
+#4 C:\xampp\htdocs\yns-dev-exercises\5\5-4\app\webroot\index.php(117): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#5 {main}
+2020-03-06 04:04:59 Error: [NotFoundException] Invalid post
+Request URL: /comments/index/favicon.ico
+Stack Trace:
+#0 [internal function]: CommentsController->index('favicon.ico')
+#1 C:\xampp\htdocs\yns-dev-exercises\5\5-4\lib\Cake\Controller\Controller.php(499): ReflectionMethod->invokeArgs(Object(CommentsController), Array)
+#2 C:\xampp\htdocs\yns-dev-exercises\5\5-4\lib\Cake\Routing\Dispatcher.php(193): Controller->invokeAction(Object(CakeRequest))
+#3 C:\xampp\htdocs\yns-dev-exercises\5\5-4\lib\Cake\Routing\Dispatcher.php(167): Dispatcher->_invoke(Object(CommentsController), Object(CakeRequest))
+#4 C:\xampp\htdocs\yns-dev-exercises\5\5-4\app\webroot\index.php(117): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#5 {main}
+2020-03-06 04:05:15 Error: [ParseError] syntax error, unexpected ';', expecting ')'
+Request URL: /comments/index/5?page=3
+Stack Trace:
+#0 [internal function]: App::load('CommentsControl...')
+#1 [internal function]: spl_autoload_call('CommentsControl...')
+#2 C:\xampp\htdocs\yns-dev-exercises\5\5-4\lib\Cake\Routing\Dispatcher.php(266): class_exists('CommentsControl...')
+#3 C:\xampp\htdocs\yns-dev-exercises\5\5-4\lib\Cake\Routing\Dispatcher.php(235): Dispatcher->_loadController(Object(CakeRequest))
+#4 C:\xampp\htdocs\yns-dev-exercises\5\5-4\lib\Cake\Routing\Dispatcher.php(158): Dispatcher->_getController(Object(CakeRequest), Object(CakeResponse))
+#5 C:\xampp\htdocs\yns-dev-exercises\5\5-4\app\webroot\index.php(117): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#6 {main}
+2020-03-06 04:12:46 Error: [ParseError] syntax error, unexpected ')', expecting ';'
+Request URL: /comments/index/5/page:4
+Stack Trace:
+#0 [internal function]: App::load('CommentsControl...')
+#1 [internal function]: spl_autoload_call('CommentsControl...')
+#2 C:\xampp\htdocs\yns-dev-exercises\5\5-4\lib\Cake\Routing\Dispatcher.php(266): class_exists('CommentsControl...')
+#3 C:\xampp\htdocs\yns-dev-exercises\5\5-4\lib\Cake\Routing\Dispatcher.php(235): Dispatcher->_loadController(Object(CakeRequest))
+#4 C:\xampp\htdocs\yns-dev-exercises\5\5-4\lib\Cake\Routing\Dispatcher.php(158): Dispatcher->_getController(Object(CakeRequest), Object(CakeResponse))
+#5 C:\xampp\htdocs\yns-dev-exercises\5\5-4\app\webroot\index.php(117): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#6 {main}
+2020-03-06 04:12:48 Error: [ParseError] syntax error, unexpected ')', expecting ';'
+Request URL: /comments/index/5/favicon.ico
+Stack Trace:
+#0 [internal function]: App::load('CommentsControl...')
+#1 [internal function]: spl_autoload_call('CommentsControl...')
+#2 C:\xampp\htdocs\yns-dev-exercises\5\5-4\lib\Cake\Routing\Dispatcher.php(266): class_exists('CommentsControl...')
+#3 C:\xampp\htdocs\yns-dev-exercises\5\5-4\lib\Cake\Routing\Dispatcher.php(235): Dispatcher->_loadController(Object(CakeRequest))
+#4 C:\xampp\htdocs\yns-dev-exercises\5\5-4\lib\Cake\Routing\Dispatcher.php(158): Dispatcher->_getController(Object(CakeRequest), Object(CakeResponse))
+#5 C:\xampp\htdocs\yns-dev-exercises\5\5-4\app\webroot\index.php(117): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#6 {main}
+2020-03-06 04:13:26 Error: [NotFoundException] Not Found
+Request URL: /comments/index/5/page:4
+Stack Trace:
+#0 C:\xampp\htdocs\yns-dev-exercises\5\5-4\app\Controller\CommentsController.php(25): PaginatorComponent->paginate(Object(Comment), Array, Array)
+#1 [internal function]: CommentsController->index('5')
+#2 C:\xampp\htdocs\yns-dev-exercises\5\5-4\lib\Cake\Controller\Controller.php(499): ReflectionMethod->invokeArgs(Object(CommentsController), Array)
+#3 C:\xampp\htdocs\yns-dev-exercises\5\5-4\lib\Cake\Routing\Dispatcher.php(193): Controller->invokeAction(Object(CakeRequest))
+#4 C:\xampp\htdocs\yns-dev-exercises\5\5-4\lib\Cake\Routing\Dispatcher.php(167): Dispatcher->_invoke(Object(CommentsController), Object(CakeRequest))
+#5 C:\xampp\htdocs\yns-dev-exercises\5\5-4\app\webroot\index.php(117): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#6 {main}
+2020-03-06 04:18:17 Error: [NotFoundException] Not Found
+Request URL: /comments/index/5/page:4
+Stack Trace:
+#0 C:\xampp\htdocs\yns-dev-exercises\5\5-4\app\Controller\CommentsController.php(25): PaginatorComponent->paginate(Object(Comment), Array, Array)
+#1 [internal function]: CommentsController->index('5')
+#2 C:\xampp\htdocs\yns-dev-exercises\5\5-4\lib\Cake\Controller\Controller.php(499): ReflectionMethod->invokeArgs(Object(CommentsController), Array)
+#3 C:\xampp\htdocs\yns-dev-exercises\5\5-4\lib\Cake\Routing\Dispatcher.php(193): Controller->invokeAction(Object(CakeRequest))
+#4 C:\xampp\htdocs\yns-dev-exercises\5\5-4\lib\Cake\Routing\Dispatcher.php(167): Dispatcher->_invoke(Object(CommentsController), Object(CakeRequest))
+#5 C:\xampp\htdocs\yns-dev-exercises\5\5-4\app\webroot\index.php(117): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#6 {main}
+2020-03-06 04:24:10 Error: [NotFoundException] Not Found
+Request URL: /comments/index/5/page:4
+Stack Trace:
+#0 C:\xampp\htdocs\yns-dev-exercises\5\5-4\app\Controller\CommentsController.php(26): PaginatorComponent->paginate(Object(Comment), Array, Array)
+#1 [internal function]: CommentsController->index('5')
+#2 C:\xampp\htdocs\yns-dev-exercises\5\5-4\lib\Cake\Controller\Controller.php(499): ReflectionMethod->invokeArgs(Object(CommentsController), Array)
+#3 C:\xampp\htdocs\yns-dev-exercises\5\5-4\lib\Cake\Routing\Dispatcher.php(193): Controller->invokeAction(Object(CakeRequest))
+#4 C:\xampp\htdocs\yns-dev-exercises\5\5-4\lib\Cake\Routing\Dispatcher.php(167): Dispatcher->_invoke(Object(CommentsController), Object(CakeRequest))
+#5 C:\xampp\htdocs\yns-dev-exercises\5\5-4\app\webroot\index.php(117): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#6 {main}
+2020-03-06 04:26:27 Error: [NotFoundException] Invalid post
+Request URL: /comments/index/page:0
+Stack Trace:
+#0 [internal function]: CommentsController->index()
+#1 C:\xampp\htdocs\yns-dev-exercises\5\5-4\lib\Cake\Controller\Controller.php(499): ReflectionMethod->invokeArgs(Object(CommentsController), Array)
+#2 C:\xampp\htdocs\yns-dev-exercises\5\5-4\lib\Cake\Routing\Dispatcher.php(193): Controller->invokeAction(Object(CakeRequest))
+#3 C:\xampp\htdocs\yns-dev-exercises\5\5-4\lib\Cake\Routing\Dispatcher.php(167): Dispatcher->_invoke(Object(CommentsController), Object(CakeRequest))
+#4 C:\xampp\htdocs\yns-dev-exercises\5\5-4\app\webroot\index.php(117): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#5 {main}
+2020-03-06 04:28:32 Error: [NotFoundException] Invalid post
+Request URL: /comments/index/page:0
+Stack Trace:
+#0 [internal function]: CommentsController->index()
+#1 C:\xampp\htdocs\yns-dev-exercises\5\5-4\lib\Cake\Controller\Controller.php(499): ReflectionMethod->invokeArgs(Object(CommentsController), Array)
+#2 C:\xampp\htdocs\yns-dev-exercises\5\5-4\lib\Cake\Routing\Dispatcher.php(193): Controller->invokeAction(Object(CakeRequest))
+#3 C:\xampp\htdocs\yns-dev-exercises\5\5-4\lib\Cake\Routing\Dispatcher.php(167): Dispatcher->_invoke(Object(CommentsController), Object(CakeRequest))
+#4 C:\xampp\htdocs\yns-dev-exercises\5\5-4\app\webroot\index.php(117): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#5 {main}
+2020-03-06 04:28:48 Error: [NotFoundException] Invalid post
+Request URL: /comments/index/page:0
+Stack Trace:
+#0 [internal function]: CommentsController->index()
+#1 C:\xampp\htdocs\yns-dev-exercises\5\5-4\lib\Cake\Controller\Controller.php(499): ReflectionMethod->invokeArgs(Object(CommentsController), Array)
+#2 C:\xampp\htdocs\yns-dev-exercises\5\5-4\lib\Cake\Routing\Dispatcher.php(193): Controller->invokeAction(Object(CakeRequest))
+#3 C:\xampp\htdocs\yns-dev-exercises\5\5-4\lib\Cake\Routing\Dispatcher.php(167): Dispatcher->_invoke(Object(CommentsController), Object(CakeRequest))
+#4 C:\xampp\htdocs\yns-dev-exercises\5\5-4\app\webroot\index.php(117): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#5 {main}
+2020-03-06 04:29:00 Error: [NotFoundException] Invalid post
+Request URL: /comments/index/page:1
+Stack Trace:
+#0 [internal function]: CommentsController->index()
+#1 C:\xampp\htdocs\yns-dev-exercises\5\5-4\lib\Cake\Controller\Controller.php(499): ReflectionMethod->invokeArgs(Object(CommentsController), Array)
+#2 C:\xampp\htdocs\yns-dev-exercises\5\5-4\lib\Cake\Routing\Dispatcher.php(193): Controller->invokeAction(Object(CakeRequest))
+#3 C:\xampp\htdocs\yns-dev-exercises\5\5-4\lib\Cake\Routing\Dispatcher.php(167): Dispatcher->_invoke(Object(CommentsController), Object(CakeRequest))
+#4 C:\xampp\htdocs\yns-dev-exercises\5\5-4\app\webroot\index.php(117): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#5 {main}
+2020-03-06 04:29:57 Error: [NotFoundException] Invalid post
+Request URL: /comments/index/page:0
+Stack Trace:
+#0 [internal function]: CommentsController->index()
+#1 C:\xampp\htdocs\yns-dev-exercises\5\5-4\lib\Cake\Controller\Controller.php(499): ReflectionMethod->invokeArgs(Object(CommentsController), Array)
+#2 C:\xampp\htdocs\yns-dev-exercises\5\5-4\lib\Cake\Routing\Dispatcher.php(193): Controller->invokeAction(Object(CakeRequest))
+#3 C:\xampp\htdocs\yns-dev-exercises\5\5-4\lib\Cake\Routing\Dispatcher.php(167): Dispatcher->_invoke(Object(CommentsController), Object(CakeRequest))
+#4 C:\xampp\htdocs\yns-dev-exercises\5\5-4\app\webroot\index.php(117): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#5 {main}
+2020-03-06 04:30:01 Error: [NotFoundException] Invalid post
+Request URL: /comments/index/page:1
+Stack Trace:
+#0 [internal function]: CommentsController->index()
+#1 C:\xampp\htdocs\yns-dev-exercises\5\5-4\lib\Cake\Controller\Controller.php(499): ReflectionMethod->invokeArgs(Object(CommentsController), Array)
+#2 C:\xampp\htdocs\yns-dev-exercises\5\5-4\lib\Cake\Routing\Dispatcher.php(193): Controller->invokeAction(Object(CakeRequest))
+#3 C:\xampp\htdocs\yns-dev-exercises\5\5-4\lib\Cake\Routing\Dispatcher.php(167): Dispatcher->_invoke(Object(CommentsController), Object(CakeRequest))
+#4 C:\xampp\htdocs\yns-dev-exercises\5\5-4\app\webroot\index.php(117): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#5 {main}
+2020-03-06 04:30:15 Error: [NotFoundException] Invalid post
+Request URL: /comments/index/page:0
+Stack Trace:
+#0 [internal function]: CommentsController->index()
+#1 C:\xampp\htdocs\yns-dev-exercises\5\5-4\lib\Cake\Controller\Controller.php(499): ReflectionMethod->invokeArgs(Object(CommentsController), Array)
+#2 C:\xampp\htdocs\yns-dev-exercises\5\5-4\lib\Cake\Routing\Dispatcher.php(193): Controller->invokeAction(Object(CakeRequest))
+#3 C:\xampp\htdocs\yns-dev-exercises\5\5-4\lib\Cake\Routing\Dispatcher.php(167): Dispatcher->_invoke(Object(CommentsController), Object(CakeRequest))
+#4 C:\xampp\htdocs\yns-dev-exercises\5\5-4\app\webroot\index.php(117): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#5 {main}
+2020-03-06 04:30:20 Error: [NotFoundException] Invalid post
+Request URL: /comments/index/page:2
+Stack Trace:
+#0 [internal function]: CommentsController->index()
+#1 C:\xampp\htdocs\yns-dev-exercises\5\5-4\lib\Cake\Controller\Controller.php(499): ReflectionMethod->invokeArgs(Object(CommentsController), Array)
+#2 C:\xampp\htdocs\yns-dev-exercises\5\5-4\lib\Cake\Routing\Dispatcher.php(193): Controller->invokeAction(Object(CakeRequest))
+#3 C:\xampp\htdocs\yns-dev-exercises\5\5-4\lib\Cake\Routing\Dispatcher.php(167): Dispatcher->_invoke(Object(CommentsController), Object(CakeRequest))
+#4 C:\xampp\htdocs\yns-dev-exercises\5\5-4\app\webroot\index.php(117): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#5 {main}
+2020-03-06 04:31:17 Error: [PDOException] SQLSTATE[42S22]: Column not found: 1054 Unknown column 'Comment.post_id' in 'where clause'
+Request URL: /comments/index/5/page:5
+Stack Trace:
+#0 C:\xampp\htdocs\yns-dev-exercises\5\5-4\lib\Cake\Model\Datasource\DboSource.php(502): PDOStatement->execute(Array)
+#1 C:\xampp\htdocs\yns-dev-exercises\5\5-4\lib\Cake\Model\Datasource\DboSource.php(468): DboSource->_execute('SELECT `Post`.`...', Array)
+#2 C:\xampp\htdocs\yns-dev-exercises\5\5-4\lib\Cake\Model\Datasource\DboSource.php(715): DboSource->execute('SELECT `Post`.`...', Array, Array)
+#3 C:\xampp\htdocs\yns-dev-exercises\5\5-4\lib\Cake\Model\Datasource\DboSource.php(1226): DboSource->fetchAll('SELECT `Post`.`...', Array)
+#4 C:\xampp\htdocs\yns-dev-exercises\5\5-4\lib\Cake\Model\Model.php(3053): DboSource->read(Object(Post), Array)
+#5 C:\xampp\htdocs\yns-dev-exercises\5\5-4\lib\Cake\Model\Model.php(3025): Model->_readDataSource('all', Array)
+#6 C:\xampp\htdocs\yns-dev-exercises\5\5-4\lib\Cake\Controller\Component\PaginatorComponent.php(212): Model->find('all', Array)
+#7 C:\xampp\htdocs\yns-dev-exercises\5\5-4\app\Controller\CommentsController.php(30): PaginatorComponent->paginate()
+#8 [internal function]: CommentsController->index('5')
+#9 C:\xampp\htdocs\yns-dev-exercises\5\5-4\lib\Cake\Controller\Controller.php(499): ReflectionMethod->invokeArgs(Object(CommentsController), Array)
+#10 C:\xampp\htdocs\yns-dev-exercises\5\5-4\lib\Cake\Routing\Dispatcher.php(193): Controller->invokeAction(Object(CakeRequest))
+#11 C:\xampp\htdocs\yns-dev-exercises\5\5-4\lib\Cake\Routing\Dispatcher.php(167): Dispatcher->_invoke(Object(CommentsController), Object(CakeRequest))
+#12 C:\xampp\htdocs\yns-dev-exercises\5\5-4\app\webroot\index.php(117): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#13 {main}
+2020-03-06 04:32:20 Error: [NotFoundException] Not Found
+Request URL: /comments/index/5/page:5
+Stack Trace:
+#0 C:\xampp\htdocs\yns-dev-exercises\5\5-4\app\Controller\CommentsController.php(30): PaginatorComponent->paginate(Object(Comment))
+#1 [internal function]: CommentsController->index('5')
+#2 C:\xampp\htdocs\yns-dev-exercises\5\5-4\lib\Cake\Controller\Controller.php(499): ReflectionMethod->invokeArgs(Object(CommentsController), Array)
+#3 C:\xampp\htdocs\yns-dev-exercises\5\5-4\lib\Cake\Routing\Dispatcher.php(193): Controller->invokeAction(Object(CakeRequest))
+#4 C:\xampp\htdocs\yns-dev-exercises\5\5-4\lib\Cake\Routing\Dispatcher.php(167): Dispatcher->_invoke(Object(CommentsController), Object(CakeRequest))
+#5 C:\xampp\htdocs\yns-dev-exercises\5\5-4\app\webroot\index.php(117): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#6 {main}
+2020-03-06 04:32:33 Error: [NotFoundException] Not Found
+Request URL: /comments/index/5/page:5
+Stack Trace:
+#0 C:\xampp\htdocs\yns-dev-exercises\5\5-4\app\Controller\CommentsController.php(30): PaginatorComponent->paginate(Object(Comment))
+#1 [internal function]: CommentsController->index('5')
+#2 C:\xampp\htdocs\yns-dev-exercises\5\5-4\lib\Cake\Controller\Controller.php(499): ReflectionMethod->invokeArgs(Object(CommentsController), Array)
+#3 C:\xampp\htdocs\yns-dev-exercises\5\5-4\lib\Cake\Routing\Dispatcher.php(193): Controller->invokeAction(Object(CakeRequest))
+#4 C:\xampp\htdocs\yns-dev-exercises\5\5-4\lib\Cake\Routing\Dispatcher.php(167): Dispatcher->_invoke(Object(CommentsController), Object(CakeRequest))
+#5 C:\xampp\htdocs\yns-dev-exercises\5\5-4\app\webroot\index.php(117): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#6 {main}
+2020-03-06 04:33:11 Error: [NotFoundException] Not Found
+Request URL: /comments/index/5/page:5
+Stack Trace:
+#0 C:\xampp\htdocs\yns-dev-exercises\5\5-4\app\Controller\CommentsController.php(30): PaginatorComponent->paginate(Object(Comment))
+#1 [internal function]: CommentsController->index('5')
+#2 C:\xampp\htdocs\yns-dev-exercises\5\5-4\lib\Cake\Controller\Controller.php(499): ReflectionMethod->invokeArgs(Object(CommentsController), Array)
+#3 C:\xampp\htdocs\yns-dev-exercises\5\5-4\lib\Cake\Routing\Dispatcher.php(193): Controller->invokeAction(Object(CakeRequest))
+#4 C:\xampp\htdocs\yns-dev-exercises\5\5-4\lib\Cake\Routing\Dispatcher.php(167): Dispatcher->_invoke(Object(CommentsController), Object(CakeRequest))
+#5 C:\xampp\htdocs\yns-dev-exercises\5\5-4\app\webroot\index.php(117): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#6 {main}
+2020-03-06 04:34:32 Error: [NotFoundException] Invalid post
+Request URL: /comments/index/page:0
+Stack Trace:
+#0 [internal function]: CommentsController->index()
+#1 C:\xampp\htdocs\yns-dev-exercises\5\5-4\lib\Cake\Controller\Controller.php(499): ReflectionMethod->invokeArgs(Object(CommentsController), Array)
+#2 C:\xampp\htdocs\yns-dev-exercises\5\5-4\lib\Cake\Routing\Dispatcher.php(193): Controller->invokeAction(Object(CakeRequest))
+#3 C:\xampp\htdocs\yns-dev-exercises\5\5-4\lib\Cake\Routing\Dispatcher.php(167): Dispatcher->_invoke(Object(CommentsController), Object(CakeRequest))
+#4 C:\xampp\htdocs\yns-dev-exercises\5\5-4\app\webroot\index.php(117): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#5 {main}
+2020-03-06 04:34:40 Error: [NotFoundException] Invalid post
+Request URL: /comments/index/page:0
+Stack Trace:
+#0 [internal function]: CommentsController->index()
+#1 C:\xampp\htdocs\yns-dev-exercises\5\5-4\lib\Cake\Controller\Controller.php(499): ReflectionMethod->invokeArgs(Object(CommentsController), Array)
+#2 C:\xampp\htdocs\yns-dev-exercises\5\5-4\lib\Cake\Routing\Dispatcher.php(193): Controller->invokeAction(Object(CakeRequest))
+#3 C:\xampp\htdocs\yns-dev-exercises\5\5-4\lib\Cake\Routing\Dispatcher.php(167): Dispatcher->_invoke(Object(CommentsController), Object(CakeRequest))
+#4 C:\xampp\htdocs\yns-dev-exercises\5\5-4\app\webroot\index.php(117): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#5 {main}
+2020-03-06 04:35:44 Error: [NotFoundException] Not Found
+Request URL: /comments/index/5/page:5
+Stack Trace:
+#0 C:\xampp\htdocs\yns-dev-exercises\5\5-4\app\Controller\CommentsController.php(30): PaginatorComponent->paginate(Object(Comment), Array, Array)
+#1 [internal function]: CommentsController->index('5')
+#2 C:\xampp\htdocs\yns-dev-exercises\5\5-4\lib\Cake\Controller\Controller.php(499): ReflectionMethod->invokeArgs(Object(CommentsController), Array)
+#3 C:\xampp\htdocs\yns-dev-exercises\5\5-4\lib\Cake\Routing\Dispatcher.php(193): Controller->invokeAction(Object(CakeRequest))
+#4 C:\xampp\htdocs\yns-dev-exercises\5\5-4\lib\Cake\Routing\Dispatcher.php(167): Dispatcher->_invoke(Object(CommentsController), Object(CakeRequest))
+#5 C:\xampp\htdocs\yns-dev-exercises\5\5-4\app\webroot\index.php(117): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#6 {main}
+2020-03-06 04:38:07 Error: [Error] Call to undefined method PaginatorComponent::pageCount()
+Request URL: /comments/index/5/page:6
+Stack Trace:
+#0 [internal function]: CommentsController->index('5')
+#1 C:\xampp\htdocs\yns-dev-exercises\5\5-4\lib\Cake\Controller\Controller.php(499): ReflectionMethod->invokeArgs(Object(CommentsController), Array)
+#2 C:\xampp\htdocs\yns-dev-exercises\5\5-4\lib\Cake\Routing\Dispatcher.php(193): Controller->invokeAction(Object(CakeRequest))
+#3 C:\xampp\htdocs\yns-dev-exercises\5\5-4\lib\Cake\Routing\Dispatcher.php(167): Dispatcher->_invoke(Object(CommentsController), Object(CakeRequest))
+#4 C:\xampp\htdocs\yns-dev-exercises\5\5-4\app\webroot\index.php(117): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#5 {main}
+2020-03-06 04:39:20 Error: [Error] Call to a member function find() on null
+Request URL: /comments/index/5/page:6
+Stack Trace:
+#0 [internal function]: CommentsController->index('5')
+#1 C:\xampp\htdocs\yns-dev-exercises\5\5-4\lib\Cake\Controller\Controller.php(499): ReflectionMethod->invokeArgs(Object(CommentsController), Array)
+#2 C:\xampp\htdocs\yns-dev-exercises\5\5-4\lib\Cake\Routing\Dispatcher.php(193): Controller->invokeAction(Object(CakeRequest))
+#3 C:\xampp\htdocs\yns-dev-exercises\5\5-4\lib\Cake\Routing\Dispatcher.php(167): Dispatcher->_invoke(Object(CommentsController), Object(CakeRequest))
+#4 C:\xampp\htdocs\yns-dev-exercises\5\5-4\app\webroot\index.php(117): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#5 {main}
+2020-03-06 04:39:38 Error: [Error] Unsupported operand types
+Request URL: /comments/index/5/page:6
+Stack Trace:
+#0 [internal function]: CommentsController->index('5')
+#1 C:\xampp\htdocs\yns-dev-exercises\5\5-4\lib\Cake\Controller\Controller.php(499): ReflectionMethod->invokeArgs(Object(CommentsController), Array)
+#2 C:\xampp\htdocs\yns-dev-exercises\5\5-4\lib\Cake\Routing\Dispatcher.php(193): Controller->invokeAction(Object(CakeRequest))
+#3 C:\xampp\htdocs\yns-dev-exercises\5\5-4\lib\Cake\Routing\Dispatcher.php(167): Dispatcher->_invoke(Object(CommentsController), Object(CakeRequest))
+#4 C:\xampp\htdocs\yns-dev-exercises\5\5-4\app\webroot\index.php(117): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#5 {main}
+2020-03-06 05:01:25 Error: [Error] Unsupported operand types
+Request URL: /searches/posts/page:3?terms=a
+Stack Trace:
+#0 [internal function]: SearchesController->posts()
+#1 C:\xampp\htdocs\yns-dev-exercises\5\5-4\lib\Cake\Controller\Controller.php(499): ReflectionMethod->invokeArgs(Object(SearchesController), Array)
+#2 C:\xampp\htdocs\yns-dev-exercises\5\5-4\lib\Cake\Routing\Dispatcher.php(193): Controller->invokeAction(Object(CakeRequest))
+#3 C:\xampp\htdocs\yns-dev-exercises\5\5-4\lib\Cake\Routing\Dispatcher.php(167): Dispatcher->_invoke(Object(SearchesController), Object(CakeRequest))
+#4 C:\xampp\htdocs\yns-dev-exercises\5\5-4\app\webroot\index.php(117): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#5 {main}
+2020-03-06 06:16:57 Error: [Error] Call to a member function image() on null
+Request URL: /
+Stack Trace:
+#0 C:\xampp\htdocs\yns-dev-exercises\5\5-4\app\View\Posts\index.ctp(30): PostHelper->putPost(NULL)
+#1 C:\xampp\htdocs\yns-dev-exercises\5\5-4\lib\Cake\View\View.php(971): include('C:\\xampp\\htdocs...')
+#2 C:\xampp\htdocs\yns-dev-exercises\5\5-4\lib\Cake\View\View.php(933): View->_evaluate('C:\\xampp\\htdocs...', Array)
+#3 C:\xampp\htdocs\yns-dev-exercises\5\5-4\lib\Cake\View\View.php(473): View->_render('C:\\xampp\\htdocs...')
+#4 C:\xampp\htdocs\yns-dev-exercises\5\5-4\lib\Cake\Controller\Controller.php(968): View->render(NULL, NULL)
+#5 C:\xampp\htdocs\yns-dev-exercises\5\5-4\lib\Cake\Routing\Dispatcher.php(200): Controller->render()
+#6 C:\xampp\htdocs\yns-dev-exercises\5\5-4\lib\Cake\Routing\Dispatcher.php(167): Dispatcher->_invoke(Object(PostsController), Object(CakeRequest))
+#7 C:\xampp\htdocs\yns-dev-exercises\5\5-4\app\webroot\index.php(117): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#8 {main}
+2020-03-06 06:17:32 Error: [Error] Call to a member function image() on null
+Request URL: /
+Stack Trace:
+#0 C:\xampp\htdocs\yns-dev-exercises\5\5-4\app\View\Posts\index.ctp(30): PostHelper->putPost(NULL, Array)
+#1 C:\xampp\htdocs\yns-dev-exercises\5\5-4\lib\Cake\View\View.php(971): include('C:\\xampp\\htdocs...')
+#2 C:\xampp\htdocs\yns-dev-exercises\5\5-4\lib\Cake\View\View.php(933): View->_evaluate('C:\\xampp\\htdocs...', Array)
+#3 C:\xampp\htdocs\yns-dev-exercises\5\5-4\lib\Cake\View\View.php(473): View->_render('C:\\xampp\\htdocs...')
+#4 C:\xampp\htdocs\yns-dev-exercises\5\5-4\lib\Cake\Controller\Controller.php(968): View->render(NULL, NULL)
+#5 C:\xampp\htdocs\yns-dev-exercises\5\5-4\lib\Cake\Routing\Dispatcher.php(200): Controller->render()
+#6 C:\xampp\htdocs\yns-dev-exercises\5\5-4\lib\Cake\Routing\Dispatcher.php(167): Dispatcher->_invoke(Object(PostsController), Object(CakeRequest))
+#7 C:\xampp\htdocs\yns-dev-exercises\5\5-4\app\webroot\index.php(117): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#8 {main}
+2020-03-06 06:17:51 Error: [Error] Call to a member function image() on null
+Request URL: /
+Stack Trace:
+#0 C:\xampp\htdocs\yns-dev-exercises\5\5-4\app\View\Posts\index.ctp(30): PostHelper->putPost(Array, Array)
+#1 C:\xampp\htdocs\yns-dev-exercises\5\5-4\lib\Cake\View\View.php(971): include('C:\\xampp\\htdocs...')
+#2 C:\xampp\htdocs\yns-dev-exercises\5\5-4\lib\Cake\View\View.php(933): View->_evaluate('C:\\xampp\\htdocs...', Array)
+#3 C:\xampp\htdocs\yns-dev-exercises\5\5-4\lib\Cake\View\View.php(473): View->_render('C:\\xampp\\htdocs...')
+#4 C:\xampp\htdocs\yns-dev-exercises\5\5-4\lib\Cake\Controller\Controller.php(968): View->render(NULL, NULL)
+#5 C:\xampp\htdocs\yns-dev-exercises\5\5-4\lib\Cake\Routing\Dispatcher.php(200): Controller->render()
+#6 C:\xampp\htdocs\yns-dev-exercises\5\5-4\lib\Cake\Routing\Dispatcher.php(167): Dispatcher->_invoke(Object(PostsController), Object(CakeRequest))
+#7 C:\xampp\htdocs\yns-dev-exercises\5\5-4\app\webroot\index.php(117): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#8 {main}
+2020-03-06 06:23:53 Error: [MissingActionException] Action FollowersController::favicon.ico() could not be found.
+Exception Attributes: array (
+  'controller' => 'FollowersController',
+  'action' => 'favicon.ico',
+)
+Request URL: /followers/favicon.ico
+Stack Trace:
+#0 C:\xampp\htdocs\yns-dev-exercises\5\5-4\lib\Cake\Routing\Dispatcher.php(193): Controller->invokeAction(Object(CakeRequest))
+#1 C:\xampp\htdocs\yns-dev-exercises\5\5-4\lib\Cake\Routing\Dispatcher.php(167): Dispatcher->_invoke(Object(FollowersController), Object(CakeRequest))
+#2 C:\xampp\htdocs\yns-dev-exercises\5\5-4\app\webroot\index.php(117): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#3 {main}
+2020-03-06 06:27:34 Error: [ParseError] syntax error, unexpected end of file, expecting function (T_FUNCTION) or const (T_CONST)
+Request URL: /
+Stack Trace:
+#0 [internal function]: App::load('PostHelper')
+#1 [internal function]: spl_autoload_call('PostHelper')
+#2 C:\xampp\htdocs\yns-dev-exercises\5\5-4\lib\Cake\View\HelperCollection.php(130): class_exists('PostHelper')
+#3 C:\xampp\htdocs\yns-dev-exercises\5\5-4\lib\Cake\View\HelperCollection.php(63): HelperCollection->load('Post')
+#4 C:\xampp\htdocs\yns-dev-exercises\5\5-4\lib\Cake\View\View.php(858): HelperCollection->__isset('Post')
+#5 C:\xampp\htdocs\yns-dev-exercises\5\5-4\app\View\Posts\index.ctp(31): View->__get('Post')
+#6 C:\xampp\htdocs\yns-dev-exercises\5\5-4\lib\Cake\View\View.php(971): include('C:\\xampp\\htdocs...')
+#7 C:\xampp\htdocs\yns-dev-exercises\5\5-4\lib\Cake\View\View.php(933): View->_evaluate('C:\\xampp\\htdocs...', Array)
+#8 C:\xampp\htdocs\yns-dev-exercises\5\5-4\lib\Cake\View\View.php(473): View->_render('C:\\xampp\\htdocs...')
+#9 C:\xampp\htdocs\yns-dev-exercises\5\5-4\lib\Cake\Controller\Controller.php(968): View->render(NULL, NULL)
+#10 C:\xampp\htdocs\yns-dev-exercises\5\5-4\lib\Cake\Routing\Dispatcher.php(200): Controller->render()
+#11 C:\xampp\htdocs\yns-dev-exercises\5\5-4\lib\Cake\Routing\Dispatcher.php(167): Dispatcher->_invoke(Object(PostsController), Object(CakeRequest))
+#12 C:\xampp\htdocs\yns-dev-exercises\5\5-4\app\webroot\index.php(117): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#13 {main}
+2020-03-06 06:28:29 Error: Fatal Error (64): Cannot declare class SpaceHelper, because the name is already in use in [C:\xampp\htdocs\yns-dev-exercises\5\5-4\app\View\Helper\PostHelper.php, line 122]
+2020-03-06 06:28:29 Error: [FatalErrorException] Cannot declare class SpaceHelper, because the name is already in use
+Request URL: /
+Stack Trace:
+#0 C:\xampp\htdocs\yns-dev-exercises\5\5-4\lib\Cake\Error\ErrorHandler.php(212): ErrorHandler::handleFatalError(64, 'Cannot declare ...', 'C:\\xampp\\htdocs...', 122)
+#1 C:\xampp\htdocs\yns-dev-exercises\5\5-4\lib\Cake\Core\App.php(970): ErrorHandler::handleError(64, 'Cannot declare ...', 'C:\\xampp\\htdocs...', 122, Array)
+#2 C:\xampp\htdocs\yns-dev-exercises\5\5-4\lib\Cake\Core\App.php(943): App::_checkFatalError()
+#3 [internal function]: App::shutdown()
+#4 {main}
+2020-03-06 06:28:50 Error: [Error] Call to a member function image() on null
+Request URL: /
+Stack Trace:
+#0 C:\xampp\htdocs\yns-dev-exercises\5\5-4\app\View\Posts\index.ctp(31): PostHelper->putPost(Array, Array)
+#1 C:\xampp\htdocs\yns-dev-exercises\5\5-4\lib\Cake\View\View.php(971): include('C:\\xampp\\htdocs...')
+#2 C:\xampp\htdocs\yns-dev-exercises\5\5-4\lib\Cake\View\View.php(933): View->_evaluate('C:\\xampp\\htdocs...', Array)
+#3 C:\xampp\htdocs\yns-dev-exercises\5\5-4\lib\Cake\View\View.php(473): View->_render('C:\\xampp\\htdocs...')
+#4 C:\xampp\htdocs\yns-dev-exercises\5\5-4\lib\Cake\Controller\Controller.php(968): View->render(NULL, NULL)
+#5 C:\xampp\htdocs\yns-dev-exercises\5\5-4\lib\Cake\Routing\Dispatcher.php(200): Controller->render()
+#6 C:\xampp\htdocs\yns-dev-exercises\5\5-4\lib\Cake\Routing\Dispatcher.php(167): Dispatcher->_invoke(Object(PostsController), Object(CakeRequest))
+#7 C:\xampp\htdocs\yns-dev-exercises\5\5-4\app\webroot\index.php(117): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#8 {main}
+2020-03-06 06:29:35 Error: [Error] Call to a member function read() on null
+Request URL: /
+Stack Trace:
+#0 C:\xampp\htdocs\yns-dev-exercises\5\5-4\app\View\Posts\index.ctp(31): PostHelper->putPost(Array, Array)
+#1 C:\xampp\htdocs\yns-dev-exercises\5\5-4\lib\Cake\View\View.php(971): include('C:\\xampp\\htdocs...')
+#2 C:\xampp\htdocs\yns-dev-exercises\5\5-4\lib\Cake\View\View.php(933): View->_evaluate('C:\\xampp\\htdocs...', Array)
+#3 C:\xampp\htdocs\yns-dev-exercises\5\5-4\lib\Cake\View\View.php(473): View->_render('C:\\xampp\\htdocs...')
+#4 C:\xampp\htdocs\yns-dev-exercises\5\5-4\lib\Cake\Controller\Controller.php(968): View->render(NULL, NULL)
+#5 C:\xampp\htdocs\yns-dev-exercises\5\5-4\lib\Cake\Routing\Dispatcher.php(200): Controller->render()
+#6 C:\xampp\htdocs\yns-dev-exercises\5\5-4\lib\Cake\Routing\Dispatcher.php(167): Dispatcher->_invoke(Object(PostsController), Object(CakeRequest))
+#7 C:\xampp\htdocs\yns-dev-exercises\5\5-4\app\webroot\index.php(117): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#8 {main}
+2020-03-06 06:30:28 Error: [Error] Call to a member function read() on null
+Request URL: /
+Stack Trace:
+#0 C:\xampp\htdocs\yns-dev-exercises\5\5-4\app\View\Posts\index.ctp(31): PostHelper->putPost(Array, Array)
+#1 C:\xampp\htdocs\yns-dev-exercises\5\5-4\lib\Cake\View\View.php(971): include('C:\\xampp\\htdocs...')
+#2 C:\xampp\htdocs\yns-dev-exercises\5\5-4\lib\Cake\View\View.php(933): View->_evaluate('C:\\xampp\\htdocs...', Array)
+#3 C:\xampp\htdocs\yns-dev-exercises\5\5-4\lib\Cake\View\View.php(473): View->_render('C:\\xampp\\htdocs...')
+#4 C:\xampp\htdocs\yns-dev-exercises\5\5-4\lib\Cake\Controller\Controller.php(968): View->render(NULL, NULL)
+#5 C:\xampp\htdocs\yns-dev-exercises\5\5-4\lib\Cake\Routing\Dispatcher.php(200): Controller->render()
+#6 C:\xampp\htdocs\yns-dev-exercises\5\5-4\lib\Cake\Routing\Dispatcher.php(167): Dispatcher->_invoke(Object(PostsController), Object(CakeRequest))
+#7 C:\xampp\htdocs\yns-dev-exercises\5\5-4\app\webroot\index.php(117): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#8 {main}
+2020-03-06 06:42:36 Error: [MissingActionException] Action SearchesController::like() could not be found.
+Exception Attributes: array (
+  'controller' => 'SearchesController',
+  'action' => 'like',
+)
+Request URL: /searches/like/6
+Stack Trace:
+#0 C:\xampp\htdocs\yns-dev-exercises\5\5-4\lib\Cake\Routing\Dispatcher.php(193): Controller->invokeAction(Object(CakeRequest))
+#1 C:\xampp\htdocs\yns-dev-exercises\5\5-4\lib\Cake\Routing\Dispatcher.php(167): Dispatcher->_invoke(Object(SearchesController), Object(CakeRequest))
+#2 C:\xampp\htdocs\yns-dev-exercises\5\5-4\app\webroot\index.php(117): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#3 {main}
+2020-03-06 06:43:58 Error: [MissingActionException] Action SearchesController::like() could not be found.
+Exception Attributes: array (
+  'controller' => 'SearchesController',
+  'action' => 'like',
+)
+Request URL: /searches/like/6
+Stack Trace:
+#0 C:\xampp\htdocs\yns-dev-exercises\5\5-4\lib\Cake\Routing\Dispatcher.php(193): Controller->invokeAction(Object(CakeRequest))
+#1 C:\xampp\htdocs\yns-dev-exercises\5\5-4\lib\Cake\Routing\Dispatcher.php(167): Dispatcher->_invoke(Object(SearchesController), Object(CakeRequest))
+#2 C:\xampp\htdocs\yns-dev-exercises\5\5-4\app\webroot\index.php(117): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#3 {main}
+2020-03-06 06:43:59 Error: [MissingActionException] Action SearchesController::like() could not be found.
+Exception Attributes: array (
+  'controller' => 'SearchesController',
+  'action' => 'like',
+)
+Request URL: /searches/like/favicon.ico
+Stack Trace:
+#0 C:\xampp\htdocs\yns-dev-exercises\5\5-4\lib\Cake\Routing\Dispatcher.php(193): Controller->invokeAction(Object(CakeRequest))
+#1 C:\xampp\htdocs\yns-dev-exercises\5\5-4\lib\Cake\Routing\Dispatcher.php(167): Dispatcher->_invoke(Object(SearchesController), Object(CakeRequest))
+#2 C:\xampp\htdocs\yns-dev-exercises\5\5-4\app\webroot\index.php(117): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#3 {main}
+2020-03-06 06:46:06 Error: [MissingActionException] Action SearchesController::favicon.ico() could not be found.
+Exception Attributes: array (
+  'controller' => 'SearchesController',
+  'action' => 'favicon.ico',
+)
+Request URL: /searches/favicon.ico
+Stack Trace:
+#0 C:\xampp\htdocs\yns-dev-exercises\5\5-4\lib\Cake\Routing\Dispatcher.php(193): Controller->invokeAction(Object(CakeRequest))
+#1 C:\xampp\htdocs\yns-dev-exercises\5\5-4\lib\Cake\Routing\Dispatcher.php(167): Dispatcher->_invoke(Object(SearchesController), Object(CakeRequest))
+#2 C:\xampp\htdocs\yns-dev-exercises\5\5-4\app\webroot\index.php(117): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#3 {main}
+2020-03-06 06:49:05 Error: [ParseError] syntax error, unexpected '}'
+Request URL: /searches/posts?terms=a
+Stack Trace:
+#0 C:\xampp\htdocs\yns-dev-exercises\5\5-4\lib\Cake\View\View.php(933): View->_evaluate('C:\\xampp\\htdocs...', Array)
+#1 C:\xampp\htdocs\yns-dev-exercises\5\5-4\lib\Cake\View\View.php(473): View->_render('C:\\xampp\\htdocs...')
+#2 C:\xampp\htdocs\yns-dev-exercises\5\5-4\lib\Cake\Controller\Controller.php(968): View->render(NULL, NULL)
+#3 C:\xampp\htdocs\yns-dev-exercises\5\5-4\lib\Cake\Routing\Dispatcher.php(200): Controller->render()
+#4 C:\xampp\htdocs\yns-dev-exercises\5\5-4\lib\Cake\Routing\Dispatcher.php(167): Dispatcher->_invoke(Object(SearchesController), Object(CakeRequest))
+#5 C:\xampp\htdocs\yns-dev-exercises\5\5-4\app\webroot\index.php(117): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#6 {main}
+2020-03-06 06:59:44 Error: [Error] Call to a member function find() on null
+Request URL: /comments/index/5
+Stack Trace:
+#0 [internal function]: CommentsController->index('5')
+#1 C:\xampp\htdocs\yns-dev-exercises\5\5-4\lib\Cake\Controller\Controller.php(499): ReflectionMethod->invokeArgs(Object(CommentsController), Array)
+#2 C:\xampp\htdocs\yns-dev-exercises\5\5-4\lib\Cake\Routing\Dispatcher.php(193): Controller->invokeAction(Object(CakeRequest))
+#3 C:\xampp\htdocs\yns-dev-exercises\5\5-4\lib\Cake\Routing\Dispatcher.php(167): Dispatcher->_invoke(Object(CommentsController), Object(CakeRequest))
+#4 C:\xampp\htdocs\yns-dev-exercises\5\5-4\app\webroot\index.php(117): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#5 {main}
+2020-03-06 07:00:31 Error: [Error] Call to a member function find() on null
+Request URL: /comments/index/5
+Stack Trace:
+#0 [internal function]: CommentsController->index('5')
+#1 C:\xampp\htdocs\yns-dev-exercises\5\5-4\lib\Cake\Controller\Controller.php(499): ReflectionMethod->invokeArgs(Object(CommentsController), Array)
+#2 C:\xampp\htdocs\yns-dev-exercises\5\5-4\lib\Cake\Routing\Dispatcher.php(193): Controller->invokeAction(Object(CakeRequest))
+#3 C:\xampp\htdocs\yns-dev-exercises\5\5-4\lib\Cake\Routing\Dispatcher.php(167): Dispatcher->_invoke(Object(CommentsController), Object(CakeRequest))
+#4 C:\xampp\htdocs\yns-dev-exercises\5\5-4\app\webroot\index.php(117): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#5 {main}
+2020-03-06 07:11:08 Error: [Error] Call to a member function find() on null
+Request URL: /users/login
+Stack Trace:
+#0 [internal function]: UsersController->login()
+#1 C:\xampp\htdocs\yns-dev-exercises\5\5-4\lib\Cake\Controller\Controller.php(499): ReflectionMethod->invokeArgs(Object(UsersController), Array)
+#2 C:\xampp\htdocs\yns-dev-exercises\5\5-4\lib\Cake\Routing\Dispatcher.php(193): Controller->invokeAction(Object(CakeRequest))
+#3 C:\xampp\htdocs\yns-dev-exercises\5\5-4\lib\Cake\Routing\Dispatcher.php(167): Dispatcher->_invoke(Object(UsersController), Object(CakeRequest))
+#4 C:\xampp\htdocs\yns-dev-exercises\5\5-4\app\webroot\index.php(117): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#5 {main}
+2020-03-06 07:11:26 Error: [Error] Call to a member function find() on null
+Request URL: /users/login
+Stack Trace:
+#0 [internal function]: UsersController->login()
+#1 C:\xampp\htdocs\yns-dev-exercises\5\5-4\lib\Cake\Controller\Controller.php(499): ReflectionMethod->invokeArgs(Object(UsersController), Array)
+#2 C:\xampp\htdocs\yns-dev-exercises\5\5-4\lib\Cake\Routing\Dispatcher.php(193): Controller->invokeAction(Object(CakeRequest))
+#3 C:\xampp\htdocs\yns-dev-exercises\5\5-4\lib\Cake\Routing\Dispatcher.php(167): Dispatcher->_invoke(Object(UsersController), Object(CakeRequest))
+#4 C:\xampp\htdocs\yns-dev-exercises\5\5-4\app\webroot\index.php(117): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#5 {main}
+2020-03-06 07:12:52 Error: [Error] Call to a member function find() on null
+Request URL: /users/login
+Stack Trace:
+#0 [internal function]: UsersController->login()
+#1 C:\xampp\htdocs\yns-dev-exercises\5\5-4\lib\Cake\Controller\Controller.php(499): ReflectionMethod->invokeArgs(Object(UsersController), Array)
+#2 C:\xampp\htdocs\yns-dev-exercises\5\5-4\lib\Cake\Routing\Dispatcher.php(193): Controller->invokeAction(Object(CakeRequest))
+#3 C:\xampp\htdocs\yns-dev-exercises\5\5-4\lib\Cake\Routing\Dispatcher.php(167): Dispatcher->_invoke(Object(UsersController), Object(CakeRequest))
+#4 C:\xampp\htdocs\yns-dev-exercises\5\5-4\app\webroot\index.php(117): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#5 {main}
+2020-03-06 07:15:27 Error: [MissingViewException] View file "Users\signup.ctp" is missing.
+Exception Attributes: array (
+  'file' => 'Users\\signup.ctp',
+)
+Request URL: /users/signup
+Stack Trace:
+#0 C:\xampp\htdocs\yns-dev-exercises\5\5-4\lib\Cake\View\View.php(470): View->_getViewFileName('Users\\signup')
+#1 C:\xampp\htdocs\yns-dev-exercises\5\5-4\lib\Cake\Controller\Controller.php(968): View->render(NULL, NULL)
+#2 C:\xampp\htdocs\yns-dev-exercises\5\5-4\lib\Cake\Routing\Dispatcher.php(200): Controller->render()
+#3 C:\xampp\htdocs\yns-dev-exercises\5\5-4\lib\Cake\Routing\Dispatcher.php(167): Dispatcher->_invoke(Object(UsersController), Object(CakeRequest))
+#4 C:\xampp\htdocs\yns-dev-exercises\5\5-4\app\webroot\index.php(117): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#5 {main}
+2020-03-06 07:32:57 Error: [ParseError] syntax error, unexpected ';'
+Request URL: /followers
+Stack Trace:
+#0 [internal function]: App::load('FollowersContro...')
+#1 [internal function]: spl_autoload_call('FollowersContro...')
+#2 C:\xampp\htdocs\yns-dev-exercises\5\5-4\lib\Cake\Routing\Dispatcher.php(266): class_exists('FollowersContro...')
+#3 C:\xampp\htdocs\yns-dev-exercises\5\5-4\lib\Cake\Routing\Dispatcher.php(235): Dispatcher->_loadController(Object(CakeRequest))
+#4 C:\xampp\htdocs\yns-dev-exercises\5\5-4\lib\Cake\Routing\Dispatcher.php(158): Dispatcher->_getController(Object(CakeRequest), Object(CakeResponse))
+#5 C:\xampp\htdocs\yns-dev-exercises\5\5-4\app\webroot\index.php(117): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#6 {main}
+2020-03-06 07:33:32 Error: [ParseError] syntax error, unexpected ';'
+Request URL: /followers/following
+Stack Trace:
+#0 [internal function]: App::load('FollowersContro...')
+#1 [internal function]: spl_autoload_call('FollowersContro...')
+#2 C:\xampp\htdocs\yns-dev-exercises\5\5-4\lib\Cake\Routing\Dispatcher.php(266): class_exists('FollowersContro...')
+#3 C:\xampp\htdocs\yns-dev-exercises\5\5-4\lib\Cake\Routing\Dispatcher.php(235): Dispatcher->_loadController(Object(CakeRequest))
+#4 C:\xampp\htdocs\yns-dev-exercises\5\5-4\lib\Cake\Routing\Dispatcher.php(158): Dispatcher->_getController(Object(CakeRequest), Object(CakeResponse))
+#5 C:\xampp\htdocs\yns-dev-exercises\5\5-4\app\webroot\index.php(117): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#6 {main}
+2020-03-06 07:33:34 Error: [ParseError] syntax error, unexpected ';'
+Request URL: /followers
+Stack Trace:
+#0 [internal function]: App::load('FollowersContro...')
+#1 [internal function]: spl_autoload_call('FollowersContro...')
+#2 C:\xampp\htdocs\yns-dev-exercises\5\5-4\lib\Cake\Routing\Dispatcher.php(266): class_exists('FollowersContro...')
+#3 C:\xampp\htdocs\yns-dev-exercises\5\5-4\lib\Cake\Routing\Dispatcher.php(235): Dispatcher->_loadController(Object(CakeRequest))
+#4 C:\xampp\htdocs\yns-dev-exercises\5\5-4\lib\Cake\Routing\Dispatcher.php(158): Dispatcher->_getController(Object(CakeRequest), Object(CakeResponse))
+#5 C:\xampp\htdocs\yns-dev-exercises\5\5-4\app\webroot\index.php(117): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#6 {main}
+2020-03-06 07:33:54 Error: [ParseError] syntax error, unexpected ';'
+Request URL: /followers/following
+Stack Trace:
+#0 [internal function]: App::load('FollowersContro...')
+#1 [internal function]: spl_autoload_call('FollowersContro...')
+#2 C:\xampp\htdocs\yns-dev-exercises\5\5-4\lib\Cake\Routing\Dispatcher.php(266): class_exists('FollowersContro...')
+#3 C:\xampp\htdocs\yns-dev-exercises\5\5-4\lib\Cake\Routing\Dispatcher.php(235): Dispatcher->_loadController(Object(CakeRequest))
+#4 C:\xampp\htdocs\yns-dev-exercises\5\5-4\lib\Cake\Routing\Dispatcher.php(158): Dispatcher->_getController(Object(CakeRequest), Object(CakeResponse))
+#5 C:\xampp\htdocs\yns-dev-exercises\5\5-4\app\webroot\index.php(117): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#6 {main}
+2020-03-06 07:33:56 Error: [ParseError] syntax error, unexpected ';'
+Request URL: /followers
+Stack Trace:
+#0 [internal function]: App::load('FollowersContro...')
+#1 [internal function]: spl_autoload_call('FollowersContro...')
+#2 C:\xampp\htdocs\yns-dev-exercises\5\5-4\lib\Cake\Routing\Dispatcher.php(266): class_exists('FollowersContro...')
+#3 C:\xampp\htdocs\yns-dev-exercises\5\5-4\lib\Cake\Routing\Dispatcher.php(235): Dispatcher->_loadController(Object(CakeRequest))
+#4 C:\xampp\htdocs\yns-dev-exercises\5\5-4\lib\Cake\Routing\Dispatcher.php(158): Dispatcher->_getController(Object(CakeRequest), Object(CakeResponse))
+#5 C:\xampp\htdocs\yns-dev-exercises\5\5-4\app\webroot\index.php(117): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#6 {main}
+2020-03-06 07:35:16 Error: [ParseError] syntax error, unexpected ';', expecting ')'
+Request URL: /followers
+Stack Trace:
+#0 [internal function]: App::load('FollowersContro...')
+#1 [internal function]: spl_autoload_call('FollowersContro...')
+#2 C:\xampp\htdocs\yns-dev-exercises\5\5-4\lib\Cake\Routing\Dispatcher.php(266): class_exists('FollowersContro...')
+#3 C:\xampp\htdocs\yns-dev-exercises\5\5-4\lib\Cake\Routing\Dispatcher.php(235): Dispatcher->_loadController(Object(CakeRequest))
+#4 C:\xampp\htdocs\yns-dev-exercises\5\5-4\lib\Cake\Routing\Dispatcher.php(158): Dispatcher->_getController(Object(CakeRequest), Object(CakeResponse))
+#5 C:\xampp\htdocs\yns-dev-exercises\5\5-4\app\webroot\index.php(117): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#6 {main}
+2020-03-06 07:50:31 Error: [MissingControllerException] Controller class Robots.txtController could not be found.
+Exception Attributes: array (
+  'class' => 'Robots.txtController',
+  'plugin' => NULL,
+)
+Request URL: /robots.txt
+Stack Trace:
+#0 C:\xampp\htdocs\yns-dev-exercises\5\5-4\app\webroot\index.php(117): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}

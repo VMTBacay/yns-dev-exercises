@@ -11,8 +11,9 @@ class EmailConfig {
 }
 
 class UsersController extends AppController {
-    public $helpers = array('Html', 'Form', 'Flash');
     public $components = array('Flash', 'Session');
+
+    public $uses = array('User', 'Follower');
 
     public function beforeFilter() {
     }
@@ -80,6 +81,17 @@ class UsersController extends AppController {
 
             if (!empty($user) && $user['User']['password'] === $this->request->data['User']['password'] && $user['User']['activated']) {
                 $this->Session->write('User', $user['User']);
+
+                $follows = array($this->Session->read('User.id'));
+                $followIds = $this->Follower->find('all', array(
+                    'conditions' => array('follower_id' => $this->Session->read('User.id'), 'Follower.deleted' => 0),
+                    'fields' => 'user_id'
+                ));
+                foreach ($followIds as $followId) {
+                    array_push($follows, $followId['Follower']['user_id']);
+                }
+                $this->Session->write('User.follows', $follows);
+
                 return $this->redirect(array('controller' => 'posts'));
             } else {
                 $this->Flash->error(__('Invalid username/password.'));
@@ -167,7 +179,6 @@ class UsersController extends AppController {
             }
             $this->request->data['User']['profile_pic'] = basename($target_file);
             if ($this->User->save($this->request->data)) {
-
                 move_uploaded_file($this->request->data['User']['pic']['tmp_name'], $target_file);
                 $this->Flash->success(__('Your profile picture has been updated.'));
                 $this->Session->write('User.profile_pic', basename($target_file));

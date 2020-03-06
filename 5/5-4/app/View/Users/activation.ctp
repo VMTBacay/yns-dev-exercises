@@ -1,6 +1,8 @@
 <div class="sulibox">
-    An activation code has been sent to your email.<br>
-    Enter it to activate your account.
+    <div style="margin: 10px;">
+        An activation code has been sent to your email.<br>
+        Enter it to activate your account.
+    </div>
     <?php
     echo $this->Form->create('User');
     echo $this->Form->input('code');

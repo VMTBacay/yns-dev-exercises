@@ -1,6 +1,5 @@
 <?php
 class SearchesController extends AppController {
-    public $helpers = array('Html', 'Form', 'Flash', 'Space');
     public $components = array('Flash', 'Session', 'Paginator');
 
     public $uses = array('User', 'Post', 'Follower');
@@ -15,16 +14,6 @@ class SearchesController extends AppController {
         }
         $this->set('terms', $terms);
 
-        $follows = array($this->Session->read('User.id'));
-        $followIds = $this->Follower->find('all', array(
-            'conditions' => array('follower_id' => $this->Session->read('User.id'), 'Follower.deleted' => 0),
-            'fields' => 'user_id'
-        ));
-        foreach ($followIds as $followId) {
-            array_push($follows, $followId['Follower']['user_id']);
-        }
-        $this->set('follows', $follows);
-
         $this->set('posts', $this->Post->find('all', array(
             'conditions' => array(
                 'OR' => array(
@@ -38,16 +27,6 @@ class SearchesController extends AppController {
     }
 
     public function users() {
-        $follows = array($this->Session->read('User.id'));
-        $followIds = $this->Follower->find('all', array(
-            'conditions' => array('follower_id' => $this->Session->read('User.id'), 'Follower.deleted' => 0),
-            'fields' => 'user_id'
-        ));
-        foreach ($followIds as $followId) {
-            array_push($follows, $followId['Follower']['user_id']);
-        }
-        $this->set('follows', $follows);
-
         $terms = $this->params['url']['terms'];
         $this->set('terms', $terms);
 
@@ -55,20 +34,18 @@ class SearchesController extends AppController {
             'conditions' => array('User.username LIKE' => '%' . $terms . '%'),
             'limit' => self::PAGE_LIMIT
         );
-       $this->set('users', $this->Paginator->paginate('User'));
+
+        try {
+            $this->set('users', $this->Paginator->paginate('User'));
+        } catch (Exception $e) {
+            return $this->redirect(array_merge(
+                array('action' => 'users', '?' => array('terms' => $terms)),
+                array('page' => ceil(count($this->User->find('all', array('conditions' => array('User.username LIKE' => '%' . $terms . '%')))) / self::PAGE_LIMIT
+            ))));
+        }
     }
 
     public function posts() {
-        $follows = array($this->Session->read('User.id'));
-        $followIds = $this->Follower->find('all', array(
-            'conditions' => array('follower_id' => $this->Session->read('User.id'), 'Follower.deleted' => 0),
-            'fields' => 'user_id'
-        ));
-        foreach ($followIds as $followId) {
-            array_push($follows, $followId['Follower']['user_id']);
-        }
-        $this->set('follows', $follows);
-
         $terms = $this->params['url']['terms'];
         $this->set('terms', $terms);
 
@@ -79,6 +56,18 @@ class SearchesController extends AppController {
                     'Post.body LIKE' => '%' . $terms . '%')),
             'limit' => self::PAGE_LIMIT
         );
-        $this->set('posts', $this->Paginator->paginate('Post'));
+
+        try {
+            $this->set('posts', $this->Paginator->paginate('Post'));
+        } catch (Exception $e) {
+            return $this->redirect(array_merge(
+                array('action' => 'posts', '?' => array('terms' => $terms)),
+                array('page' => ceil(count($this->Post->find('all', array('conditions' => array(
+                    'OR' => array(
+                        'Post.title LIKE' => '%' . $terms . '%',
+                        'Post.body LIKE' => '%' . $terms . '%')))))
+                    / self::PAGE_LIMIT
+            ))));
+        }
     }
 }

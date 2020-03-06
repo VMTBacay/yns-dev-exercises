@@ -1,6 +1,5 @@
 <?php
 class PostsController extends AppController {
-    public $helpers = array('Html', 'Form', 'Flash', 'Space');
     public $components = array('Flash', 'Session');
 
     public $uses = array('Post', 'Repost', 'Like', 'Comment', 'Follower');
@@ -8,17 +7,7 @@ class PostsController extends AppController {
     public function index($userOnly = null) {
         $this->set('userOnly', $userOnly);
 
-        $follows = array($this->Session->read('User.id'));
-        if ($userOnly === null) {
-            $followIds = $this->Follower->find('all', array(
-                'conditions' => array('follower_id' => $this->Session->read('User.id'), 'Follower.deleted' => 0),
-                'fields' => 'user_id'
-            ));
-            foreach ($followIds as $followId) {
-                array_push($follows, $followId['Follower']['user_id']);
-            }
-        }
-        $this->set('follows', $follows);
+        $follows = $userOnly === null ? $this->Session->read('User.follows') : array($this->Session->read('User.id'));
 
         $repostPostIds = $this->Repost->find('all', array(
             'conditions' => array('Repost.user_id' => $follows, 'Repost.deleted' => 0),
@@ -55,7 +44,7 @@ class PostsController extends AppController {
                 }
                 $this->request->data['Post']['image'] = basename($target_file);
             }
-            
+
             if ($this->Post->save($this->request->data)) {
                 if ($this->request->data['Post']['pic']['name'] !== null) {
                     move_uploaded_file($this->request->data['Post']['pic']['tmp_name'], $target_file);
