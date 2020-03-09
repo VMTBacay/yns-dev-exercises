@@ -117,7 +117,7 @@ class PostsController extends AppController {
         if ($this->request->is('post')) {
             if ($this->Post->save(array('id' => $id, 'deleted' => 1, 'deleted_date' => date("Y-m-d H:i:s")))) {
                 $this->Flash->success(__('Your post has been deleted.'));
-                return $this->redirect($this->referer());
+                return $this->redirect(array('controller' => 'posts', 'action' => 'index'));
             }
             $this->Flash->error(__('Unable to delete your post.'));
             return $this->redirect($this->referer());

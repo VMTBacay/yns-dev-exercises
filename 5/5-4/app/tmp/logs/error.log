@@ -8788,3 +8788,30 @@ Request URL: /robots.txt
 Stack Trace:
 #0 C:\xampp\htdocs\yns-dev-exercises\5\5-4\app\webroot\index.php(117): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
 #1 {main}
+2020-03-09 03:20:41 Error: [MissingControllerException] Controller class Robots.txtController could not be found.
+Exception Attributes: array (
+  'class' => 'Robots.txtController',
+  'plugin' => NULL,
+)
+Request URL: /robots.txt
+Stack Trace:
+#0 C:\xampp\htdocs\yns-dev-exercises\5\5-4\app\webroot\index.php(117): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2020-03-09 03:24:20 Error: [MissingControllerException] Controller class Robots.txtController could not be found.
+Exception Attributes: array (
+  'class' => 'Robots.txtController',
+  'plugin' => NULL,
+)
+Request URL: /robots.txt
+Stack Trace:
+#0 C:\xampp\htdocs\yns-dev-exercises\5\5-4\app\webroot\index.php(117): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2020-03-09 03:43:56 Error: [NotFoundException] Invalid post
+Request URL: /comments/index/favicon.ico
+Stack Trace:
+#0 [internal function]: CommentsController->index('favicon.ico')
+#1 C:\xampp\htdocs\yns-dev-exercises\5\5-4\lib\Cake\Controller\Controller.php(499): ReflectionMethod->invokeArgs(Object(CommentsController), Array)
+#2 C:\xampp\htdocs\yns-dev-exercises\5\5-4\lib\Cake\Routing\Dispatcher.php(193): Controller->invokeAction(Object(CakeRequest))
+#3 C:\xampp\htdocs\yns-dev-exercises\5\5-4\lib\Cake\Routing\Dispatcher.php(167): Dispatcher->_invoke(Object(CommentsController), Object(CakeRequest))
+#4 C:\xampp\htdocs\yns-dev-exercises\5\5-4\app\webroot\index.php(117): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#5 {main}

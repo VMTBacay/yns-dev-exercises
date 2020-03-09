@@ -19,17 +19,19 @@ Comments
             </span>
             <span>
                 <?php
-                echo $this->Form->postLink(
-                    'Delete',
-                    array('action' => 'delete', $comment['Comment']['id']),
-                    array('confirm' => 'Are you sure?')
-                );
-                $this->Space->spaceMaker();
+                if ($comment['Comment']['user_id'] === $this->Session->read('User.id')) {
+                    echo $this->Form->postLink(
+                        'Delete',
+                        array('action' => 'delete', $comment['Comment']['id']),
+                        array('confirm' => 'Are you sure?')
+                    );
+                    $this->Space->spaceMaker();
 
-                echo $this->Html->link(
-                    'Edit', array('action' => 'edit', $comment['Comment']['id'])
-                );
-                $this->Space->spaceMaker();
+                    echo $this->Html->link(
+                        'Edit', array('action' => 'edit', $comment['Comment']['id'])
+                    );
+                    $this->Space->spaceMaker();
+                }
                 ?>
             </span>
         </div>
