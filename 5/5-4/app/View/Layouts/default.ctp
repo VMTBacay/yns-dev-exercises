@@ -45,7 +45,7 @@
         echo $this->Html->link('Edit Profile Picture', array('controller' => 'users', 'action' => 'editProfilePic'));
         ?>
     </div>
-    <div id="content" style="margin-left: 160px;">
+    <div id="content" style="margin-left: 190px;">
         <?php echo $this->Flash->render();?>
         <?php echo $this->fetch('content'); ?>
     </div>
