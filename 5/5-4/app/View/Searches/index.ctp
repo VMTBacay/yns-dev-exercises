@@ -14,8 +14,8 @@ if (count($users) > 3) {
     echo $this->Html->link('More user results', $this->Html->url(array(
         'controller' => 'searches',
         'action' => 'users',
-        "?" => array('terms' => $terms)
-    )));
+        "?" => array('terms' => $terms)))
+    );
 }
 ?>
 <br><br>
@@ -26,14 +26,14 @@ if (empty($posts)) {
     echo 'No posts found';
 }
 for ($i = 0; $i < min(RESULTS_LIMIT, count($posts)); $i++) {
-    $this->Putter->putPost($posts[$i], $this->Session->read('User.follows'));
+    $this->Putter->putPost($posts[$i], $this->Session->read('user.follows'));
 }
 
 if (count($posts) > 3) {
     echo $this->Html->link('More post results', $this->Html->url(array(
         'controller' => 'searches',
         'action' => 'posts',
-        '?' => array('terms' => $terms)
-    )));
+        '?' => array('terms' => $terms)))
+    );
 }
 ?>

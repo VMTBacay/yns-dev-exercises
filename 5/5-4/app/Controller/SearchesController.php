@@ -18,12 +18,12 @@ class SearchesController extends AppController {
             'conditions' => array(
                 'OR' => array(
                     'Post.title LIKE' => '%' . $terms . '%',
-                    'Post.body LIKE' => '%' . $terms . '%'))
-        )));
+                    'Post.body LIKE' => '%' . $terms . '%'))))
+        );
 
         $this->set('users', $this->User->find('all', array(
-            'conditions' => array('User.username LIKE' => '%' . $terms . '%')
-        )));
+            'conditions' => array('User.username LIKE' => '%' . $terms . '%')))
+        );
     }
 
     public function users() {
@@ -40,8 +40,8 @@ class SearchesController extends AppController {
         } catch (Exception $e) {
             return $this->redirect(array_merge(
                 array('action' => 'users', '?' => array('terms' => $terms)),
-                array('page' => ceil(count($this->User->find('all', array('conditions' => array('User.username LIKE' => '%' . $terms . '%')))) / self::PAGE_LIMIT
-            ))));
+                array('page' => ceil(count($this->User->find('all', array('conditions' => array('User.username LIKE' => '%' . $terms . '%')))) / self::PAGE_LIMIT)))
+            );
         }
     }
 
@@ -65,9 +65,11 @@ class SearchesController extends AppController {
                 array('page' => ceil(count($this->Post->find('all', array('conditions' => array(
                     'OR' => array(
                         'Post.title LIKE' => '%' . $terms . '%',
-                        'Post.body LIKE' => '%' . $terms . '%')))))
-                    / self::PAGE_LIMIT
-            ))));
+                        'Post.body LIKE' => '%' . $terms . '%'))))
+                    )
+                    / self::PAGE_LIMIT))
+                )
+            );
         }
     }
 }

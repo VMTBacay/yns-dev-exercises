@@ -3,7 +3,7 @@
 <h1>Posts with "<?php echo h($terms) ?>" in their title or body</h1>
 <?php
 foreach ($posts as $post) {
-    $this->Putter->putPost($post, $this->Session->read('User.follows'));
+    $this->Putter->putPost($post, $this->Session->read('user.follows'));
 }
 ?>
 

@@ -28,13 +28,13 @@ class CommentsController extends AppController {
         } catch (Exception $e) {
             return $this->redirect(array_merge(
                 array('action' => 'index', $id),
-                array('page' => ceil(count($this->Comment->findAllByPostIdAndDeleted($id, 0)) / self::PAGE_LIMIT
-            ))));
+                array('page' => ceil(count($this->Comment->findAllByPostIdAndDeleted($id, 0)) / self::PAGE_LIMIT)))
+            );
         }
 
         if ($this->request->is('post')) {
             $this->Comment->create();
-            $this->request->data['Comment']['user_id'] = $this->Session->read('User.id');
+            $this->request->data['Comment']['user_id'] = $this->Session->read('user.id');
             $this->request->data['Comment']['post_id'] = $id;
             if ($this->Comment->save($this->request->data)) {
                 $this->Flash->success(__('Your comment has been added.'));

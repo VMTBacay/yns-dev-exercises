@@ -1,4 +1,3 @@
-<!-- File: /app/View/Posts/view.ctp -->
 <div style="border-style: solid; margin: 10px; padding: 5px;">
     <div style="display: inline-flex; align-items: center;">
         <?php

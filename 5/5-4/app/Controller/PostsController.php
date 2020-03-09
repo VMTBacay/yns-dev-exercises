@@ -7,7 +7,7 @@ class PostsController extends AppController {
     public function index($userOnly = null) {
         $this->set('userOnly', $userOnly);
 
-        $follows = $userOnly === null ? $this->Session->read('User.follows') : array($this->Session->read('User.id'));
+        $follows = $userOnly === null ? $this->Session->read('user.follows') : array($this->Session->read('user.id'));
 
         $repostPostIds = $this->Repost->find('all', array(
             'conditions' => array('Repost.user_id' => $follows, 'Repost.deleted' => 0),
@@ -31,7 +31,7 @@ class PostsController extends AppController {
     public function add() {
         if ($this->request->is('post')) {
             $this->Post->create();
-            $this->request->data['Post']['user_id'] = $this->Session->read('User.id');
+            $this->request->data['Post']['user_id'] = $this->Session->read('user.id');
 
             if (!$this->request->data['Post']['pic']['error']) {
                 $img_name = explode('.', $this->request->data['Post']['pic']['name']);
@@ -126,14 +126,14 @@ class PostsController extends AppController {
 
     public function repost($id) {
         if ($this->request->is('post')) {
-            $repost = $this->Repost->findAllByUserIdAndPostId($this->Session->read('User.id'), $id)[0];
+            $repost = $this->Repost->findAllByUserIdAndPostId($this->Session->read('user.id'), $id)[0];
             if ($repost !== null) {
                 $this->Repost->id = $repost['Repost']['id'];
                 $this->request->data['Repost']['modified'] = date("Y-m-d H:i:s");
                 $this->request->data['Repost']['deleted'] = 0;
             } else {
                 $this->Repost->create();
-                $this->request->data['Repost']['user_id'] = $this->Session->read('User.id');
+                $this->request->data['Repost']['user_id'] = $this->Session->read('user.id');
                 $this->request->data['Repost']['post_id'] = $id;
             }
             if ($this->Repost->save($this->request->data)) {
@@ -171,14 +171,14 @@ class PostsController extends AppController {
 
     public function like($id) {
         if ($this->request->is('post')) {
-            $like = $this->Like->findAllByUserIdAndPostId($this->Session->read('User.id'), $id)[0];
+            $like = $this->Like->findAllByUserIdAndPostId($this->Session->read('user.id'), $id)[0];
             if ($like !== null) {
                 $this->Like->id = $like['Like']['id'];
                 $this->request->data['Like']['modified'] = date("Y-m-d H:i:s");
                 $this->request->data['Like']['deleted'] = 0;
             } else {
                 $this->Like->create();
-                $this->request->data['Like']['user_id'] = $this->Session->read('User.id');
+                $this->request->data['Like']['user_id'] = $this->Session->read('user.id');
                 $this->request->data['Like']['post_id'] = $id;
             }
             if ($this->Like->save($this->request->data)) {

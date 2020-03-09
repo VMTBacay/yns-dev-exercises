@@ -29,7 +29,7 @@ if ($postCount === 0) {
 }
 
 for ($i = $offset; $i < $end; $i++) {
-    $this->Putter->putPost($allPosts[$i], $this->Session->read('User.follows'), $repostPosts);
+    $this->Putter->putPost($allPosts[$i], $this->Session->read('user.follows'), $repostPosts);
 }
 ?>
 

@@ -15,7 +15,7 @@ class PutterHelper extends AppHelper {
                 </span>
                 <span>
                     <?php
-                    if (in_array($user['id'], $this->Session->read('User.follows'))) {
+                    if (in_array($user['id'], $this->Session->read('user.follows'))) {
                         echo $this->Form->postlink(
                             'Unfollow User', array('controller' => 'followers', 'action' => 'unfollow', $user['id'])
                         );
@@ -73,7 +73,7 @@ class PutterHelper extends AppHelper {
                 </span>
                 <span>
                     <?php
-                    if ($this->Session->read('User.id') === $post['Post']['user_id']) {
+                    if ($this->Session->read('user.id') === $post['Post']['user_id']) {
                         echo $this->Form->postLink(
                             'Delete',
                             array('controller' => 'posts', 'action' => 'delete', $post['Post']['id']),
@@ -101,7 +101,7 @@ class PutterHelper extends AppHelper {
                     $hasLiked = false;
                     $likeId = 0;
                     foreach ($post['Like'] as $like) {
-                        if ($like['user_id'] == $this->Session->read('User.id') && !$like['deleted']) {
+                        if ($like['user_id'] == $this->Session->read('user.id') && !$like['deleted']) {
                             $hasLiked = true;
                             $likeId = $like['id'];
                             break;
@@ -122,7 +122,7 @@ class PutterHelper extends AppHelper {
                     $hasReposted = false;
                     $repostId = 0;
                     foreach ($post['Repost'] as $repost) {
-                        if ($repost['user_id'] == $this->Session->read('User.id') && !$repost['deleted']) {
+                        if ($repost['user_id'] == $this->Session->read('user.id') && !$repost['deleted']) {
                             $hasReposted = true;
                             $repostId = $repost['id'];
                             break;

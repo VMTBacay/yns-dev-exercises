@@ -8815,3 +8815,15 @@ Stack Trace:
 #3 C:\xampp\htdocs\yns-dev-exercises\5\5-4\lib\Cake\Routing\Dispatcher.php(167): Dispatcher->_invoke(Object(CommentsController), Object(CakeRequest))
 #4 C:\xampp\htdocs\yns-dev-exercises\5\5-4\app\webroot\index.php(117): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
 #5 {main}
+2020-03-09 06:25:26 Error: [MissingViewException] View file "Users\signup.ctp" is missing.
+Exception Attributes: array (
+  'file' => 'Users\\signup.ctp',
+)
+Request URL: /users/signup
+Stack Trace:
+#0 C:\xampp\htdocs\yns-dev-exercises\5\5-4\lib\Cake\View\View.php(470): View->_getViewFileName('Users\\signup')
+#1 C:\xampp\htdocs\yns-dev-exercises\5\5-4\lib\Cake\Controller\Controller.php(968): View->render(NULL, NULL)
+#2 C:\xampp\htdocs\yns-dev-exercises\5\5-4\lib\Cake\Routing\Dispatcher.php(200): Controller->render()
+#3 C:\xampp\htdocs\yns-dev-exercises\5\5-4\lib\Cake\Routing\Dispatcher.php(167): Dispatcher->_invoke(Object(UsersController), Object(CakeRequest))
+#4 C:\xampp\htdocs\yns-dev-exercises\5\5-4\app\webroot\index.php(117): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#5 {main}

@@ -32,7 +32,7 @@ App::uses('Controller', 'Controller');
  */
 class AppController extends Controller {
     public function beforeFilter() {
-        if ($this->Session->read('User.id') === null) {
+        if ($this->Session->read('user.id') === null) {
             return $this->redirect(array('controller' => 'users', 'action' => 'signUp'));
         }
     }

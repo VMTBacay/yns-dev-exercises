@@ -753,7 +753,7 @@ pre {
   width: 160px; /* Set the width of the sidebar */
   left: 0;
   background-color: #111; /* Black */
-  padding-top: 20px;
+  padding: 20px;
 }
 
 .sidebar a {

@@ -15,7 +15,7 @@
     show up on all of your views, include it here -->
     <div class="topbar">
         <?php
-        if ($this->Session->read('User.id') !== null) {
+        if ($this->Session->read('user.id') !== null) {
             ?>
             Home <span style="float: right;">Search <?php echo $this->Html->link('Log out', array('action' => 'logout'), array('style' => 'color: white')) ?></span>
             <?php

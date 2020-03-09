@@ -1,4 +1,4 @@
-<?php $this->Putter->putPost($post, $this->Session->read('User.follows')); ?>
+<?php $this->Putter->putPost($post, $this->Session->read('user.follows')); ?>
 <br>
 
 Comments
@@ -9,7 +9,7 @@ Comments
             <?php
             echo '<img src="' . $this->webroot . 'img/' . $comment['User']['profile_pic'] . '" height="50px" width="50px">';
             $this->Space->spaceMaker();
-            echo $comment['User']['username'] . ' says:';
+            echo h($comment['User']['username']) . ' says:';
             ?>
         </div>
         <p style="margin: 10px"><?php echo h($comment['Comment']['body']); ?></p>
@@ -19,7 +19,7 @@ Comments
             </span>
             <span>
                 <?php
-                if ($comment['Comment']['user_id'] === $this->Session->read('User.id')) {
+                if ($comment['Comment']['user_id'] === $this->Session->read('user.id')) {
                     echo $this->Form->postLink(
                         'Delete',
                         array('action' => 'delete', $comment['Comment']['id']),
