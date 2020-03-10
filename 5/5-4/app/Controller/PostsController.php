@@ -2,12 +2,28 @@
 class PostsController extends AppController {
     public $components = array('Flash', 'Session');
 
-    public $uses = array('Post', 'Repost', 'Like', 'Comment', 'Follower');
+    public $uses = array('Post', 'Repost', 'Like', 'Comment', 'Follower', 'User'); 
 
-    public function index($userOnly = null) {
+    public function index($id = null, $userOnly = null) {
         $this->set('userOnly', $userOnly);
 
-        $follows = $userOnly === null ? $this->Session->read('user.follows') : array($this->Session->read('user.id'));
+        $id = $id === null ? $this->Session->read('user.id') : $id;
+        $viewUser = $this->User->findByIdAndDeleted($id, 0);
+        if (!array_key_exists('User', $viewUser)) {
+             throw new NotFoundException(__('Invalid user'));
+             return;
+        }
+        $this->set('viewUser', $viewUser['User']);
+
+        $follows = array($id);
+        $followIds = $this->Follower->find('all', array(
+            'conditions' => array('follower_id' => $id, 'Follower.deleted' => 0),
+            'fields' => 'user_id'
+        ));
+        foreach ($followIds as $followId) {
+            array_push($follows, $followId['Follower']['user_id']);
+        }
+        $follows = $userOnly === null ? $follows : array($id);
 
         $repostPostIds = $this->Repost->find('all', array(
             'conditions' => array('Repost.user_id' => $follows, 'Repost.deleted' => 0),
@@ -22,8 +38,8 @@ class PostsController extends AppController {
         $this->set('reposts', $this->Repost->find('all', array('conditions' => array(
             'Repost.user_id' => $follows,
             'Repost.deleted' => 0,
-            'Post.deleted' => 0,
-        ))));
+            'Post.deleted' => 0)))
+        );
 
         $this->set('posts', $this->Post->findAllByUserIdAndDeleted($follows, 0));
     }
@@ -70,7 +86,12 @@ class PostsController extends AppController {
             $this->Post->id = $id;
             $this->request->data['Post']['modified'] = date("Y-m-d H:i:s");
 
+            $this->request->data['Post']['image'] = null;
             if (!$this->request->data['Post']['pic']['error']) {
+                $this->Post->validator()->add('image', array(
+                    'rule' => array('chkImageExtension'),
+                    'message' => 'Please Upload Valid Image.'
+                ));
                 $img_name = explode('.', $this->request->data['Post']['pic']['name']);
                 $target_dir = dirname(APP) . '/app/webroot/img/';
                 $target_file = $target_dir . $img_name[0] . '.' . $img_name[1];
@@ -83,11 +104,11 @@ class PostsController extends AppController {
             }
 
             if ($this->Post->save($this->request->data)) {
-                if ($this->request->data['Post']['pic']['name'] !== null) {
+                if (!$this->request->data['Post']['pic']['error']) {
                     move_uploaded_file($this->request->data['Post']['pic']['tmp_name'], $target_file);
                 }
                 $this->Flash->success(__('Your post has been updated.'));
-                return $this->redirect($this->referer());
+                return $this->redirect(array('controller' => 'comments', 'action' => 'index', $id));
             }
             $this->Flash->error(__('Unable to update your post.'));
         }

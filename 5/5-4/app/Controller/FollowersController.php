@@ -2,11 +2,21 @@
 class FollowersController extends AppController {
     public $components = array('Flash', 'Session', 'Paginator');
 
+    public $uses = array('Follower', 'User');
+
     const PAGE_LIMIT = 5;
 
-    public function index() {
+    public function index($id = null) {
+        $id = $id === null ? $this->Session->read('user.id') : $id;
+        $viewUser = $this->User->findByIdAndDeleted($id, 0);
+        if (!array_key_exists('User', $viewUser)) {
+             throw new NotFoundException(__('Invalid user'));
+             return;
+        }
+        $this->set('viewUser', $viewUser['User']);
+
         $this->Paginator->settings = array(
-            'conditions' => array('Follower.user_id' => $this->Session->read('user.id'), 'Follower.deleted' => 0),
+            'conditions' => array('Follower.user_id' => $id, 'Follower.deleted' => 0),
             'limit' => self::PAGE_LIMIT
         );
 
@@ -15,14 +25,22 @@ class FollowersController extends AppController {
         } catch (Exception $e) {
             return $this->redirect(array_merge(
                 array('action' => 'index'),
-                array('page' => ceil(count($this->Follower->findAllByUserIdAndDeleted($this->Session->read('user.id'), 0)) / self::PAGE_LIMIT)))
+                array('page' => ceil(count($this->Follower->findAllByUserIdAndDeleted($id, 0)) / self::PAGE_LIMIT)))
             );
         }
     }
 
-    public function following() {
+    public function following($id = null) {
+        $id = $id === null ? $this->Session->read('user.id') : $id;
+        $viewUser = $this->User->findByIdAndDeleted($id, 0);
+        if (!array_key_exists('User', $viewUser)) {
+             throw new NotFoundException(__('Invalid user'));
+             return;
+        }
+        $this->set('viewUser', $viewUser['User']);
+
         $this->Paginator->settings = array(
-            'conditions' => array('Follower.follower_id' => $this->Session->read('user.id'), 'Follower.deleted' => 0),
+            'conditions' => array('Follower.follower_id' => $id, 'Follower.deleted' => 0),
             'limit' => self::PAGE_LIMIT
         );
 
@@ -31,7 +49,7 @@ class FollowersController extends AppController {
         } catch (Exception $e) {
             return $this->redirect(array_merge(
                 array('action' => 'index'),
-                array('page' => ceil(count($this->Follower->findAllByFollowerIdAndDeleted($this->Session->read('user.id'), 0)) / self::PAGE_LIMIT)))
+                array('page' => ceil(count($this->Follower->findAllByFollowerIdAndDeleted($id, 0)) / self::PAGE_LIMIT)))
             );
         }
     }

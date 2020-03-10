@@ -9,7 +9,7 @@ Comments
             <?php
             echo '<img src="' . $this->webroot . 'img/' . $comment['User']['profile_pic'] . '" height="50px" width="50px">';
             $this->Space->spaceMaker();
-            echo h($comment['User']['username']) . ' says:';
+            echo $this->Html->link($comment['User']['username'], array('controller' => 'posts', 'action' => 'index', $comment['User']['id'], null)) . '&nbsp;says:';
             ?>
         </div>
         <p style="margin: 10px"><?php echo h($comment['Comment']['body']); ?></p>

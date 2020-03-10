@@ -14,13 +14,13 @@
     <!-- If you'd like some sort of menu to
     show up on all of your views, include it here -->
     <div class="topbar">
-        <?php
-        if ($this->Session->read('user.id') !== null) {
-            ?>
-            Home <span style="float: right;">Search <?php echo $this->Html->link('Log out', array('action' => 'logout'), array('style' => 'color: white')) ?></span>
+        <div class="home">
             <?php
-        }
-        ?>
+            echo $this->Html->link('Sign Up', array('controller' => 'users', 'action' => 'signUp'), array('style' => 'color: white;'));
+            $this->Space->spaceMaker();
+            echo $this->Html->link('Login', array('controller' => 'users', 'action' => 'login'), array('style' => 'color: white;'))
+            ?>
+        </div>
     </div>
     <div id="content">
         <!-- Here's where I want my views to be displayed -->

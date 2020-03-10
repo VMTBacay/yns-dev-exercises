@@ -10,19 +10,21 @@ class PutterHelper extends AppHelper {
                     <?php
                     echo $this->Html->image($user['profile_pic'], array('height' => '50', 'width' => '50'));
                     $this->Space->spaceMaker();
-                    echo h($user['username']);
+                    echo $this->Html->link($user['username'], array('controller' => 'posts', 'action' => 'index', $user['id'], null));
                     ?>
                 </span>
                 <span>
                     <?php
-                    if (in_array($user['id'], $this->Session->read('user.follows'))) {
-                        echo $this->Form->postlink(
-                            'Unfollow User', array('controller' => 'followers', 'action' => 'unfollow', $user['id'])
-                        );
-                    } else {
-                        echo $this->Form->postlink(
-                            'Follow User', array('controller' => 'followers', 'action' => 'follow', $user['id'])
-                        );
+                    if ($user['id'] !== $this->Session->read('user.id')) {
+                        if (in_array($user['id'], $this->Session->read('user.follows'))) {
+                            echo $this->Form->postlink(
+                                'Unfollow User', array('controller' => 'followers', 'action' => 'unfollow', $user['id'])
+                            );
+                        } else {
+                            echo $this->Form->postlink(
+                                'Follow User', array('controller' => 'followers', 'action' => 'follow', $user['id'])
+                            );
+                        }
                     }
                     ?>
                 </span>
@@ -49,7 +51,7 @@ class PutterHelper extends AppHelper {
 
                     echo $this->Html->image($post['User']['profile_pic'], array('height' => '50', 'width' => '50'));
                     $this->Space->spaceMaker();
-                    echo h($post['User']['username']) . ' says:&nbsp;';
+                    echo $this->Html->link($post['User']['username'], array('controller' => 'posts', 'action' => 'index', $post['User']['id'], null)) . '&nbsp;says:&nbsp;';
                     echo $this->Html->link($post['Post']['title'], array('controller' => 'comments', $post['Post']['id']));
                     ?>
                 </span>

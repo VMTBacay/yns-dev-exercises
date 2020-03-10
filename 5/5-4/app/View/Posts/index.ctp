@@ -1,10 +1,12 @@
-<h1>Add Post</h1>
 <?php
-echo $this->Form->create('Post', array('type' => 'file', 'url' => array('action' => 'add')));
-echo $this->Form->input('title');
-echo $this->Form->input('body', array('rows' => '3'));
-echo $this->Form->file('Post.pic');
-echo $this->Form->end('Save Post');
+if ($this->Session->read('user.id') === $viewUser['id']) {
+    echo '<h1>Add Post</h1>';
+    echo $this->Form->create('Post', array('type' => 'file', 'url' => array('action' => 'add')));
+    echo $this->Form->input('title');
+    echo $this->Form->input('body', array('rows' => '3'));
+    echo $this->Form->file('Post.pic');
+    echo $this->Form->end('Save Post');
+}
 
 $allPosts = array_merge($posts, $reposts);
 usort($allPosts, function($b, $a) {
@@ -21,7 +23,7 @@ $offset = ($page - 1)  * PAGE_LIMIT;
 $end = min(($offset + PAGE_LIMIT), $postCount);
 ?>
 
-<h1><?php echo $userOnly === null ? 'Posts' : 'Your Posts' ?></h1>
+<h1><?php echo $userOnly === null ? 'Feed' : 'User\'s Posts' ?></h1>
 <hr><br>
 <?php
 if ($postCount === 0) {
@@ -38,13 +40,13 @@ for ($i = $offset; $i < $end; $i++) {
     if ($page != 1) {
         echo $this->Html->link('<<first', $this->Html->url(array(
             'controller' => 'posts',
-            'action' => 'index',
+            'action' => 'index', $viewUser['id'], $userOnly,
             "?" => array('page' => 1)
         )));
         echo  ' ';
         echo $this->Html->link('<<Previous', $this->Html->url(array(
             'controller' => 'posts',
-            'action' => 'index',
+            'action' => 'index', $viewUser['id'], $userOnly,
             "?" => array('page' => $page - 1)
         )));
         $this->Space->spaceMaker();
@@ -53,13 +55,13 @@ for ($i = $offset; $i < $end; $i++) {
     if ($page != $pages) {
         echo $this->Html->link('Next>>', $this->Html->url(array(
             'controller' => 'posts',
-            'action' => 'index',
+            'action' => 'index', $viewUser['id'], $userOnly,
             "?" => array('page' => $page + 1)
         )));
         echo ' ';
         echo $this->Html->link('last>>', $this->Html->url(array(
             'controller' => 'posts',
-            'action' => 'index',
+            'action' => 'index', $viewUser['id'], $userOnly,
             "?" => array('page' => $pages)
         )));
     }

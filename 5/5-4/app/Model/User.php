@@ -49,4 +49,24 @@ class User extends AppModel {
     public function activationExpiration($check) {
         return time() - strtotime($check['activation_code_date'])  <= 1800;
     }
+
+    public function chkImageExtension($data) {
+       $return = true; 
+
+       if($data['profile_pic'] != ''){
+            $fileData   = pathinfo($data['profile_pic']);
+            $ext        = $fileData['extension'];
+            $allowExtension = array('gif', 'jpeg', 'png', 'jpg');
+
+            if(in_array($ext, $allowExtension)) {
+                $return = true; 
+            } else {
+                $return = false;
+            }   
+        } else {
+            $return = false; 
+        }   
+
+        return $return;
+    } 
 }

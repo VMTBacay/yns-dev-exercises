@@ -34,43 +34,62 @@ class UsersController extends AppController {
             for ($i = 0; $i < 6; $i++) {
                 $activationCode .= rand(0, 9);
             }
-            $codeMail = new CakeEmail(EmailConfig::$gmail);
-            $codeMail->from(array('code@microblog.com' => 'microblog'));
-            $codeMail->to($this->request->data['User']['email']);
-            $codeMail->subject('Activation code');
-            $codeMail->send('Your code is ' . $activationCode);
             $this->request->data['User']['activation_code'] = $activationCode;
             if ($this->User->save($this->request->data)) {
-                return $this->redirect(array('action' => 'activation', $this->User->id));
+
+                return $this->redirect(array('action' => 'activation', $this->User->id, 0));
             }
         }
     }
 
-    public function activation($id) {
+    public function activation($id, $resend) {
         $this->layout = 'suli';
+        $this->set('id', $id);
 
-        $this->User->validator()
-            ->add('code', 'required', array(
-                'rule' => array('equalToField', 'activation_code'),
-                'required' => true,
-                'allowEmpty' => false,
-                'message' => 'Incorrect code')
-            )
-            ->add('activation_code_date', array(
-                'rule' => array('activationExpiration'),
-                'required' => true,
-                'allowEmpty' => false,
-                'message' => 'Code expired'
-            )
-        );
+        $user = $this->User->findById($id);
 
         if ($this->request->is('post')) {
-            $user = $this->User->findById($id);
+            $this->User->validator()
+                ->add('code', 'required', array(
+                    'rule' => array('equalToField', 'activation_code'),
+                    'required' => true,
+                    'allowEmpty' => false,
+                    'message' => 'Incorrect code')
+                )
+                ->add('activation_code_date', array(
+                    'rule' => array('activationExpiration'),
+                    'required' => true,
+                    'allowEmpty' => false,
+                    'message' => 'Code expired'
+                )
+            );
+
             $user['User']['code'] = $this->request->data['User']['code'];
             $user['User']['activated'] = 1;
             if($this->User->save($user)) {
                 return $this->redirect(array('action' => 'activated'));
             }
+            $resend = 0;
+        }
+
+        if ($this->referer() === Router::url(array('action' => 'signUp'), true) || $resend === '1') {
+            if ($resend === '1') {
+                $activationCode = '';
+                for ($i = 0; $i < 6; $i++) {
+                    $activationCode .= rand(0, 9);
+                }
+                $user['User']['activation_code'] = $activationCode;
+                $user['User']['activation_code_date'] = date("Y-m-d H:i:s");
+                $this->User->save($user);
+                $this->Flash->success(__('A new code has been sent.'));
+            }
+            $codeMail = new CakeEmail(EmailConfig::$gmail);
+            $codeMail->from(array('code@microblog.com' => 'microblog'));
+            $codeMail->to($user['User']['email']);
+            $codeMail->subject('Activation code');
+            $codeMail->send(
+                'Your code is ' . $user['User']['activation_code'] . '. Activate it through this url: ' . Router::url(array('action' => 'activation', $id, 0), true)
+            );
         }
     }
 
@@ -78,7 +97,7 @@ class UsersController extends AppController {
         $this->layout = 'suli';
 
         if ($this->request->is('post')) {
-            $user = $this->User->findByUsername($this->request->data['User']['username']);
+            $user = $this->User->findByUsernameAndDeleted($this->request->data['User']['username'], 0);
 
             if (!empty($user) && $user['User']['password'] === $this->request->data['User']['password'] && $user['User']['activated']) {
                 $this->Session->write('user', $user['User']);
@@ -105,6 +124,10 @@ class UsersController extends AppController {
     }
 
     public function editUsername() {
+        if ($this->Session->read('user.id') === null) {
+            return $this->redirect(array('controller' => 'users', 'action' => 'signUp'));
+        }
+
         $this->User->validator()->remove('password');
         $this->User->validator()->remove('email');
 
@@ -121,6 +144,10 @@ class UsersController extends AppController {
     }
 
     public function editEmail() {
+        if ($this->Session->read('user.id') === null) {
+            return $this->redirect(array('controller' => 'users', 'action' => 'signUp'));
+        }
+
         $this->User->validator()->remove('username');
         $this->User->validator()->remove('password');
 
@@ -163,11 +190,24 @@ class UsersController extends AppController {
     }
 
     public function editProfilePic() {
+        if ($this->Session->read('user.id') === null) {
+            return $this->redirect(array('controller' => 'users', 'action' => 'signUp'));
+        }
+
         $this->User->validator()->remove('username');
         $this->User->validator()->remove('password');
         $this->User->validator()->remove('email');
+        $this->User->validator()->add('profile_pic', 'required', array(
+            'rule' => array('chkImageExtension'),
+            'required' => true,
+            'allowEmpty' => false,
+            'message' => 'Please Upload Valid Image.'
+        ));
 
         if ($this->request->is('post')) {
+            if ($this->request->data['User']['pic']['name'] === '') {
+                return $this->Flash->error(__('Please choose your profile picture.'));
+            }
             $this->User->id = $this->Session->read('user.id');
             $this->request->data['User']['modified'] = date("Y-m-d H:i:s");
             $img_name = explode('.', $this->request->data['User']['pic']['name']);
