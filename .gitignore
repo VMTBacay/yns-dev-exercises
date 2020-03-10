@@ -2,7 +2,6 @@
 #################################################
 5/5-4/app/Config/database.php
 5/5-4/app/tmp
-5/5-4/app/tmp/logs/error.log
 5/5-4/app/webroot/img
 5/5-4/lib/Cake/Console/Templates/skel/tmp/
 5/5-4/plugins

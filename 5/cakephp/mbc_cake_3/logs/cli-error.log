@@ -1,0 +1,7 @@
+2019-10-15 02:23:09 Error: [RuntimeException] Unknown command `cake serverbin/cake`. Run `cake --help` to get the list of valid commands. in D:\xampp\htdocs\cakephp3_getting_started\vendor\cakephp\cakephp\src\Console\CommandRunner.php on line 347
+Stack Trace:
+#0 D:\xampp\htdocs\cakephp3_getting_started\vendor\cakephp\cakephp\src\Console\CommandRunner.php(157): Cake\Console\CommandRunner->resolveName(Object(Cake\Console\CommandCollection), Object(Cake\Console\ConsoleIo), 'serverbin/cake')
+#1 D:\xampp\htdocs\cakephp3_getting_started\bin\cake.php(12): Cake\Console\CommandRunner->run(Array)
+#2 {main}
+
+

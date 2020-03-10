@@ -1,0 +1,6 @@
+.hide_border td, .hide_border th {
+    border: none;
+}
+.hide_th{
+    display: none;
+}
