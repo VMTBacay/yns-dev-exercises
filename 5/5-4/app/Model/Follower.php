@@ -15,7 +15,6 @@ class Follower extends AppModel {
     );
 
     public function notEqualToField($check, $otherField) {
-        //get name of field
         $fname = '';
         foreach ($check as $key => $value) {
             $fname = $key;

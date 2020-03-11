@@ -25,8 +25,8 @@ class UsersController extends AppController {
             'rule' => array('equalToField', 'password'),
             'required' => true,
             'allowEmpty' => false,
-            'message' => 'Re-entered password is different'
-        ));
+            'message' => 'Re-entered password is different')
+        );
 
        if ($this->request->is('post')) {
             $this->User->create();

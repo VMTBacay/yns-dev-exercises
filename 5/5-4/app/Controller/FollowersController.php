@@ -11,7 +11,6 @@ class FollowersController extends AppController {
         $viewUser = $this->User->findByIdAndDeleted($id, 0);
         if (!array_key_exists('User', $viewUser)) {
              throw new NotFoundException(__('Invalid user'));
-             return;
         }
         $this->set('viewUser', $viewUser['User']);
 
@@ -35,7 +34,6 @@ class FollowersController extends AppController {
         $viewUser = $this->User->findByIdAndDeleted($id, 0);
         if (!array_key_exists('User', $viewUser)) {
              throw new NotFoundException(__('Invalid user'));
-             return;
         }
         $this->set('viewUser', $viewUser['User']);
 

@@ -33,22 +33,21 @@ class Post extends AppModel {
     );
 
     public function chkImageExtension($data) {
-       $return = true; 
+       $return = true;
 
        if($data['image'] != ''){
-            $fileData   = pathinfo($data['image']);
-            $ext        = $fileData['extension'];
+            $fileData = pathinfo($data['image']);
+            $ext = $fileData['extension'];
             $allowExtension = array('gif', 'jpeg', 'png', 'jpg');
 
             if(in_array($ext, $allowExtension)) {
-                $return = true; 
+                $return = true;
             } else {
                 $return = false;
-            }   
+            }
         } else {
-            $return = false; 
-        }   
-
+            $return = false;
+        }
         return $return;
-    } 
+    }
 }

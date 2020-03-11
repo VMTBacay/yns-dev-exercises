@@ -2,7 +2,7 @@
 class PostsController extends AppController {
     public $components = array('Flash', 'Session');
 
-    public $uses = array('Post', 'Repost', 'Like', 'Comment', 'Follower', 'User'); 
+    public $uses = array('Post', 'Repost', 'Like', 'Comment', 'Follower', 'User');
 
     public function index($id = null, $userOnly = null) {
         $this->set('userOnly', $userOnly);
@@ -11,7 +11,6 @@ class PostsController extends AppController {
         $viewUser = $this->User->findByIdAndDeleted($id, 0);
         if (!array_key_exists('User', $viewUser)) {
              throw new NotFoundException(__('Invalid user'));
-             return;
         }
         $this->set('viewUser', $viewUser['User']);
 
@@ -48,8 +47,15 @@ class PostsController extends AppController {
         if ($this->request->is('post')) {
             $this->Post->create();
             $this->request->data['Post']['user_id'] = $this->Session->read('user.id');
+            $this->request->data['Post']['title'] = trim($this->request->data['Post']['title']);
+            $this->request->data['Post']['body'] = trim($this->request->data['Post']['title']);
 
             if (!$this->request->data['Post']['pic']['error']) {
+                $this->Post->validator()->add('image', array(
+                    'rule' => array('chkImageExtension'),
+                    'message' => 'Please Upload Valid Image.'
+                ));
+
                 $img_name = explode('.', $this->request->data['Post']['pic']['name']);
                 $target_dir = dirname(APP) . '/app/webroot/img/';
                 $target_file = $target_dir . $img_name[0] . '.' . $img_name[1];
@@ -69,6 +75,7 @@ class PostsController extends AppController {
                 return $this->redirect(array('action' => 'index'));
             }
             $this->Flash->error(__('Unable to add your post.'));
+            return $this->redirect(array('action' => 'index'));
         }
     }
 

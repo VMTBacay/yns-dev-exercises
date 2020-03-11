@@ -1,4 +1,6 @@
 <?php
+var_dump($_SESSION);
+
 if ($this->Session->read('user.id') === $viewUser['id']) {
     echo '<h1>Add Post</h1>';
     echo $this->Form->create('Post', array('type' => 'file', 'url' => array('action' => 'add')));

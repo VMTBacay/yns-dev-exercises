@@ -38,9 +38,14 @@ class SearchesController extends AppController {
         try {
             $this->set('users', $this->Paginator->paginate('User'));
         } catch (Exception $e) {
-            return $this->redirect(array_merge(
-                array('action' => 'users', '?' => array('terms' => $terms)),
-                array('page' => ceil(count($this->User->find('all', array('conditions' => array('User.username LIKE' => '%' . $terms . '%')))) / self::PAGE_LIMIT)))
+            $totalRecords = count(
+                $this->User->find('all', array('conditions' => array('User.username LIKE' => '%' . $terms . '%')))
+            );
+            return $this->redirect(
+                array_merge(
+                    array('action' => 'users', '?' => array('terms' => $terms)),
+                    array('page' => ceil($totalRecords / self::PAGE_LIMIT))
+                )
             );
         }
     }
@@ -60,14 +65,20 @@ class SearchesController extends AppController {
         try {
             $this->set('posts', $this->Paginator->paginate('Post'));
         } catch (Exception $e) {
-            return $this->redirect(array_merge(
-                array('action' => 'posts', '?' => array('terms' => $terms)),
-                array('page' => ceil(count($this->Post->find('all', array('conditions' => array(
-                    'OR' => array(
-                        'Post.title LIKE' => '%' . $terms . '%',
-                        'Post.body LIKE' => '%' . $terms . '%'))))
+            $totalRecords = count(
+                $this->Post->find('all', array(
+                    'conditions' => array(
+                        'OR' => array(
+                            'Post.title LIKE' => '%' . $terms . '%', 
+                            'Post.body LIKE' => '%' . $terms . '%')
+                        )
                     )
-                    / self::PAGE_LIMIT))
+                )
+            );
+            return $this->redirect(
+                array_merge(
+                    array('action' => 'posts', '?' => array('terms' => $terms)),
+                    array('page' => ceil($totalRecords / self::PAGE_LIMIT))
                 )
             );
         }

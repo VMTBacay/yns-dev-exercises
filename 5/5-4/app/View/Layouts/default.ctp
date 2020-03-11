@@ -10,7 +10,9 @@
 </head>
 <body>
     <div class="topbar">
-        <span class="home"><?php echo $this->Html->link('Home', array('controller' => 'posts', 'action' => 'index'), array('style' => 'color: white;')); ?></span>
+        <span class="home">
+            <?php echo $this->Html->link('Home', array('controller' => 'posts', 'action' => 'index'), array('style' => 'color: white;')); ?>
+        </span>
         <span style="float: right;">
             <table style="border-collapse: collapse; border-style: hidden;">
                 <?php
@@ -36,7 +38,11 @@
         <?php
         $user = isset($viewUser) ? $viewUser : $this->Session->read('user');
         echo $this->Html->image($user['profile_pic'], array('height' => '150px', 'width' => '150px'));
-        echo $this->Html->link($user['username'], array('controller' => 'posts', 'action' => 'index', $user['id'], null), array('style' => 'color: white; font-size: 15px'));
+        echo $this->Html->link(
+            $user['username'], array(
+                'controller' => 'posts', 'action' => 'index', $user['id'], null), array('style' => 'color: white; font-size: 15px'
+            )
+        );
         echo $this->Html->link('User\'s Posts', array('controller' => 'posts', 'action' => 'index', $user['id'], 1));
         echo $this->Html->link('Following', array('controller' => 'followers', 'action' => 'following', $user['id']));
         echo $this->Html->link('Followers', array('controller' => 'followers', 'action' => 'index', $user['id']));
@@ -47,19 +53,15 @@
             echo $this->Html->link('Edit Profile Picture', array('controller' => 'users', 'action' => 'editProfilePic'));
         } else {
             if (in_array($user['id'], $this->Session->read('user.follows'))) {
-                echo $this->Form->postlink(
-                    'Unfollow User', array('controller' => 'followers', 'action' => 'unfollow', $user['id'])
-                );
+                echo $this->Form->postlink('Unfollow User', array('controller' => 'followers', 'action' => 'unfollow', $user['id']));
             } else {
-                echo $this->Form->postlink(
-                    'Follow User', array('controller' => 'followers', 'action' => 'follow', $user['id'])
-                );
+                echo $this->Form->postlink('Follow User', array('controller' => 'followers', 'action' => 'follow', $user['id']));
             }
         }
         ?>
     </div>
     <div id="content" style="margin-left: 190px;">
-        <?php echo $this->Flash->render();?>
+        <?php echo $this->Flash->render(); ?>
         <?php echo $this->fetch('content'); ?>
     </div>
 </body>
