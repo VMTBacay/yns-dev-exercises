@@ -208,6 +208,10 @@ class UsersController extends AppController {
             if ($this->request->data['User']['pic']['name'] === '') {
                 return $this->Flash->error(__('Please choose your profile picture.'));
             }
+            if ($this->request->data['User']['pic']['error']) {
+                return $this->Flash->error(__('File is too big. Maximum is 2MB.'));
+            }
+
             $this->User->id = $this->Session->read('user.id');
             $this->request->data['User']['modified'] = date("Y-m-d H:i:s");
             $img_name = explode('.', $this->request->data['User']['pic']['name']);
@@ -225,7 +229,7 @@ class UsersController extends AppController {
                 $this->Session->write('user.profile_pic', basename($target_file));
                 return $this->redirect(array('controller' => 'posts', 'action' => 'index'));
             }
-            $this->Flash->error(__('Unable to update your profile picture.'));
+            $this->Flash->error(__('Please Upload Valid Image.'));
         }
     }
 }

@@ -6,7 +6,7 @@
     <!-- Include external files and scripts here (See HTML helper for more info.) -->
     <?php
     echo $this->Html->meta('icon');
-    echo $this->HTML->css('microblog2');
+    echo $this->HTML->css('microblog.2');
     echo $this->fetch('script');
     ?>
 </head>

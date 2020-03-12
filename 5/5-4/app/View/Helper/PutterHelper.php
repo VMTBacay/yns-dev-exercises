@@ -52,7 +52,7 @@ class PutterHelper extends AppHelper {
                     echo $this->Html->image($post['User']['profile_pic'], array('height' => '50', 'width' => '50'));
                     $this->Space->spaceMaker();
                     echo $this->Html->link($post['User']['username'], array('controller' => 'posts', 'action' => 'index', $post['User']['id'], null)) . '&nbsp;says:&nbsp;';
-                    echo $this->Html->link($post['Post']['title'], array('controller' => 'comments', $post['Post']['id']));
+                    echo h($post['Post']['title']);
                     ?>
                 </span>
                 <span style="color: gray">
@@ -66,7 +66,10 @@ class PutterHelper extends AppHelper {
             <div style="margin: 10px">
                 <?php
                 echo h($post['Post']['body']) . '<br>';
-                echo $this->Html->image($post['Post']['image'], array('style' => 'height: 100px;'));
+                if (file_exists(dirname(APP) . '/app/webroot/img/' . $post['Post']['image'])
+                    && $post['Post']['image'] !== null) {
+                        echo '<br>'. $this->Html->image($post['Post']['image'], array('style' => 'height: 100px;'));
+                }
                 ?>
             </div>
             <div style="margin: 10px; display: flex; justify-content: space-between;">
@@ -89,12 +92,12 @@ class PutterHelper extends AppHelper {
                         $this->Space->spaceMaker();
                     } else {
                         if (in_array($post['Post']['user_id'], $follows)) {
-                            echo $this->Form->postlink(
-                                'Unfollow User', array('controller' => 'followers', 'action' => 'unfollow', $post['User']['id'])
+                            echo $this->Html->link(
+                                'Unfollow User', array('controller' => 'followers', 'action' => 'unfollow', $post['User']['id']), array('class' => 'unfollow')
                             );
                         } else {
-                            echo $this->Form->postlink(
-                                'Follow User', array('controller' => 'followers', 'action' => 'follow', $post['User']['id'])
+                            echo $this->Html->link(
+                                'Follow User', array('controller' => 'followers', 'action' => 'follow', $post['User']['id']), array('class' => 'follow')
                             );
                         }
                         $this->Space->spaceMaker();
@@ -109,16 +112,13 @@ class PutterHelper extends AppHelper {
                             break;
                         }
                     }
-                    if ($hasLiked) {
-                        echo $this->Form->postlink(
-                            'Undo like', array('controller' => 'posts', 'action' => 'undoLike', $likeId)
-                        );
-                    } else {
-                        echo $this->Form->postlink(
-                            'Like', array('controller' => 'posts', 'action' => 'like', $post['Post']['id'])
-                        );
-                    }
-                    echo ' ' . count($post['Like']) . ' like(s)';
+                    $likeOrUnlike = $hasLiked ? array('unlike', 'Unlike') : array('like', 'Like');
+                    ?>
+                    <span class="<?php echo $likeOrUnlike[0]?> link" id="<?php echo $post['Post']['id'] ?>">
+                        <?php echo $likeOrUnlike[1]?>
+                    </span>
+                    <?php
+                    echo ' <span id="likeCount-' . $post['Post']['id'] . '">' . count($post['Like']) . '</span> like(s)';
                     $this->Space->spaceMaker();
 
                     $hasReposted = false;

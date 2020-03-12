@@ -791,3 +791,15 @@ pre {
 .highlight {
     background-color: yellow;
 }
+
+.link {
+    cursor: pointer;
+    color: #003d4c;
+    text-decoration: underline;
+    font-weight: bold;
+}
+
+.link:hover {
+    color: #367889;
+    text-decoration:none;
+}

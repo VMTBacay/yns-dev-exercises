@@ -28,26 +28,7 @@ class Post extends AppModel {
             'rule' => array('maxLength', '140'),
             'required' => true,
             'allowEmpty' => false,
-            'message' => 'Minimum 140 characters long'
+            'message' => 'Maximum 140 characters long'
         )
     );
-
-    public function chkImageExtension($data) {
-       $return = true;
-
-       if($data['image'] != ''){
-            $fileData = pathinfo($data['image']);
-            $ext = $fileData['extension'];
-            $allowExtension = array('gif', 'jpeg', 'png', 'jpg');
-
-            if(in_array($ext, $allowExtension)) {
-                $return = true;
-            } else {
-                $return = false;
-            }
-        } else {
-            $return = false;
-        }
-        return $return;
-    }
 }

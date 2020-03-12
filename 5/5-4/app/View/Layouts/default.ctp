@@ -3,9 +3,10 @@
 <head>
     <title><?php echo $this->fetch('title'); ?></title>
     <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
+    <script src="/js/jquery-3.4.1.js"></script>
     <?php
     echo $this->Html->meta('icon');
-    echo $this->HTML->css('microblog2');
+    echo $this->HTML->css('microblog.2');
     ?>
 </head>
 <body>
@@ -61,11 +62,46 @@
         ?>
     </div>
     <div id="content" style="margin-left: 190px;">
-        <?php echo $this->Flash->render(); ?>
-        <?php echo $this->fetch('content'); ?>
+        <?php
+        if ($this->Session->read('Message.flash')) {
+            $_SESSION['Message']['flash'] = array_unique($this->Session->read('Message.flash'), SORT_REGULAR);
+        }
+        echo $this->Flash->render();
+        echo $this->fetch('content');
+        ?>
     </div>
 </body>
-<script type="text/javascript">
+<script type="text/javascript"> 
+    function unlike(me) {
+        $.post("<?php echo Router::url(array('controller'=>'posts','action'=>'unlike')); ?>/" + me.attr("id"));
+        me.attr('class', 'like link');
+        me.html("Like");
+        $("#likeCount-" + me.attr("id")).html(parseInt($("#likeCount-" + me.attr("id")).html() - 1));
+        me.unbind('click');
+        me.click(function() {
+            like($(this));
+        });
+    }
+
+    function like(me) {
+        $.post("<?php echo Router::url(array('controller'=>'posts','action'=>'like')); ?>/" + me.attr("id"));
+        me.attr('class', 'unlike link');
+        me.html("Unlike");
+        $("#likeCount-" + me.attr("id")).html(parseInt($("#likeCount-" + me.attr("id")).html() + 1));
+        me.unbind('click');
+        me.click(function() {
+            unlike($(this));
+        });
+    }
+
+    $(".unlike").click(function() {
+        unlike($(this));
+    });
+    $(".like").click(function(){
+        like($(this));
+    });
+
+
     document.getElementsByClassName('sidebar')[0].style.height = (document.body.scrollHeight - 100) + 'px';
 </script>
 </html>

@@ -51,10 +51,11 @@ class PostsController extends AppController {
             $this->request->data['Post']['body'] = trim($this->request->data['Post']['title']);
 
             if (!$this->request->data['Post']['pic']['error']) {
-                $this->Post->validator()->add('image', array(
-                    'rule' => array('chkImageExtension'),
-                    'message' => 'Please Upload Valid Image.'
-                ));
+                $allowExtension = array('gif', 'jpeg', 'png', 'jpg');
+                if(!in_array(explode('.', $this->request->data['Post']['pic']['name'])[1], $allowExtension)) {
+                    $this->Flash->error(__('Please upload a valid image'));
+                    return $this->redirect(array('action' => 'index'));
+                }
 
                 $img_name = explode('.', $this->request->data['Post']['pic']['name']);
                 $target_dir = dirname(APP) . '/app/webroot/img/';
@@ -65,6 +66,9 @@ class PostsController extends AppController {
                     $i++;
                 }
                 $this->request->data['Post']['image'] = basename($target_file);
+            } else if ($this->request->data['Post']['pic']['name'] !== '') {
+                $this->Flash->error(__('File is too big. Maximum is 2MB.'));
+                return $this->redirect(array('action' => 'index'));
             }
 
             if ($this->Post->save($this->request->data)) {
@@ -92,13 +96,16 @@ class PostsController extends AppController {
         if ($this->request->is(array('post', 'put'))) {
             $this->Post->id = $id;
             $this->request->data['Post']['modified'] = date("Y-m-d H:i:s");
+            $this->request->data['Post']['title'] = trim($this->request->data['Post']['title']);
+            $this->request->data['Post']['body'] = trim($this->request->data['Post']['title']);
 
             $this->request->data['Post']['image'] = null;
             if (!$this->request->data['Post']['pic']['error']) {
-                $this->Post->validator()->add('image', array(
-                    'rule' => array('chkImageExtension'),
-                    'message' => 'Please Upload Valid Image.'
-                ));
+                $allowExtension = array('gif', 'jpeg', 'png', 'jpg');
+                if(!in_array(explode('.', $this->request->data['Post']['pic']['name'])[1], $allowExtension)) {
+                    return $this->Flash->error(__('Please upload a valid image'));
+                }
+
                 $img_name = explode('.', $this->request->data['Post']['pic']['name']);
                 $target_dir = dirname(APP) . '/app/webroot/img/';
                 $target_file = $target_dir . $img_name[0] . '.' . $img_name[1];
@@ -108,6 +115,8 @@ class PostsController extends AppController {
                     $i++;
                 }
                 $this->request->data['Post']['image'] = basename($target_file);
+            } else if ($this->request->data['Post']['pic']['name'] !== '') {
+                return $this->Flash->error(__('File is too big. Maximum is 2MB.'));
             }
 
             if ($this->Post->save($this->request->data)) {
@@ -198,6 +207,8 @@ class PostsController extends AppController {
     }
 
     public function like($id) {
+        $this->autoRender = false;
+
         if ($this->request->is('post')) {
             $like = $this->Like->findAllByUserIdAndPostId($this->Session->read('user.id'), $id)[0];
             if ($like !== null) {
@@ -210,35 +221,29 @@ class PostsController extends AppController {
                 $this->request->data['Like']['post_id'] = $id;
             }
             if ($this->Like->save($this->request->data)) {
-                $this->Flash->success(__('Successfully liked.'));
-                return $this->redirect($this->referer());
+                //$this->Flash->success(__('Successfully liked.'));
             }
-            $this->Flash->error(__('Unable to like that post.'));
-            return $this->redirect($this->referer());
+            //$this->Flash->error(__('Unable to like that post.'));
         }
     }
 
-    public function undoLike($id) {
-        if ($this->request->is('get')) {
-            throw new MethodNotAllowedException();
-        }
+    public function unlike($id) {
+        $this->autoRender = false;
 
         if (!$id) {
             throw new NotFoundException(__('Invalid post'));
         }
 
-        $like = $this->Like->findById($id);
+        $like = $this->Like->findByPostIdAndUserId($id, $this->Session->read('user.id'));
         if (!$like) {
             throw new NotFoundException(__('Invalid post'));
         }
 
-        if ($this->request->is(array('post'))) {
-            if ($this->Like->save(array('id' => $id, 'deleted' => 1, 'deleted_date' => date("Y-m-d H:i:s")))) {
-                $this->Flash->success(__('Your like has been undone.'));
-                return $this->redirect($this->referer());
+        if ($this->request->is('post')) {
+            if ($this->Like->save(array('id' => $like['Like']['id'], 'deleted' => 1, 'deleted_date' => date("Y-m-d H:i:s")))) {
+                //$this->Flash->success(__('Your like has been undone.'));
             }
-            $this->Flash->error(__('Unable to undo your like.'));
-            return $this->redirect($this->referer());
+            //$this->Flash->error(__('Unable to undo your like.'));
         }
     }
 
