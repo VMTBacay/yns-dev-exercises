@@ -40,7 +40,13 @@ class PostsController extends AppController {
             'Post.deleted' => 0)))
         );
 
-        $this->set('posts', $this->Post->findAllByUserIdAndDeleted($follows, 0));
+        $this->set('posts', $this->Post->find('all', array(
+            'conditions' => array(
+                'Post.user_id' => $follows,
+                'Post.deleted' => 0),
+            'recursive' => 2
+            ))
+        );
     }
 
     public function add() {
@@ -179,6 +185,44 @@ class PostsController extends AppController {
             }
             $this->Flash->error(__('Unable to repost that post.'));
             return $this->redirect($this->referer());
+        }
+    }
+
+    public function rpWithContent($id) {
+        if ($this->request->is('post')) {
+            $this->Post->create();
+            $this->request->data['Post']['user_id'] = $this->Session->read('user.id');
+            $this->request->data['Post']['title'] = trim($this->request->data['Post']['title']);
+            $this->request->data['Post']['body'] = trim($this->request->data['Post']['title']);
+            $this->request->data['Post']['repost_id'] = $id;
+
+            if (!$this->request->data['Post']['pic']['error']) {
+                $allowExtension = array('gif', 'jpeg', 'png', 'jpg');
+                if(!in_array(explode('.', $this->request->data['Post']['pic']['name'])[1], $allowExtension)) {
+                    return $this->Flash->error(__('Please upload a valid image'));
+                }
+
+                $img_name = explode('.', $this->request->data['Post']['pic']['name']);
+                $target_dir = dirname(APP) . '/app/webroot/img/';
+                $target_file = $target_dir . $img_name[0] . '.' . $img_name[1];
+                $i = 1;
+                while (file_exists($target_file)) {
+                    $target_file = $target_dir . $img_name[0] . $i . '.' . $img_name[1];
+                    $i++;
+                }
+                $this->request->data['Post']['image'] = basename($target_file);
+            } else if ($this->request->data['Post']['pic']['name'] !== '') {
+                return $this->Flash->error(__('File is too big. Maximum is 2MB.'));
+            }
+
+            if ($this->Post->save($this->request->data)) {
+                if ($this->request->data['Post']['pic']['name'] !== null) {
+                    move_uploaded_file($this->request->data['Post']['pic']['tmp_name'], $target_file);
+                }
+                $this->Flash->success(__('Your post has been saved.'));
+                return $this->redirect(array('action' => 'index'));
+            }
+            $this->Flash->error(__('Unable to add your post.'));
         }
     }
 

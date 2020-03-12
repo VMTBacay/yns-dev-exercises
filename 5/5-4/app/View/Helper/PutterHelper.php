@@ -33,7 +33,7 @@ class PutterHelper extends AppHelper {
     <?php
     }
 
-    public function putPost($ogPost, $follows, $repostPosts = null) {
+    public function putPost($ogPost, $follows, $repostPosts = null, $isRpc = false) {
     ?>
         <div style="border-style: solid;">
             <div style="margin: 10px; display : flex; justify-content: space-between;">
@@ -41,7 +41,7 @@ class PutterHelper extends AppHelper {
                     <?php
                     $post = $ogPost;
 
-                    if (!array_key_exists('Like', $post)) {
+                    if (!array_key_exists('Like', $post) && !$isRpc) {
                         foreach ($repostPosts as $repostPost) {
                             if ($repostPost['Post']['id'] === $post['Post']['id']) {
                                 $post = $repostPost;
@@ -69,6 +69,9 @@ class PutterHelper extends AppHelper {
                 if (file_exists(dirname(APP) . '/app/webroot/img/' . $post['Post']['image'])
                     && $post['Post']['image'] !== null) {
                         echo '<br>'. $this->Html->image($post['Post']['image'], array('style' => 'height: 100px;'));
+                }
+                if ($post['Post']['repost_id'] !== null) {
+                    //put that dang rpc array stuff in post key bleh
                 }
                 ?>
             </div>
@@ -115,7 +118,7 @@ class PutterHelper extends AppHelper {
                     $likeOrUnlike = $hasLiked ? array('unlike', 'Unlike') : array('like', 'Like');
                     ?>
                     <span class="<?php echo $likeOrUnlike[0]?> link" id="<?php echo $post['Post']['id'] ?>">
-                        <?php echo $likeOrUnlike[1]?>
+                        <?php echo $likeOrUnlike[1]; ?>
                     </span>
                     <?php
                     echo ' <span id="likeCount-' . $post['Post']['id'] . '">' . count($post['Like']) . '</span> like(s)';
@@ -139,6 +142,9 @@ class PutterHelper extends AppHelper {
                             'Repost', array('controller' => 'posts', 'action' => 'repost', $post['Post']['id'])
                         );
                     }
+                    echo '&nbsp;|&nbsp;' . $this->Html->link(
+                            'RP with content', array('controller' => 'posts', 'action' => 'rpWithContent', $post['Post']['id'])
+                        );
                     echo ' ' . count($post['Repost']) . ' repost(s)';
                     $this->Space->spaceMaker();
 

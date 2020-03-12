@@ -1,6 +1,12 @@
 <?php
 class Post extends AppModel {
-    public $belongsTo = 'User';
+    public $belongsTo = array(
+        'User',
+        'RPC' => array(
+            'className' => 'Post',
+            'foreignKey' => 'repost_id'
+        )
+    );
 
     public $hasMany = array(
         'Repost' => array(
