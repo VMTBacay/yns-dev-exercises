@@ -71,7 +71,7 @@
         ?>
     </div>
 </body>
-<script type="text/javascript"> 
+<script type="text/javascript">
     function unlike(me) {
         $.post("<?php echo Router::url(array('controller'=>'posts','action'=>'unlike')); ?>/" + me.attr("id"));
         me.attr('class', 'like link');
@@ -94,13 +94,40 @@
         });
     }
 
+    function unrepost(me) {
+        $.post("<?php echo Router::url(array('controller'=>'posts','action'=>'unrepost')); ?>/" + me.attr("id"));
+        me.attr('class', 'repost link');
+        me.html("Repost");
+        $("#repostCount-" + me.attr("id")).html(parseInt($("#repostCount-" + me.attr("id")).html() - 1));
+        me.unbind('click');
+        me.click(function() {
+            repost($(this));
+        });
+    }
+
+    function repost(me) {
+        $.post("<?php echo Router::url(array('controller'=>'posts','action'=>'repost')); ?>/" + me.attr("id"));
+        me.attr('class', 'unrepost link');
+        me.html("Unrepost");
+        $("#repostCount-" + me.attr("id")).html(parseInt($("#repostCount-" + me.attr("id")).html() + 1));
+        me.unbind('click');
+        me.click(function() {
+            unrepost($(this));
+        });
+    }
+
     $(".unlike").click(function() {
         unlike($(this));
     });
     $(".like").click(function(){
         like($(this));
     });
-
+    $(".unrepost").click(function() {
+        unrepost($(this));
+    });
+    $(".repost").click(function(){
+        repost($(this));
+    });
 
     document.getElementsByClassName('sidebar')[0].style.height = (document.body.scrollHeight - 100) + 'px';
 </script>

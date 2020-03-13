@@ -20,6 +20,11 @@ class Post extends AppModel {
         'Comment' => array(
             'className' => 'Comment',
             'conditions' => array('Comment.deleted' => '0')
+        ),
+        'RPCPost' => array(
+            'className' => 'Post',
+            'foreignKey' => 'repost_id',
+            'conditions' => array('RPCPost.deleted' => '0')
         )
     );
 

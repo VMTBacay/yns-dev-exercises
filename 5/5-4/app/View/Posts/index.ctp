@@ -5,9 +5,12 @@ if ($this->Session->read('user.id') === $viewUser['id']) {
     echo $this->Form->input('title');
     echo $this->Form->input('body', array('rows' => '3'));
     ?>
-    <span style="margin-left: 10px">
-        <?php echo $this->Html->image(' ', array('height' => '100px', 'id' => 'preview')); ?>
+    <span style="margin-left: 10px;">Image:</span>
+    <span style="display: flex; align-items: center;">
+        <?php echo $this->Html->image('no_image.jpg', array('height' => '100px', 'id' => 'preview', 'style' => 'margin: 10px;')); ?>
+        <button type="button" id="removeImage" hidden>Remove Image</button>
     </span>
+
     <?php
     echo $this->Form->file('Post.pic');
     echo $this->Form->end('Save Post');
@@ -36,7 +39,7 @@ if ($postCount === 0) {
 }
 
 for ($i = $offset; $i < $end; $i++) {
-    $this->Putter->putPost($allPosts[$i], $this->Session->read('user.follows'), $repostPosts);
+    $this->Putter->putPost($allPosts[$i], $this->Session->read('user.follows'));
 }
 ?>
 
@@ -77,7 +80,14 @@ for ($i = $offset; $i < $end; $i++) {
         var reader = new FileReader();
         reader.onload = function (e) {
             document.getElementById("preview").src = e.target.result;
+            $("#removeImage").show();
         };
         reader.readAsDataURL(document.getElementById("PostPic").files[0]);
+    });
+
+    $("#removeImage").click(function() {
+        document.getElementById("preview").src = '/img/no_image.jpg';
+        document.getElementById('PostPic').value = "";
+        $(this).hide();
     });
 </script>

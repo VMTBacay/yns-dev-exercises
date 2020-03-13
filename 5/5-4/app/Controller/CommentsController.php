@@ -11,7 +11,13 @@ class CommentsController extends AppController {
             throw new NotFoundException(__('Invalid post'));
         }
 
-        $post = $this->Post->findById($id);
+        $post = $this->Post->find('first', array(
+            'conditions' => array(
+                'Post.id' => $id,
+                'Post.deleted' => 0
+            ),
+            'recursive' => 2
+        ));
         if (!$post) {
             throw new NotFoundException(__('Invalid post'));
         }
